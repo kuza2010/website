@@ -21,6 +21,11 @@ module.exports = {
       alignAttributesVertically: true,
       ignores: []
     }],
+    'vue/html-closing-bracket-spacing': ['error', {
+      startTag: 'never',
+      endTag: 'never',
+      selfClosingTag: 'never'
+    }],
     'vue/max-attributes-per-line': ['error', {
       singleline: 1,
       multiline: {
