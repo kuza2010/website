@@ -11,8 +11,22 @@ module.exports = {
     '@nuxtjs',
     'plugin:nuxt/recommended'
   ],
-  plugins: [
-  ],
+  plugins: [],
   // add your custom rules here
-  rules: {}
+  rules: {
+    'vue/html-indent': ['error', 4, {
+      attribute: 1,
+      baseIndent: 1,
+      closeBracket: 0,
+      alignAttributesVertically: true,
+      ignores: []
+    }],
+    'vue/max-attributes-per-line': ['error', {
+      singleline: 1,
+      multiline: {
+        max: 2,
+        allowFirstLine: true
+      }
+    }]
+  }
 }
