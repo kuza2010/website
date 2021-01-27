@@ -13,6 +13,8 @@
     "fix": "eslint --fix --ext \".js,.vue\" --ignore-path .gitignore ."
   },
   "dependencies": {
+    "@chakra-ui/nuxt": "^0.2.4",
+    "@nuxtjs/emotion": "^0.1.0",
     "core-js": "^3.8.2",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.14.12"
