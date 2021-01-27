@@ -1,7 +1,7 @@
+import customTheme from './config/custom-theme.js'
 import pkg from './package.json'
 
 export default {
-    // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
         title: pkg.name,
         htmlAttrs: { lang: 'en' },
@@ -11,34 +11,30 @@ export default {
             { hid: 'description', name: 'description', content: pkg.description }
         ],
         link: [
-            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+            { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
+            { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap' }
         ]
     },
-
-    // Global CSS: https://go.nuxtjs.dev/config-css
     css: [
-        'normalize.css/normalize.css'
+        'normalize.css/normalize.css',
+        '@assets/global-defined-styles.css'
     ],
-
-    // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
+        'plugins/chakra-ui'
     ],
-
-    // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
-
-    // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
     buildModules: [
         '@nuxtjs/eslint-module'
     ],
-
-    // Modules: https://go.nuxtjs.dev/config-modules
     modules: [
         '@chakra-ui/nuxt',
         '@nuxtjs/emotion'
     ],
+    build: {},
 
-    // Build Configuration: https://go.nuxtjs.dev/config-build
-    build: {
+    // Chakra UI
+    chakra: {
+        extendTheme: customTheme
     }
 }
