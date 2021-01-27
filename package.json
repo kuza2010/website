@@ -1,6 +1,8 @@
 {
   "name": "website",
   "version": "1.0.0",
+  "author": "Danilin Artyom aka kyza2010",
+  "description": "This is my personal web site build on Next.js",
   "private": true,
   "scripts": {
     "dev": "nuxt",
