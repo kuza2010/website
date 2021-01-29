@@ -1,23 +1,22 @@
 <template>
-    <div class="app">
-        <CThemeProvider>
-            <CColorModeProvider>
-                <CBox>
-                    <Nuxt/>
-                </CBox>
-            </CColorModeProvider>
-        </CThemeProvider>
-    </div>
+    <chakra-theme-wrapper>
+        <c-box class="app">
+            <nav-bar/>
+            <nuxt/>
+        </c-box>
+    </chakra-theme-wrapper>
 </template>
 
 <script lang="js">
-import { CThemeProvider, CColorModeProvider, CBox } from '@chakra-ui/vue'
+import { CBox } from '@chakra-ui/vue'
+import NavBar from '~/components/navbar'
+import ChakraThemeWrapper from '~/components/chakra/ChakraThemeWrapper'
 
 export default {
     name: 'App',
     components: {
-        CThemeProvider,
-        CColorModeProvider,
+        ChakraThemeWrapper,
+        NavBar,
         CBox
     }
 }

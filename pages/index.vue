@@ -1,20 +1,34 @@
 <template>
-    <CBox bg="tomato" h="100vh"
-          p="4" color="white"
-          display="flex" align-items="center"
-          justify-content="center"
-    >
-        <h1>Hello Nuxt</h1>
-    </CBox>
+    <div>
+        <CBox bg="tomato" h="100vh"
+              color="white" display="flex"
+              align-items="center" justify-content="center"
+              :class="colorMode === 'dark'? 'dark-mode' :'light-mode'"
+        >
+            <c-button
+                variant-color="brand.orange"
+                @click="$toggleColorMode"
+            >
+                Current ColorMode: {{ colorMode }}
+            </c-button>
+        </CBox>
+    </div>
 </template>
 
 <script lang="js">
-import { CBox } from '@chakra-ui/vue'
+import { CBox, CButton } from '@chakra-ui/vue'
 
 export default {
     name: 'Index',
     components: {
-        CBox
+        CBox,
+        CButton
+    },
+    inject: ['$chakraColorMode', '$toggleColorMode'],
+    computed: {
+        colorMode () {
+            return this.$chakraColorMode()
+        }
     }
 }
 </script>

@@ -1,4 +1,14 @@
 body {
     /*add other fonts here*/
     font-family: 'Inter', sans-serif;
+
+    line-height: 1.5;
+}
+
+.dark-mode {
+    background-color: #0d1117 !important;
+}
+
+.light-mode {
+    background-color: #f5dccb !important;
 }

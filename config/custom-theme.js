@@ -1,6 +1,11 @@
+import defaultTheme from '@chakra-ui/vue/src/lib/theme/index'
+
 //  custom-theme.js
 export default {
+    ...defaultTheme,
     colors: {
+        primary: '#f5dccb',
+        secondary: '#e6a73c',
         // generate palette: https://coolors.co/e6a73c-d4b57f-9c6e21-8c6c35-784f0a
         marigold: '#e6a73c',
         burlywood: '#d4b57f',

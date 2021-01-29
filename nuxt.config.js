@@ -1,5 +1,5 @@
-import customTheme from './config/custom-theme.js'
 import pkg from './package.json'
+import customTheme from './config/custom-theme.js'
 
 export default {
     head: {
@@ -35,6 +35,7 @@ export default {
 
     // Chakra UI
     chakra: {
-        extendTheme: customTheme
+        extendTheme: customTheme,
+        autoImport: true
     }
 }
