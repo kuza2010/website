@@ -1,14 +1,43 @@
 body {
     /*add other fonts here*/
     font-family: 'Inter', sans-serif;
-
     line-height: 1.5;
+
+
+    /* Colors */
+    --primary-light: #fdf9f5;
+    --secondary-light: #e6a73c;
+    --secondary-light-transparent: rgba(230, 167, 80, 0.8);
+
+    --primary-black: #0d1117;
+    --secondary-black: #161b22;
+    --secondary-black-transparent: rgba(22, 27, 34, 0.5);
+
+    --marigold: #e6a73c;
+    --marigold-hover: #bd8018;
+    --burlywood: #d4b57f;
+    --goldenBrown: #9c6e21;
+    --bistreBrown: #8c6c35;
+    --brown: #784f0a;
+
+    --transparent-white-15: rgba(255, 255, 255, 0.15);
 }
 
 .dark-mode {
-    background-color: #0d1117 !important;
+    background-color: var(--primary-black) !important;
+    color: var(--primary-light) !important;
 }
 
 .light-mode {
-    background-color: #f5dccb !important;
+    background-color: var(--primary-light) !important;
+    color: var(--primary-black) !important;
+}
+
+/* Navigation bar style*/
+nav .light-mode {
+    background-color: var(--secondary-light-transparent) !important;
+}
+
+nav .dark-mode {
+    background-color: var(--secondary-black-transparent) !important;
 }
