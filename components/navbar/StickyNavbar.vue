@@ -1,36 +1,48 @@
 <template>
-    <nav>
-        <c-flex
-            overflow="hidden"
-            pos="fixed"
-            z-index="9999"
-            top="0"
-            w="100%"
-            class="navbar"
-            :class="colorMode === 'dark'? 'dark-mode' :'light-mode'"
+    <nav
+        :style="navStyle"
+        :class="colorMode === 'dark'? 'dark-mode' :'light-mode'"
+    >
+        <c-flex mr="auto" ml="auto"
+                max-w="1150px" w="100%"
+                p="1rem" align-items="center"
+                :justify-content="justifyContent"
         >
-            <c-box mr="auto" ml="auto"
-                   max-w="1150px" w="100%"
-            >
-                <slot/>
-            </c-box>
+            <slot/>
         </c-flex>
     </nav>
 </template>
 
 <script lang="js">
-import { CBox, CFlex } from '@chakra-ui/vue'
+import { CFlex } from '@chakra-ui/vue'
 
 export default {
     name: 'StickyNavBar',
     components: {
-        CFlex,
-        CBox
+        CFlex
     },
     inject: ['$chakraColorMode', '$toggleColorMode'],
+    props: {
+        stickyBottom: {
+            type: Boolean,
+            default: false,
+            required: false
+        },
+        justifyContent: {
+            type: String,
+            default: 'flex-end',
+            required: false
+        }
+    },
     computed: {
         colorMode () {
             return this.$chakraColorMode()
+        },
+        navStyle () {
+            if (this.stickyBottom) {
+                return { bottom: 0 }
+            }
+            return { top: 0 }
         }
     }
 }
@@ -38,7 +50,11 @@ export default {
 
 <style scoped lang="css">
 
-.navbar {
+nav {
     backdrop-filter: saturate(180%) blur(20px);
+    display: flex;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
 }
 </style>
