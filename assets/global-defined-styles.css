@@ -6,15 +6,15 @@ body {
 
     /* Colors */
     --primary-light: #fdf9f5;
-    --secondary-light: #e6a73c;
-    --secondary-light-transparent: rgba(230, 167, 80, 0.8);
+    --secondary-light: #593196;
+    --secondary-light-transparent: rgba(89, 49, 150, 0.8);
 
     --primary-black: #0d1117;
     --secondary-black: #161b22;
     --secondary-black-transparent: rgba(22, 27, 34, 0.5);
 
     --marigold: #e6a73c;
-    --marigold-hover: #bd8018;
+    --marigold-hover: #422470;
     --burlywood: #d4b57f;
     --goldenBrown: #9c6e21;
     --bistreBrown: #8c6c35;
@@ -34,10 +34,23 @@ body {
 }
 
 /* Navigation bar style*/
-nav .light-mode {
+nav.light-mode {
     background-color: var(--secondary-light-transparent) !important;
 }
 
-nav .dark-mode {
+nav.dark-mode {
     background-color: var(--secondary-black-transparent) !important;
+}
+
+/* Helpers */
+.visible {
+    visibility: visible !important;
+}
+
+.collapse {
+    visibility: collapse !important;
+}
+
+.invisible {
+    display: none !important;
 }
