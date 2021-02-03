@@ -18,7 +18,7 @@
                                 to="#" is-external-link
                 />
                 with bachelor's degree and continue my education as a master. I am very keen on programming, dedicate to
-                be a full-stack engineer 📚. Here, in my personal slice of the internet ypu can get to know me better.
+                be a full-stack engineer 📚. Here in my personal slice of the internet you can get to know me better.
             </c-text>
             <c-button-group spasing="4">
                 <c-button variant-color="brand.purple"
