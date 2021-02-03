@@ -14,7 +14,6 @@
         >
             <c-icon
                 :name="icon"
-                :color="color"
                 :aria-label="ariaLabel || icon"
                 :size="iconSize"
                 p="0.25rem"
@@ -71,4 +70,32 @@ export default {
 </script>
 
 <style scoped lang="scss">
+button {
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+        border: 0;
+    }
+
+    &:active {
+        outline: none;
+        background: var(--transparent-white-15) !important;
+        border: 0;
+    }
+}
+
+.navbar-btn-dark {
+    &:hover {
+        background-color: var(--primary-black);
+        color: white;
+    }
+}
+
+.navbar-btn-light {
+    &:hover {
+        background-color: var(--marigold-hover);
+        color: white;
+    }
+}
 </style>

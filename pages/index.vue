@@ -1,52 +1,19 @@
 <template>
-    <div>
-        <CBox bg="tomato" h="100vh"
-              color="white" display="flex"
-              align-items="center" justify-content="center"
-              :class="colorMode === 'dark'? 'dark-mode' :'light-mode'"
-        >
-            <c-button
-                variant-color="brand.orange"
-                @click="$toggleColorMode"
-            >
-                Current ColorMode: {{ colorMode }}
-            </c-button>
-        </CBox>
-        <CBox bg="tomato" h="100vh"
-              color="white" display="flex"
-              align-items="center" justify-content="center"
-              :class="colorMode === 'dark'? 'dark-mode' :'light-mode'"
-        >
-            <c-button
-                variant-color="brand.orange"
-                @click="$toggleColorMode"
-            >
-                Current ColorMode: {{ colorMode }}
-            </c-button>
-        </CBox>
-        <CBox bg="tomato" h="100vh"
-              color="white" display="flex"
-              align-items="center" justify-content="center"
-              :class="colorMode === 'dark'? 'dark-mode' :'light-mode'"
-        >
-            <c-button
-                variant-color="brand.orange"
-                @click="$toggleColorMode"
-            >
-                Current ColorMode: {{ colorMode }}
-            </c-button>
-        </CBox>
-    </div>
+    <layout>
+        <Summary/>
+        <Summary/>
+    </layout>
 </template>
 
 <script lang="js">
-import { CBox, CButton } from '@chakra-ui/vue'
+import Summary from '~/components/Summary'
+import Layout from '~/components/Container'
 
 export default {
     name: 'Index',
     components: {
-        CBox,
-        CButton
+        Layout,
+        Summary
     },
     inject: ['$chakraColorMode', '$toggleColorMode'],
     computed: {
