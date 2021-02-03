@@ -11,18 +11,47 @@ body {
 
     --primary-black: #0d1117;
     --secondary-black: #161b22;
-    --secondary-black-transparent: rgba(22, 27, 34, 0.5);
+    --secondary-black-transparent: rgba(22, 27, 34, 0.8);
 
-    --marigold: #e6a73c;
-    --marigold-hover: #422470;
-    --burlywood: #d4b57f;
-    --goldenBrown: #9c6e21;
-    --bistreBrown: #8c6c35;
-    --brown: #784f0a;
 
+    --success: #a9e5c1;
+    --success-bold: #84dba7;
+    --info: #b8e3f5;
+    --info-bold: #7acced;
+    --warning: #fbe5c0;
+    --warning-bold: #f7cf89;
+    --danger: #fec8c8;
+    --danger-bold: #fd9898;
+
+    --purple-50: #faf9fc;
+    --purple-100: #f0ecf5;
+    --purple-200: #e4deee;
+    --purple-300: #d8cfe7;
+    --purple-400: #cbbfde;
+    --purple-500: #bcacd5;
+    --purple-600: #ab97ca;
+    --purple-700: #967ebd;
+    --purple-800: #7b5dac;
+    --purple-900: #4d2b84;
+
+    /* text */
+    --text-secondary: #8b949e;
+
+    /* link */
+    --link-primary-light: #593196;                  /* --secondary-light  */
+    --link-primary-active-light: #0d1117;           /* --secondary-black   */
+    --link--primary-dark: #7b5dac;                  /* --secondary-light  */
+    --link-primary-active-dark: #fdf9f5;            /* --primary-light   */
+
+    /* common visited */
+    --link-primary-visited: #8b949e;                /* --text-secondary  */
+
+
+    /* navbar */
     --transparent-white-15: rgba(255, 255, 255, 0.15);
 }
 
+/* Global style */
 .dark-mode {
     background-color: var(--primary-black) !important;
     color: var(--primary-light) !important;
@@ -43,6 +72,7 @@ nav.dark-mode {
 }
 
 /* Helpers */
+
 .visible {
     visibility: visible !important;
 }
