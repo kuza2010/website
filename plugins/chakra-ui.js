@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Chakra from '@chakra-ui/vue'
 
-import { faBlog, faHamburger, faScrewdriver, faUserGraduate } from '@fortawesome/free-solid-svg-icons'
+import { faBlog, faHamburger, faScrewdriver, faUserGraduate, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 
 import customTheme from '../config/custom-theme.js'
 
@@ -12,7 +12,8 @@ Vue.use(Chakra, {
             faHamburger,
             faUserGraduate,
             faBlog,
-            faScrewdriver
+            faScrewdriver,
+            faExternalLinkAlt
         },
         iconPack: 'fa'
     }
