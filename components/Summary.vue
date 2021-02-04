@@ -48,23 +48,20 @@
 </template>
 
 <script>
-import { CBox, CButton, CButtonGroup, CFlex, CHeading, CImage, CText } from '@chakra-ui/vue'
+import { CBox, CButtonGroup, CFlex, CHeading, CImage, CText } from '@chakra-ui/vue'
 import LinkWithIcon from '~/components/text/LinkWithIcon'
-import MyButton from '~/components/buttons/ADButton'
 import ADButton from '~/components/buttons/ADButton'
 
 export default {
     name: 'Summary',
     components: {
         ADButton,
-        MyButton,
         LinkWithIcon,
         CFlex,
         CBox,
         CImage,
         CHeading,
         CText,
-        CButton,
         CButtonGroup
     },
     inject: ['$chakraColorMode', '$toggleColorMode'],
