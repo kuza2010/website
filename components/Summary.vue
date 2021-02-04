@@ -20,20 +20,22 @@
                 with bachelor's degree and continue my education as a master. I am very keen on programming, dedicate to
                 be a full-stack engineer 📚. Here in my personal slice of the internet you can get to know me better.
             </c-text>
-            <c-button-group spacing="4">
+            <c-flex justify-content="flex-start"
+                    class="button-line"
+            >
                 <a-d-button size="lg">
                     <c-text font-size="lg" mr="5px">
                         🏆
                     </c-text>
                     My stuff
                 </a-d-button>
-                <a-d-button size="lg">
+                <a-d-button :mt="[1,0]" size="lg">
                     <c-text font-size="lg" mr="5px">
                         🎙️
                     </c-text>
                     Give feedback
                 </a-d-button>
-            </c-button-group>
+            </c-flex>
         </c-box>
         <c-box :mb="[4,0]" :mt="[2,12]">
             <c-image :rounded="['full', 16]"
@@ -48,7 +50,7 @@
 </template>
 
 <script>
-import { CBox, CButtonGroup, CFlex, CHeading, CImage, CText } from '@chakra-ui/vue'
+import { CBox, CFlex, CHeading, CImage, CText } from '@chakra-ui/vue'
 import LinkWithIcon from '~/components/text/LinkWithIcon'
 import ADButton from '~/components/buttons/ADButton'
 
@@ -61,8 +63,7 @@ export default {
         CBox,
         CImage,
         CHeading,
-        CText,
-        CButtonGroup
+        CText
     },
     inject: ['$chakraColorMode', '$toggleColorMode'],
     computed: {
@@ -73,6 +74,25 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+
+.button-line {
+    flex-direction: row;
+
+    button:first-child {
+        margin-right: 1rem;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    .button-line {
+        flex-direction: column;
+
+        button:first-child {
+            margin-right: 0;
+            margin-bottom: 1rem;
+        }
+    }
+}
 
 </style>
