@@ -109,7 +109,7 @@ button {
 
 .navbar-btn-light {
     &:hover {
-        background-color: var(--marigold-hover);
+        background-color: var(--extra-bold-light);
         color: white;
     }
 }

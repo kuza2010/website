@@ -7,6 +7,7 @@ body {
     /* Colors */
     --primary-light: #fdf9f5;
     --secondary-light: #593196;
+    --extra-bold-light: #3c2166;
     --secondary-light-transparent: rgba(89, 49, 150, 0.8);
 
     --primary-black: #0d1117;

@@ -6,6 +6,7 @@
         rounded="0.5rem" transition="opacity 0.5s"
         background="none" font-weight="300"
         font-size="12px" line-height="24px"
+        w="70px" h="70px"
         :class="colorMode === 'dark'? 'navbar-btn-dark' :'navbar-btn-light'"
         @click="onButtonClick"
     >
@@ -94,7 +95,7 @@ button {
 
 .navbar-btn-light {
     &:hover {
-        background-color: var(--marigold-hover);
+        background-color: var(--extra-bold-light);
         color: white;
     }
 }
