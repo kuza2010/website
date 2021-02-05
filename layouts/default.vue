@@ -9,7 +9,7 @@
 
 <script lang="js">
 import { CBox } from '@chakra-ui/vue'
-import ChakraThemeWrapper from '~/components/chakra/ChakraThemeWrapper'
+import ChakraThemeWrapper from '~/components/helpers/ChakraThemeWrapper'
 import Navbar from '~/components/navbar/Navbar'
 
 export default {

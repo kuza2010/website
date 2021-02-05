@@ -13,7 +13,7 @@
 import { CBox, CFlex } from '@chakra-ui/vue'
 
 export default {
-    name: 'Container',
+    name: 'AppLayout',
     components: {
         CFlex,
         CBox
