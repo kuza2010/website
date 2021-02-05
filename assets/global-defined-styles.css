@@ -14,6 +14,10 @@ body {
     --secondary-black: #161b22;
     --secondary-black-transparent: rgba(22, 27, 34, 0.8);
 
+    /* two colors */
+    --color-border-light: #d1d5da;
+    --color-border-dark: #fdf9f5;
+
 
     --success: #a9e5c1;
     --success-bold: #84dba7;
@@ -37,6 +41,8 @@ body {
 
     /* text */
     --text-secondary: #8b949e;
+    --text-black: #1A202C;
+    --text-light: #c9d1d9;
 
     /* link */
     --link-primary-light: #593196;                  /* --secondary-light  */
@@ -55,12 +61,12 @@ body {
 /* Global style */
 .dark-mode {
     background-color: var(--primary-black) !important;
-    color: var(--primary-light) !important;
+    color: var(--text-light) !important;
 }
 
 .light-mode {
     background-color: var(--primary-light) !important;
-    color: var(--primary-black) !important;
+    color: var(--text-black) !important;
 }
 
 /* Navigation bar style*/

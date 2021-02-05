@@ -16,10 +16,12 @@ export default {
         blackPrimary: '#0d1117',
         blackSecondary: '#161b22',
 
+        // two colors
+        borderLight: '#d1d5da',
+        borderDark: '#fdf9f5',
+
         primaryLight: '#fdf9f5',
         secondaryLight: '#593196',
-        primaryBlack: '#0d1117',
-        secondaryBlack: '#161b22',
         success: '#a9e5c1',
         successBold: '#84dba7',
         info: '#b8e3f5',
@@ -29,7 +31,10 @@ export default {
         danger: '#fec8c8',
         dangerBold: '#fd9898',
 
+        /* text */
         textSecondary: '#8b949e',
+        textBlack: '#1A202C',
+        textLight: '#c9d1d9',
 
         // generate brand colors: palx.jxnblk.com (base color: e6a73c)
         brand: {
