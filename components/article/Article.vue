@@ -1,13 +1,12 @@
 <template>
     <c-flex :mt="[4, 5]" :flex-direction="['column', 'row']"
-            :style="border"
-            w="100%" rounded="6px"
-            p="1" :align-items="['', 'center']"
-            justify-content="space-between"
+            :align-items="['left', 'center']"
+            :class="colorMode ==='dark' ? 'article-dark': 'article-light'"
+            w="95%" rounded="6px"
+            p="1" justify-content="space-between"
+            cursor="pointer"
     >
-        <c-box :ml="[1,4]"
-               max-w="300px"
-        >
+        <c-box :ml="[1,4]" max-w="300px">
             <c-text font-size="sm" font-weight="medium"
                     mb="1"
             >
@@ -21,23 +20,30 @@
                 {{ title }}
             </c-text>
         </c-box>
-        <c-box :mr="[0,4]" :ml="[1,0]"
-               :my="[1,0]"
+        <c-flex :mr="[0,4]" :ml="[1,0]"
+                :mb="[4,0]" :mt="[2,0]"
         >
-            Tag 1
-            Tag 2
-            Tag 3
-        </c-box>
+            <tag text="Tag-1"
+                 color="dangerBold" hover-color="danger"
+            />
+            <tag text="Tag-2"
+                 color="successBold" hover-color="success"
+            />
+            <tag text="Tag-3"
+                 color="warningBold" hover-color="warning"
+            />
+        </c-flex>
     </c-flex>
 </template>
 
 <script>
 import { CBox, CFlex, CText } from '@chakra-ui/vue'
-import Theme from '~/config/custom-theme'
+import Tag from '~/components/Tag'
 
 export default {
     name: 'Article',
     components: {
+        Tag,
         CFlex,
         CBox,
         CText
@@ -46,14 +52,6 @@ export default {
     // eslint-disable-next-line vue/require-prop-types
     props: ['id', 'title', 'data', 'isNew', 'tagArray'],
     computed: {
-        border () {
-            if (this.colorMode === 'dark') {
-                return {}
-            }
-            return {
-                boxShadow: `5px 5px 10px 0px ${Theme.colors.borderLight}`
-            }
-        },
         colorMode () {
             return this.$chakraColorMode()
         }
@@ -62,5 +60,34 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+.article-dark {
+    &:hover {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+        background-color: var(--secondary-black);
+        transition: all 0.5s ease 0s;
+    }
+
+    &:not(:hover) {
+        transition: all 0.5s ease 0s;
+    }
+}
+
+.article-light {
+
+    box-shadow: 5px 5px 10px 0 var(--color-border-light);
+
+    &:hover {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+        background-color: var(--purple-200);
+        transition: all 0.5s ease 0s;
+    }
+
+    &:not(:hover) {
+        transition: all 0.5s ease 0s;
+    }
+}
 
 </style>

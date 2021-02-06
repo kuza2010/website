@@ -2,7 +2,7 @@
     <c-button v-if="$slots"
               v-bind="$attrs"
               variant-color="brand.purple"
-              border="none"
+              border="none" cursor="pointer"
     >
         <slot/>
     </c-button>
@@ -10,7 +10,7 @@
     <c-button v-else
               v-bind="$attrs"
               variant-color="brand.purple"
-              border="none"
+              border="none" cursor="pointer"
     >
         {{ text }}
     </c-button>

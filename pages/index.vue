@@ -1,7 +1,9 @@
 <template>
     <layout>
         <Summary/>
-        <article-list :article-list="[{id:1, title:'title'}]" title="Article list"/>
+        <article-list :article-list="[{id:1, title:'title'}]"
+                      title="Article list"
+        />
     </layout>
 </template>
 

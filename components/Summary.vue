@@ -39,7 +39,7 @@
         </c-box>
         <c-box :mb="[4,0]" :mt="[2,12]">
             <c-image :rounded="['full', 16]"
-                     :src="'./me.jpg'"
+                     :src="'./me-865.jpg'"
                      :m="['auto']"
                      :w="['3xs', 'sm']"
                      alt="The best developer"
