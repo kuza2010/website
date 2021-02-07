@@ -5,46 +5,40 @@
                 :pt="[12,16]"
                 :pb="[32,16]"
         >
-            <c-flex m="0 auto" justify-content="space-around"
-                    :w="['50%', '35%', '25%']"
+            <c-flex :w="['65%', '35%', '25%']"
+                    mx="auto" mt="1"
+                    justify-content="center"
             >
-                <a-d-button size="lg" text="About"
-                            color="primary" mr="3"
-                            :bg="colorMode === 'dark'? 'blackAccent' :'brand.purple.900'"
-                            :_hover="colorMode === 'dark'? {bg: 'blackPrimary', border: `1px solid ${darkThemeBorderColor}`} : {bg: 'brand.purple.600'}"
-                />
-
-                <a-d-button size="lg" text="Blog"
-                            color="primary" mr="3"
-                            :bg="colorMode === 'dark'? 'blackAccent' :'brand.purple.900'"
-                            :_hover="colorMode === 'dark'? {bg: 'blackPrimary', border: `1px solid ${darkThemeBorderColor}`} : {bg: 'brand.purple.600'}"
-                />
-
-                <a-d-button size="lg" text="Guide"
-                            color="primary"
-                            :bg="colorMode === 'dark'? 'blackAccent' :'brand.purple.900'"
-                            :_hover="colorMode === 'dark'? {bg: 'blackPrimary', border: `1px solid ${darkThemeBorderColor}`} : {bg: 'brand.purple.600'}"
-                />
-
+                <footer-button text="About"/>
+                <footer-button text="Blog"/>
+                <footer-button text="Guide"/>
             </c-flex>
-            <c-box m="0 auto">
-                Footer!!
-            </c-box>
+            <c-flex :w="['60%', '35%', '25%']"
+                    mx="auto" mt="8"
+                    justify-content="center"
+            >
+                <footer-link icon="guthubIcon" href="https://github.com/kuza2010"/>
+                <footer-link icon="linkedInIcon" href="https://www.linkedin.com/in/artyom-danilin-a11026194"/>
+                <footer-link icon="gmailIcon" href="mailto:kyza20106@yandex.ru"/>
+            </c-flex>
         </c-flex>
     </footer>
 </template>
 
 <script>
-import { CBox, CFlex } from '@chakra-ui/vue'
+import { CFlex } from '@chakra-ui/vue'
 import ADButton from '~/components/common/ADButton'
 import Theme from '~/config/custom-theme'
+import FooterLink from '~/components/footer/FooterLink'
+import FooterButton from '~/components/footer/FooterButton'
 
 export default {
     name: 'ADFooter',
     components: {
+        FooterButton,
+        FooterLink,
         ADButton,
-        CFlex,
-        CBox
+        CFlex
     },
     inject: ['$chakraColorMode'],
     data () {

@@ -13,6 +13,7 @@ body {
     --primary-black: #0d1117;
     --secondary-black: #161b22;
     --secondary-black-transparent: rgba(22, 27, 34, 0.8);
+    --black-accent: #21262d;
 
     /* two colors */
     --color-border-light: #d1d5da;

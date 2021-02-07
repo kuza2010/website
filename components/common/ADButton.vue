@@ -3,6 +3,7 @@
               variant-color="brand.purple"
               v-bind="$attrs"
               border="none" cursor="pointer"
+              @click="onClick"
     >
         <slot/>
     </c-button>
@@ -10,6 +11,7 @@
     <c-button v-else-if="withCustomVariant"
               v-bind="$attrs"
               border="none" cursor="pointer"
+              @click="onClick"
     >
         {{ text }}
     </c-button>
@@ -18,6 +20,7 @@
               variant-color="brand.purple"
               v-bind="$attrs"
               border="none" cursor="pointer"
+              @click="onClick"
     >
         {{ text }}
     </c-button>
@@ -48,10 +51,11 @@ export default {
         hasSlot () {
             return !(this.$slots.default === undefined)
         }
+    },
+    methods: {
+        onClick () {
+            this.$emit('onClick')
+        }
     }
 }
-</script>
-
-<style scoped>
-
-</style>
+</script>s
