@@ -42,7 +42,8 @@ export default {
     ],
     components: true,
     buildModules: [
-        '@nuxtjs/eslint-module'
+        '@nuxtjs/eslint-module',
+        '@nuxtjs/mdx'
     ],
     modules: [
         '@chakra-ui/nuxt',
