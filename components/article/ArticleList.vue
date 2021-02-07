@@ -10,7 +10,9 @@
         >
             {{ title }}
         </c-heading>
-        <Article title="This is title This is title This is title This is title !!!!!!!!!!!!!!!!!" data="2020-12-12"/>
+        <Article title="This is title This is title This is title This is title !!!!!!!!!!!!!!!!!" data="2020-12-12"
+                 :is-new="true"
+        />
         <Article title="This is title" data="2020-12-12"/>
         <Article title="This is title" data="2020-12-12"/>
         <Article title="This is title" data="2020-12-12"/>

@@ -3,24 +3,31 @@
             :align-items="['left', 'center']"
             :class="colorMode ==='dark' ? 'article-dark': 'article-light'"
             w="95%" rounded="6px"
-            p="1" justify-content="space-between"
+            p="1" justify-content="flex-start"
             cursor="pointer"
     >
-        <c-box :ml="[1,4]" max-w="300px">
+        <c-badge v-if="isNew"
+                 :ml="[1,4]" :mt="[4,0]"
+                 py="1" px="2"
+                 w="36px" variant-color="brand.purple"
+        >
+            New!
+        </c-badge>
+        <c-box :ml="[1,4]">
             <c-text font-size="sm" font-weight="medium"
                     mb="1"
             >
                 {{ data }}
             </c-text>
-            <c-text :mb="[0,1]"
+            <c-text :mb="[0,1]" :white-space="['nowrap', 'normal']"
                     font-size="xl" font-weight="bold"
                     my="0" text-overflow="ellipsis"
-                    white-space="nowrap" overflow="hidden"
+                    overflow="hidden"
             >
                 {{ title }}
             </c-text>
         </c-box>
-        <c-flex :mr="[0,4]" :ml="[1,0]"
+        <c-flex :ml="[0,'auto']" :mr="[0, 1]"
                 :mb="[4,0]" :mt="[2,0]"
         >
             <tag text="Tag-1"
@@ -37,7 +44,7 @@
 </template>
 
 <script>
-import { CBox, CFlex, CText } from '@chakra-ui/vue'
+import { CBadge, CBox, CFlex, CText } from '@chakra-ui/vue'
 import Tag from '~/components/Tag'
 
 export default {
@@ -46,7 +53,8 @@ export default {
         Tag,
         CFlex,
         CBox,
-        CText
+        CText,
+        CBadge
     },
     inject: ['$chakraColorMode'],
     // eslint-disable-next-line vue/require-prop-types
