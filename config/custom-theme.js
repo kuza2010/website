@@ -15,6 +15,7 @@ export default {
         purpleSecondary: '#703EBC',
         blackPrimary: '#0d1117',
         blackSecondary: '#161b22',
+        blackAccent: '#21262d',
 
         // two colors
         borderLight: '#d1d5da',
