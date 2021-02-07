@@ -46,18 +46,19 @@ body {
     --text-light: #c9d1d9;
 
     /* link */
-    --link-primary-light: #593196;                  /* --secondary-light  */
-    --link-primary-active-light: #0d1117;           /* --secondary-black   */
-    --link--primary-dark: #7b5dac;                  /* --secondary-light  */
-    --link-primary-active-dark: #fdf9f5;            /* --primary-light   */
+    --link-primary-light: #593196; /* --secondary-light  */
+    --link-primary-active-light: #0d1117; /* --secondary-black   */
+    --link--primary-dark: #7b5dac; /* --secondary-light  */
+    --link-primary-active-dark: #fdf9f5; /* --primary-light   */
 
     /* common visited */
-    --link-primary-visited: #8b949e;                /* --text-secondary  */
+    --link-primary-visited: #8b949e; /* --text-secondary  */
 
 
     /* navbar */
     --transparent-white-15: rgba(255, 255, 255, 0.15);
 }
+
 
 /* Global style */
 .dark-mode {

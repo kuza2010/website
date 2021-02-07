@@ -27,7 +27,6 @@
 
 <script>
 import { CFlex } from '@chakra-ui/vue'
-import ADButton from '~/components/common/ADButton'
 import Theme from '~/config/custom-theme'
 import FooterLink from '~/components/footer/FooterLink'
 import FooterButton from '~/components/footer/FooterButton'
@@ -37,7 +36,6 @@ export default {
     components: {
         FooterButton,
         FooterLink,
-        ADButton,
         CFlex
     },
     inject: ['$chakraColorMode'],

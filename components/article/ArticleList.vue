@@ -10,6 +10,7 @@
         >
             {{ title }}
         </c-heading>
+        <!--        <EmptyArticle v-if="!articleList || articleList.length === 0"/>-->
         <Article title="This is title This is title This is title This is title !!!!!!!!!!!!!!!!!" data="2020-12-12"
                  :is-new="true"
         />
@@ -22,10 +23,12 @@
 <script>
 import { CFlex, CHeading } from '@chakra-ui/vue'
 import Article from '~/components/article/Article'
+import EmptyArticle from '~/components/article/EmptyArticle'
 
 export default {
     name: 'ArticleList',
     components: {
+        EmptyArticle,
         Article,
         CFlex,
         CHeading

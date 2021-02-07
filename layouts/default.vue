@@ -1,26 +1,20 @@
 <template>
     <chakra-theme-wrapper>
-        <c-box class="app">
-            <a-d-navbar/>
+        <app-layout>
             <nuxt/>
-            <a-d-footer/>
-        </c-box>
+        </app-layout>
     </chakra-theme-wrapper>
 </template>
 
 <script lang="js">
-import { CBox } from '@chakra-ui/vue'
 import ChakraThemeWrapper from '~/components/helpers/ChakraThemeWrapper'
-import ADNavbar from '~/components/navbar/ADNavbar'
-import ADFooter from '~/components/footer/ADFooter'
+import AppLayout from '~/components/AppLayout'
 
 export default {
     name: 'App',
     components: {
-        ADFooter,
-        ChakraThemeWrapper,
-        CBox,
-        ADNavbar
+        AppLayout,
+        ChakraThemeWrapper
     }
 }
 </script>

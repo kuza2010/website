@@ -1,7 +1,6 @@
 <template>
-    <nav
-        :style="navStyle"
-        :class="colorMode === 'dark'? 'dark-mode' :'light-mode'"
+    <nav :style="navStyle"
+         :class="colorMode === 'dark'? 'dark-mode' :'light-mode'"
     >
         <c-flex mr="auto" ml="auto"
                 max-w="1150px" w="100%"

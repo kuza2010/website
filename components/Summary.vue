@@ -1,5 +1,5 @@
 <template>
-    <c-flex :pt="[4, 24]" :flex-direction="['column-reverse', 'row']"
+    <c-flex :flex-direction="['column-reverse', 'row']"
             m=" 0 1rem" justify-content="space-between"
     >
         <c-box :mr="[0,12]" :mt="[2,12]">
