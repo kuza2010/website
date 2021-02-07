@@ -13,6 +13,7 @@
                     sticky-bottom
                     justify-content="space-around"
                     flex-direction="column"
+                    class="mobile-navbar"
     >
         <mobile-navbar-button icon="user-graduate" text="About"/>
         <mobile-navbar-button icon="blog" text="Blog"/>
@@ -23,13 +24,13 @@
 
 <script lang="js">
 import StickyNavBar from '~/components/navbar/StickyNavbar'
-import NavbarButton from '~/components/buttons/navbar/NavbarButton'
-import ThemesSwitcher from '~/components/buttons/ThemesSwitcher'
-import MobileThemesSwitcher from '~/components/buttons/MobileThemesSwitcher'
-import MobileNavbarButton from '~/components/buttons/navbar/MobileNavbarButton'
+import NavbarButton from '~/components/navbar/buttons/NavbarButton'
+import ThemesSwitcher from '~/components/common/ThemesSwitcher'
+import MobileThemesSwitcher from '~/components/common/MobileThemesSwitcher'
+import MobileNavbarButton from '~/components/navbar/buttons/MobileNavbarButton'
 
 export default {
-    name: 'Navbar',
+    name: 'ADNavbar',
     components: {
         MobileNavbarButton,
         ThemesSwitcher,
@@ -71,5 +72,9 @@ export default {
 .navbar-logo {
     margin-left: 1em;
     margin-right: auto;
+}
+
+.mobile-navbar{
+    height: 5rem;
 }
 </style>

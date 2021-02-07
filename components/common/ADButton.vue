@@ -1,15 +1,22 @@
 <template>
-    <c-button v-if="$slots"
-              v-bind="$attrs"
+    <c-button v-if="hasSlot"
               variant-color="brand.purple"
+              v-bind="$attrs"
               border="none" cursor="pointer"
     >
         <slot/>
     </c-button>
 
-    <c-button v-else
+    <c-button v-else-if="withCustomVariant"
               v-bind="$attrs"
+              border="none" cursor="pointer"
+    >
+        {{ text }}
+    </c-button>
+
+    <c-button v-else
               variant-color="brand.purple"
+              v-bind="$attrs"
               border="none" cursor="pointer"
     >
         {{ text }}
@@ -30,6 +37,16 @@ export default {
             type: String,
             required: false,
             default: 'button'
+        },
+        withCustomVariant: {
+            type: Boolean,
+            required: false,
+            default: false
+        }
+    },
+    computed: {
+        hasSlot () {
+            return !(this.$slots.default === undefined)
         }
     }
 }

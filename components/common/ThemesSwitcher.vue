@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import NavbarButton from '~/components/buttons/navbar/NavbarButton'
+import NavbarButton from '~/components/navbar/buttons/NavbarButton'
 
 export default {
     name: 'ThemesSwitcher',
