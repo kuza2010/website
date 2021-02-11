@@ -1,5 +1,6 @@
 import pkg from './package.json'
 import customTheme from './config/custom-theme.js'
+import sortedPosts from './plugins/blog_grabber.server'
 
 export default {
     head: {
@@ -38,9 +39,13 @@ export default {
         '@assets/global-defined-styles.css'
     ],
     plugins: [
-        'plugins/chakra-ui'
+        'plugins/chakra-ui',
+        'plugins/blog_grabber.server.js' // only server-side
     ],
     components: true,
+    publicRuntimeConfig: {
+        postBasicInfo: sortedPosts
+    },
     buildModules: [
         '@nuxtjs/eslint-module',
         '@nuxtjs/mdx'
@@ -50,7 +55,6 @@ export default {
         '@nuxtjs/emotion'
     ],
     build: {},
-
     // Chakra UI
     chakra: {
         extendTheme: customTheme,

@@ -23,12 +23,10 @@
 <script>
 import { CFlex, CHeading } from '@chakra-ui/vue'
 import Article from '~/components/article/Article'
-import EmptyArticle from '~/components/article/EmptyArticle'
 
 export default {
     name: 'ArticleList',
     components: {
-        EmptyArticle,
         Article,
         CFlex,
         CHeading
@@ -48,6 +46,9 @@ export default {
         colorMode () {
             return this.$chakraColorMode()
         }
+    },
+    mounted () {
+        console.log('posts is :', this.$config)
     }
 }
 </script>
