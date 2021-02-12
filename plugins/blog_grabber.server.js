@@ -30,7 +30,8 @@ const postMetadata = fileNames
             image: data.image,
             languageTags: data.languageTags,
             isPopular: data.isPopular,
-            guides: data.guides
+            guides: data.guides,
+            isNew: data.isNew
         }
     })
     .sort(sortByDate)
