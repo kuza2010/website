@@ -39,12 +39,12 @@ export default {
         '@assets/global-defined-styles.css'
     ],
     plugins: [
-        'plugins/chakra-ui',
+        'plugins/common',
         'plugins/blog_grabber.server.js' // only server-side
     ],
     components: true,
     publicRuntimeConfig: {
-        postBasicInfo: sortedPosts
+        sortedPosts
     },
     buildModules: [
         '@nuxtjs/eslint-module',
