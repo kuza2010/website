@@ -1,7 +1,7 @@
 <template>
     <c-box>
         <Summary/>
-        <article-list :article-list="[{id:1, title:'title'}]" title="Article list"/>
+        <article-list :article-list="posts" title="Article list"/>
     </c-box>
 </template>
 
@@ -19,6 +19,9 @@ export default {
     computed: {
         colorMode () {
             return this.$chakraColorMode()
+        },
+        posts () {
+            return this.$config.sortedPosts
         }
     }
 }
