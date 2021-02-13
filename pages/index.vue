@@ -7,6 +7,7 @@
 </template>
 
 <script lang="js">
+import { CBox } from '@chakra-ui/vue'
 import ADSummary from '~/components/ADSummary'
 import ADArticleList from '~/components/article/ADArticleList'
 import ADThingsBelt from '~/components/things-belt/ADThingsBelt'
@@ -16,7 +17,8 @@ export default {
     components: {
         ADThingsBelt,
         ADArticleList,
-        ADSummary
+        ADSummary,
+        CBox
     },
     inject: ['$chakraColorMode', '$toggleColorMode'],
     computed: {

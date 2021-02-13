@@ -19,7 +19,7 @@
             >
                 <footer-link icon="guthubIcon" href="https://github.com/kuza2010"/>
                 <footer-link icon="linkedInIcon" href="https://www.linkedin.com/in/artyom-danilin-a11026194"/>
-                <footer-link icon="gmailIcon" href="mailto:kyza20106@yandex.ru"/>
+                <footer-link icon="gmailIcon" :href="`mailto:${$config.email}`"/>
             </c-flex>
         </c-flex>
     </footer>

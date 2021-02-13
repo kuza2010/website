@@ -1,6 +1,6 @@
 <template>
     <c-flex :flex-direction="['column-reverse', 'row']"
-            m=" 0 1rem" justify-content="space-between"
+            m="0 1rem" justify-content="space-between"
     >
         <c-box :mr="[0,12]" :mt="[2,12]">
             <c-heading :font-size="['2rem', '2.6rem']"
