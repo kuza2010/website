@@ -10,28 +10,29 @@
         >
             {{ title }}
         </c-heading>
-        <empty-article v-if="!articleList || articleList.length === 0"/>
-        <Article v-for="article in articleList" v-else
-                 :key="article.title"
-                 :title="article.title"
-                 :is-new="article.isNew"
-                 :data="article.publishedAt"
+
+        <a-d-empty-article v-if="!articleList || articleList.length === 0"/>
+
+        <a-d-article v-for="article in articleList" v-else
+                     :id="article.title" :key="article.title"
+                     :title="article.title" :is-new="article.isNew"
+                     :data="article.publishedAt" :tag-array="article.languageTags"
         />
     </c-flex>
 </template>
 
 <script>
 import { CFlex, CHeading } from '@chakra-ui/vue'
-import Article from '~/components/article/Article'
-import EmptyArticle from '~/components/article/EmptyArticle'
+import ADArticle from '~/components/article/ADArticle'
+import ADEmptyArticle from '~/components/article/ADEmptyArticle'
 
 export default {
-    name: 'ArticleList',
+    name: 'ADArticleList',
     components: {
-        Article,
+        ADArticle,
         CFlex,
         CHeading,
-        EmptyArticle
+        ADEmptyArticle
     },
     inject: ['$chakraColorMode'],
     props: {

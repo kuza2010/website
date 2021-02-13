@@ -30,14 +30,10 @@
         <c-flex :ml="[0,'auto']" :mr="[0, 1]"
                 :mb="[4,0]" :mt="[2,0]"
         >
-            <tag text="Tag-1"
-                 color="dangerBold" hover-color="danger"
-            />
-            <tag text="Tag-2"
-                 color="successBold" hover-color="success"
-            />
-            <tag text="Tag-3"
-                 color="warningBold" hover-color="warning"
+            <a-d-tag v-for="(tag, index) in tagArray"
+                     :key="tag" :text="tag"
+                     :hover-color="getHoverColor(index)"
+                     :color="getColor(index)"
             />
         </c-flex>
     </c-flex>
@@ -45,12 +41,12 @@
 
 <script>
 import { CBadge, CBox, CFlex, CText } from '@chakra-ui/vue'
-import Tag from '~/components/Tag'
+import ADTag from '~/components/common/ADTag'
 
 export default {
-    name: 'Article',
+    name: 'ADArticle',
     components: {
-        Tag,
+        ADTag,
         CFlex,
         CBox,
         CText,
@@ -59,9 +55,35 @@ export default {
     inject: ['$chakraColorMode'],
     // eslint-disable-next-line vue/require-prop-types
     props: ['id', 'title', 'data', 'isNew', 'tagArray'],
+    data () {
+        return {
+            tagColors: [
+                {
+                    bg: 'dangerBold',
+                    hc: 'danger'
+                },
+                {
+                    bg: 'successBold',
+                    hc: 'success'
+                },
+                {
+                    bg: 'warningBold',
+                    hc: 'warning'
+                }
+            ]
+        }
+    },
     computed: {
         colorMode () {
             return this.$chakraColorMode()
+        }
+    },
+    methods: {
+        getColor (idx) {
+            return this.tagColors[idx].bg
+        },
+        getHoverColor (idx) {
+            return this.tagColors[idx].hc
         }
     }
 }

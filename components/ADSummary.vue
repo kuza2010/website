@@ -52,10 +52,10 @@
 <script>
 import { CBox, CFlex, CHeading, CImage, CText } from '@chakra-ui/vue'
 import LinkWithIcon from '~/components/common/LinkWithIcon'
-import ADButton from '~/components/common/ADButton'
+import ADButton from '~/components/common/buttons/ADButton'
 
 export default {
-    name: 'Summary',
+    name: 'ADSummary',
     components: {
         ADButton,
         LinkWithIcon,

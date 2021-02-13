@@ -20,7 +20,7 @@
 import { CFlex, CHeading, CText } from '@chakra-ui/vue'
 
 export default {
-    name: 'EmptyArticle',
+    name: 'ADEmptyArticle',
     components: {
         CFlex,
         CHeading,

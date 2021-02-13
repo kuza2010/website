@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import ADButton from '~/components/common/ADButton'
+import ADButton from '~/components/common/buttons/ADButton'
 
 export default {
     name: 'FooterButton',

@@ -1,7 +1,6 @@
 <template>
     <c-pseudo-box v-if="color && hoverColor"
-                  :bg="color"
-                  :_hover="{ bg: hoverColor }"
+                  :bg="color" :_hover="{ bg: hoverColor }"
                   rounded="full" px="3"
                   py="1" mx="1"
                   display="flex"
@@ -33,7 +32,7 @@
 import { CPseudoBox, CTag, CText } from '@chakra-ui/vue'
 
 export default {
-    name: 'Tag',
+    name: 'ADTag',
     components: {
         CPseudoBox,
         CText,

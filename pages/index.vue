@@ -1,19 +1,22 @@
 <template>
     <c-box>
-        <Summary/>
-        <article-list :article-list="posts" title="Article list"/>
+        <a-d-summary/>
+        <a-d-article-list :article-list="posts" title="Article list"/>
+        <a-d-things-belt/>
     </c-box>
 </template>
 
 <script lang="js">
-import Summary from '~/components/Summary'
-import ArticleList from '~/components/article/ArticleList'
+import ADSummary from '~/components/ADSummary'
+import ADArticleList from '~/components/article/ADArticleList'
+import ADThingsBelt from '~/components/things-belt/ADThingsBelt'
 
 export default {
     name: 'Index',
     components: {
-        ArticleList,
-        Summary
+        ADThingsBelt,
+        ADArticleList,
+        ADSummary
     },
     inject: ['$chakraColorMode', '$toggleColorMode'],
     computed: {
