@@ -44,7 +44,9 @@ export default {
     ],
     components: true,
     publicRuntimeConfig: {
-        sortedPosts
+        sortedPosts,
+        email: 'kyza20106@yandex.ru',
+        github: 'https://github.com/kuza2010'
     },
     buildModules: [
         '@nuxtjs/eslint-module',
