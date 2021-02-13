@@ -1,9 +1,10 @@
 <template>
     <c-box mt="8" mx="4">
         <!--   things i like     -->
-        <c-text font-size="3xl" my="4">
-            🤗
-        </c-text>
+        <ad-things-indicator main-text="🤗"
+                             open-popover-main-text="😍"
+                             popover-text="I really keen on ..."
+        />
         <c-flex :border-color="colorMode === 'dark' ?'primary' :'brand.purple.800'"
                 pt="3" border-top="1px"
                 flex-wrap="wrap" flex-direction="row"
@@ -16,9 +17,10 @@
         </c-flex>
 
         <!--   things i dont like    -->
-        <c-text font-size="3xl" my="4">
-            🙄
-        </c-text>
+        <ad-things-indicator main-text=" 🙄"
+                             open-popover-main-text="🤮"
+                             popover-text="I'm not keen on ..."
+        />
         <c-flex :border-color="colorMode === 'dark' ?'primary' :'brand.purple.800'"
                 pt="3" border-top="1px"
                 flex-wrap="wrap" flex-direction="row"
@@ -36,10 +38,12 @@
 import { CBox, CFlex, CText } from '@chakra-ui/vue'
 import { like, dislike } from '~/config/my-hobby-collection'
 import ADHobby from '~/components/things-belt/ADHobby'
+import AdThingsIndicator from '~/components/things-belt/AdThingsIndicator'
 
 export default {
     name: 'ADThingsBelt',
     components: {
+        AdThingsIndicator,
         ADHobby,
         CFlex,
         CBox,
