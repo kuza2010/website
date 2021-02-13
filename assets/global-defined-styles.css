@@ -42,7 +42,7 @@ body {
 
     /* text */
     --text-secondary: #8b949e;
-    --text-black: #1A202C;
+    --text-black: #24292e; /* #1A202C */
     --text-light: #c9d1d9;
 
     /* link */
