@@ -1,9 +1,9 @@
 <template>
-    <c-box mt="8" mx="4">
+    <c-box :mt="[4,8]" mx="4">
         <!--   things i like     -->
         <ad-things-indicator main-text="🤗"
                              open-popover-main-text="😍"
-                             popover-text="I really keen on ..."
+                             popover-text="I'm really keen on ..."
         />
         <c-flex :border-color="colorMode === 'dark' ?'primary' :'brand.purple.800'"
                 pt="3" border-top="1px"
@@ -15,11 +15,10 @@
                        :enjoy="l.enjoy"
             />
         </c-flex>
-
         <!--   things i dont like    -->
         <ad-things-indicator main-text=" 🙄"
                              open-popover-main-text="🤮"
-                             popover-text="I'm not keen on ..."
+                             popover-text="I'm not keen/hate on ..."
         />
         <c-flex :border-color="colorMode === 'dark' ?'primary' :'brand.purple.800'"
                 pt="3" border-top="1px"
@@ -35,7 +34,7 @@
 </template>
 
 <script>
-import { CBox, CFlex, CText } from '@chakra-ui/vue'
+import { CBox, CFlex } from '@chakra-ui/vue'
 import { like, dislike } from '~/config/my-hobby-collection'
 import ADHobby from '~/components/things-belt/ADHobby'
 import AdThingsIndicator from '~/components/things-belt/AdThingsIndicator'
@@ -46,8 +45,7 @@ export default {
         AdThingsIndicator,
         ADHobby,
         CFlex,
-        CBox,
-        CText
+        CBox
     },
     inject: ['$chakraColorMode'],
     data () {

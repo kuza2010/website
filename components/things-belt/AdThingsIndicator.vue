@@ -1,6 +1,7 @@
 <template>
     <c-popover v-slot="{isOpen}"
                trigger="hover"
+               placement="right"
     >
         <c-popover-trigger cursor="help">
             <c-box display="inline-block">

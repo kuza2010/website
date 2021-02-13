@@ -92,7 +92,7 @@ const dislike = [
     },
     {
         enjoy: false,
-        thing: 'Boring people'
+        thing: 'Poor customers'
     },
     {
         enjoy: false,
@@ -136,7 +136,15 @@ const dislike = [
     },
     {
         enjoy: false,
-        thing: 'Enterprise'
+        thing: 'Boring people'
+    },
+    {
+        enjoy: false,
+        thing: 'Apple'
+    },
+    {
+        enjoy: false,
+        thing: 'VSCode'
     },
     {
         enjoy: false,
