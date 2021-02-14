@@ -5,8 +5,8 @@
                              open-popover-main-text="😍"
                              popover-text="I'm really keen on ..."
         />
-        <c-flex :border-color="colorMode === 'dark' ?'primary' :'brand.purple.800'"
-                pt="3" border-top="1px"
+        <c-flex border-top="1px" pt="3"
+                :border-color="colorMode === 'dark' ?'primary' :'brand.purple.800'"
                 flex-wrap="wrap" flex-direction="row"
                 justify-content="space-between"
         >
@@ -20,8 +20,8 @@
                              open-popover-main-text="🤮"
                              popover-text="I'm not keen/hate on ..."
         />
-        <c-flex :border-color="colorMode === 'dark' ?'primary' :'brand.purple.800'"
-                pt="3" border-top="1px"
+        <c-flex border-top="1px" pt="3"
+                :border-color="colorMode === 'dark' ?'primary' :'brand.purple.800'"
                 flex-wrap="wrap" flex-direction="row"
                 justify-content="space-between"
         >
