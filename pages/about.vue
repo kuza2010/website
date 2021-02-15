@@ -35,7 +35,7 @@
                     pellentesque sapien consequat nulla pharetra, ornare feugiat eros accumsan.
                 </c-text>
                 <c-flex :font-size="['lg','xl']"
-                        ml="auto" flex-direction="column"
+                        :ml="['0', 'auto']" flex-direction="column"
                 >
                     <c-box>
                         📭
@@ -55,16 +55,19 @@
                     </c-box>
                 </c-flex>
             </c-stack>
+            <a-d-timeline :timelines="timeline"/>
         </c-box>
     </c-flex>
 </template>
 
 <script lang="js">
 import { CBox, CLink, CFlex, CStack, CHeading, CText } from '@chakra-ui/vue'
+import ADTimeline from '~/components/timeline/ADTimeline'
 
 export default {
     name: 'About',
     components: {
+        ADTimeline,
         CBox,
         CLink,
         CFlex,
@@ -82,6 +85,24 @@ export default {
         },
         myGithub () {
             return this.$config.github
+        },
+        timeline () {
+            return [
+                {
+                    year: '2020',
+                    text: 'Text text text',
+                    align: 'left',
+                    key: '2020-text',
+                    tagText: 'baby step'
+                },
+                {
+                    year: '2022',
+                    text: 'Text text text',
+                    align: 'right',
+                    tagText: 'baby step baby step  step',
+                    key: '2022-text'
+                }
+            ]
         },
         linkStyle () {
             return {
