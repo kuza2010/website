@@ -2,29 +2,35 @@
     <c-box text-align="center">
         <c-heading>Timeline</c-heading>
         <c-box :class="colorMode==='light'?'timeline light':'timeline dark'">
-            <c-box v-for="(timeline,idx) in timelines" :key="timeline.key"
-                   :class="getClassForArrow(timeline)"
+            <c-box
+                v-for="(timeline,idx) in timelines"
+                :key="timeline.key"
+                v-transition-appear-on-screen
+                :class="getClassForArrow(timeline)"
             >
-                <c-box :class="colorMode==='light'?'period-light':'period-dark'"
-                       :style="timeline.align==='left'?{'margin-left':'auto'}:{'margin-right':'auto'}"
-                       :max-width="['100%','70%']"
+                <c-box
+                    :class="colorMode==='light'?'period light':'period dark'"
+                    :style="timeline.align==='left'?{'margin-left':'auto'}:{'margin-right':'auto'}"
+                    :max-width="['100%','70%']"
                 >
-                    <c-flex :flex-direction="['column-reverse', 'row']"
-                            justify-content="space-between"
-                            align-items="center"
+                    <c-flex
+                        :flex-direction="['column-reverse', 'row']"
+                        justify-content="space-between"
+                        align-items="center"
                     >
                         <c-heading my="1" size="md">
                             {{ timeline.year }}
                         </c-heading>
 
-                        <c-text :bg="getTagBackgroundColor(idx)"
-                                my="0" font-weight="semibold"
-                                text-transform="uppercase"
-                                px="3" py="1"
-                                max-width="100%" ml="1"
-                                rounded="md" white-space="nowrap"
-                                text-overflow="ellipsis" overflow="hidden"
-                                color="textBlack"
+                        <c-text
+                            :bg="getTagBackgroundColor(idx)"
+                            my="0" font-weight="semibold"
+                            text-transform="uppercase"
+                            px="3" py="1"
+                            max-width="100%" ml="1"
+                            rounded="md" white-space="nowrap"
+                            text-overflow="ellipsis" overflow="hidden"
+                            color="textBlack"
                         >
                             {{ timeline.tagText }}
                         </c-text>
@@ -55,14 +61,13 @@ export default {
     props: ['timelines'],
     data () {
         return {
-            tagBackgroundPointer: -1,
             colors: [
                 Theme.colors.success,
                 Theme.colors.info,
-                Theme.colors.successBold,
                 Theme.colors.warning,
-                Theme.colors.infoBold,
                 Theme.colors.danger,
+                Theme.colors.infoBold,
+                Theme.colors.successBold,
                 Theme.colors.warningBold,
                 Theme.colors.dangerBold
             ]
@@ -83,14 +88,14 @@ export default {
         getClassForArrow (timeline) {
             if (timeline.align === 'left') {
                 if (this.colorMode === 'dark') {
-                    return 'arrow-dark-left container dark'
+                    return 'arrow-dark-left container dark hidden'
                 } else {
-                    return 'arrow-light-left container light'
+                    return 'arrow-light-left container light hidden'
                 }
             } else if (this.colorMode === 'dark') {
-                return 'arrow-dark-right container dark'
+                return 'arrow-dark-right container dark hidden'
             } else {
-                return 'arrow-light-right container light'
+                return 'arrow-light-right container light hidden'
             }
         }
     }
@@ -118,11 +123,11 @@ export default {
         margin-left: -3px;
     }
 
-    &.dark:after{
+    &.dark:after {
         background-color: var(--black-accent);
     }
 
-    &.light:after{
+    &.light:after {
         background-color: var(--secondary-light-transparent);
     }
 }
@@ -146,35 +151,31 @@ export default {
         z-index: 1;
     }
 
-    &.light:after{
+    &.light:after {
         background-color: var(--primary-light);
         border: 2px solid var(--secondary-light-transparent);
     }
 
-    &.dark:after{
+    &.dark:after {
         background-color: var(--purple-400);
         border: 2px solid var(--purple-900);
     }
 }
 
-.period-dark {
+.period {
     padding: 1rem 1rem;
-    background-color: var(--black-accent);
     border: 1px solid;
-    border-color: var(--color-border-dark);
     border-radius: 5px;
 
-    &:not(:hover) {
-        transition: all 0.5s ease 0s;
+    &.dark {
+        background-color: var(--black-accent);
+        border-color: var(--color-border-dark);
     }
-}
 
-.period-light {
-    padding: 1rem 1rem;
-    background-color: var(--primary-light);
-    border: 1px solid;
-    border-color: var(--color-border-light);
-    border-radius: 5px;
+    &.light {
+        background-color: var(--primary-light);
+        border-color: var(--color-border-light);
+    }
 
     &:not(:hover) {
         transition: all 0.5s ease 0s;

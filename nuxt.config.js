@@ -40,6 +40,7 @@ export default {
     ],
     plugins: [
         'plugins/common',
+        'plugins/directives',
         'plugins/blog_grabber.server.js' // only server-side
     ],
     components: true,

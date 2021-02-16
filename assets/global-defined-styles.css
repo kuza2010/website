@@ -93,3 +93,18 @@ nav.dark-mode {
 .invisible {
     display: none !important;
 }
+
+
+/* transitions */
+
+.hidden {
+    opacity: 0;
+}
+
+.element-is-visible {
+    opacity: 1;
+    transform: translate(0, 0);
+    -webkit-transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+}
