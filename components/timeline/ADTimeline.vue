@@ -86,17 +86,17 @@ export default {
             return this.colors[idx]
         },
         getClassForArrow (timeline) {
-            if (timeline.align === 'left') {
-                if (this.colorMode === 'dark') {
-                    return 'arrow-dark-left container dark hidden'
-                } else {
-                    return 'arrow-light-left container light hidden'
-                }
-            } else if (this.colorMode === 'dark') {
-                return 'arrow-dark-right container dark hidden'
-            } else {
-                return 'arrow-light-right container light hidden'
-            }
+            let clazz = timeline.align === 'left'
+                ? 'arrow-colorMode-left'
+                : 'arrow-colorMode-right'
+
+            clazz = this.colorMode === 'dark'
+                ? clazz.replace('colorMode', 'dark').concat(' container dark')
+                : clazz.replace('colorMode', 'light').concat(' container light')
+
+            clazz = clazz.concat(' hidden')
+
+            return clazz
         }
     }
 }
