@@ -35,7 +35,7 @@
                             {{ timeline.tagText }}
                         </c-text>
                     </c-flex>
-                    <c-text>
+                    <c-text text-align="left">
                         {{ timeline.text }}
                     </c-text>
                 </c-box>

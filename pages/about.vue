@@ -13,29 +13,34 @@
                 :mx="[0,6,0]"
             >
                 <c-text :font-size="['md','lg']">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae venenatis nulla. Duis
-                    pellentesque
-                    sapien consequat nulla pharetra, ornare feugiat eros accumsan. Class aptent taciti sociosqu ad
-                    litora
-                    torquent per conubia nostra, per inceptos himenaeos. Integer rhoncus congue elementum. Curabitur
-                    pellentesque aliquam sem, sed auctor massa condimentum eget. Donec tincidunt eget quam nec
-                    elementum.
+                    Hi there! I'm Artyom Danilin. I'm a developer,
+                    <span :style="{'text-decoration': 'line-through'}">budding writer</span>
+                    and open source lover. I'm a second year master at
+                    <link-with-icon icon="external-link-alt"
+                                    text="NNSTU"
+                                    to="#" is-external-link
+                    />
+                    I work at MERA-NN company in Nizhny Novgorod as a software developer 👨‍💻<br>
                 </c-text>
                 <c-text :font-size="['md','lg']">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae venenatis nulla. Duis
-                    pellentesque sapien consequat nulla pharetra, ornare feugiat eros accumsan. Class aptent taciti
-                    sociosqu ad
-                    litora torquent per conubia nostra, per inceptos himenaeos. Integer rhoncus congue elementum.
-                    Curabitur
-                    pellentesque aliquam sem, sed auctor massa condimentum eget. Donec tincidunt eget quam nec
-                    elementum.
+                    Programming is my addiction. I've been programming since high school.
+                    At university I had a deal with C/C++/C# but some time later I got an interest in Java language.
+                    Now I continue working with Java and studying some frontend stuff. I am going to be a
+                    <span :style="{ 'font-weight': 'bold'}">full-stack developer</span>
+                </c-text>
+                <c-text>
+                    I grew up here in Nizhny Novgorod, went to school, graduating with a beholders degree in Computer
+                    Engineering.
+                    I spend my free time doing sport, cooking, listening to music and enjoying time with my closest friends and
+                    family.
                 </c-text>
                 <c-heading as="h4" size="lg">
                     Get in touch
                 </c-heading>
                 <c-text :font-size="['md','lg']" mt="0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae venenatis nulla. Duis
-                    pellentesque sapien consequat nulla pharetra, ornare feugiat eros accumsan.
+                    I hope I picked up a good color scheme for my site and your eyes don't hurt.
+                    If there is anything you would like to talk about please, feel free and drop me a message by email.
+                    It's a big pleasure to hear you!
                 </c-text>
                 <c-flex :font-size="['lg','xl']"
                         :ml="['0', 'auto']" flex-direction="column"
@@ -66,10 +71,12 @@
 <script lang="js">
 import { CBox, CLink, CFlex, CStack, CHeading, CText } from '@chakra-ui/vue'
 import ADTimeline from '~/components/timeline/ADTimeline'
+import LinkWithIcon from '~/components/common/LinkWithIcon'
 
 export default {
     name: 'About',
     components: {
+        LinkWithIcon,
         ADTimeline,
         CBox,
         CLink,
@@ -92,18 +99,18 @@ export default {
         timeline () {
             return [
                 {
-                    year: '2020',
-                    text: 'Text text text',
-                    align: 'left',
-                    key: '2020-text',
-                    tagText: 'baby step'
+                    text: 'Start my journey in Nizhny Novgorod.',
+                    tagText: 'Life started',
+                    year: '1997',
+                    key: '1997-born',
+                    align: 'left'
                 },
                 {
-                    year: '2022',
-                    text: 'Text text text',
-                    align: 'right',
+                    text: '',
                     tagText: 'baby step baby step  step',
-                    key: '2022-text'
+                    year: '2004',
+                    key: '2004-phone',
+                    align: 'right'
                 },
                 {
                     year: '2020',

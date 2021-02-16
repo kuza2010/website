@@ -41,7 +41,7 @@ export default {
             type: String,
             required: true
         },
-        // fir the first time
+        // for the first time
         isExternalLink: {
             type: Boolean,
             required: true
