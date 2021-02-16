@@ -8,7 +8,10 @@
             >
                 About me
             </c-heading>
-            <c-stack text-align="justify">
+            <c-stack
+                text-align="justify"
+                :mx="[0,6,0]"
+            >
                 <c-text :font-size="['md','lg']">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae venenatis nulla. Duis
                     pellentesque
