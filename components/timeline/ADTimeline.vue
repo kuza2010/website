@@ -3,14 +3,13 @@
         <c-heading>Timeline</c-heading>
         <c-box :class="colorMode==='light'?'timeline light':'timeline dark'">
             <c-box
-                v-for="(timeline,idx) in timelines"
+                v-for="(timeline,idx) in filteredTimelines"
                 :key="timeline.key"
-                v-transition-appear-on-screen
-                :class="getClassForArrow(timeline)"
+                :class="getClassForArrow(idx)"
             >
                 <c-box
                     :class="colorMode==='light'?'period light':'period dark'"
-                    :style="timeline.align==='left'?{'margin-left':'auto'}:{'margin-right':'auto'}"
+                    :style="getTimelineAlignment(idx)==='left'?{'margin-left':'auto'}:{'margin-right':'auto'}"
                     :max-width="['100%','70%']"
                 >
                     <c-flex
@@ -41,11 +40,18 @@
                 </c-box>
             </c-box>
         </c-box>
+        <c-box mt="2rem">
+            <span :style="{ 'font-weight': 'bold'}">Show more</span>
+            <c-switch color="brand.purple"
+                      size="lg" ml="1rem"
+                      @click="showAllTimeLine"
+            />
+        </c-box>
     </c-box>
 </template>
 
 <script lang="js">
-import { CBox, CFlex, CHeading, CText } from '@chakra-ui/vue'
+import { CBox, CFlex, CSwitch, CHeading, CText } from '@chakra-ui/vue'
 import Theme from '~/config/custom-theme'
 
 export default {
@@ -54,13 +60,16 @@ export default {
         CBox,
         CFlex,
         CHeading,
-        CText
+        CText,
+        CSwitch
     },
     inject: ['$chakraColorMode'],
     // eslint-disable-next-line vue/require-prop-types
     props: ['timelines'],
     data () {
         return {
+            align: 'left',
+            showAdditionalTimelineInfo: false,
             colors: [
                 Theme.colors.success,
                 Theme.colors.info,
@@ -76,6 +85,12 @@ export default {
     computed: {
         colorMode () {
             return this.$chakraColorMode()
+        },
+        filteredTimelines () {
+            if (this.showAdditionalTimelineInfo) {
+                return this.timelines
+            }
+            return this.timelines.filter(timeline => !timeline.isAdditional)
         }
     },
     methods: {
@@ -85,8 +100,14 @@ export default {
             }
             return this.colors[idx]
         },
-        getClassForArrow (timeline) {
-            let clazz = timeline.align === 'left'
+        getTimelineAlignment (idx) {
+            if (idx === 0) {
+                return 'left'
+            }
+            return idx % 2 === 0 ? 'left' : 'right'
+        },
+        getClassForArrow (idx) {
+            let clazz = this.getTimelineAlignment(idx) === 'left'
                 ? 'arrow-colorMode-left'
                 : 'arrow-colorMode-right'
 
@@ -94,9 +115,10 @@ export default {
                 ? clazz.replace('colorMode', 'dark').concat(' container dark')
                 : clazz.replace('colorMode', 'light').concat(' container light')
 
-            clazz = clazz.concat(' hidden')
-
             return clazz
+        },
+        showAllTimeLine () {
+            this.showAdditionalTimelineInfo = !this.showAdditionalTimelineInfo
         }
     }
 }

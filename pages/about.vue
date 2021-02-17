@@ -103,56 +103,56 @@ export default {
                     tagText: 'Life started',
                     year: '1997',
                     key: '1997-born',
-                    align: 'left'
+                    isAdditional: false
                 },
                 {
                     text: '',
                     tagText: 'baby step baby step  step',
                     year: '2004',
                     key: '2004-phone',
-                    align: 'right'
+                    isAdditional: false
                 },
                 {
                     year: '2020',
                     text: 'Text text text',
-                    align: 'left',
                     key: '2023-text',
-                    tagText: 'baby step'
+                    tagText: 'baby step',
+                    isAdditional: false
                 },
                 {
                     year: '2022',
                     text: 'Text text text',
-                    align: 'right',
                     tagText: 'baby step baby step  step',
-                    key: '2024-text'
+                    key: '2024-text',
+                    isAdditional: false
                 },
                 {
                     year: '2020',
                     text: 'Text text text',
-                    align: 'left',
                     key: '2025-text',
-                    tagText: 'baby step'
+                    tagText: 'baby step',
+                    isAdditional: false
                 },
                 {
                     year: '2022',
                     text: 'Text text text',
-                    align: 'right',
                     tagText: 'baby step baby step  step',
-                    key: '2026-text'
+                    key: '2026-text',
+                    isAdditional: false
                 },
                 {
                     year: '2020',
                     text: 'Text text text',
-                    align: 'left',
                     key: '2027-text',
-                    tagText: 'baby step'
+                    tagText: 'baby step',
+                    isAdditional: false
                 },
                 {
                     year: '2022',
                     text: 'Text text text',
-                    align: 'right',
                     tagText: 'baby step baby step  step',
-                    key: '2028-text'
+                    key: '2028-text',
+                    isAdditional: false
                 }
             ]
         },
