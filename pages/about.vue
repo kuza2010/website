@@ -31,7 +31,8 @@
                 <c-text>
                     I grew up here in Nizhny Novgorod, went to school, graduating with a beholders degree in Computer
                     Engineering.
-                    I spend my free time doing sport, cooking, listening to music and enjoying time with my closest friends and
+                    I spend my free time doing sport, cooking, listening to music and enjoying time with my closest
+                    friends and
                     family.
                 </c-text>
                 <c-heading as="h4" size="lg">
@@ -102,57 +103,78 @@ export default {
                     text: 'Start my journey in Nizhny Novgorod.',
                     tagText: 'Life started',
                     year: '1997',
-                    key: '1997-born',
+                    key: '1997',
                     isAdditional: false
                 },
                 {
-                    text: '',
-                    tagText: 'baby step baby step  step',
+                    text: 'Went to school and meet friends who helps me if I need it.',
+                    tagText: 'School',
                     year: '2004',
-                    key: '2004-phone',
+                    key: '2004',
+                    isAdditional: false
+                },
+                {
+                    text: 'My parents gets first computer. It was Windows XP. I have used PC a lot, but not for programming, just playing.',
+                    tagText: 'Baby step',
+                    year: '2005',
+                    key: '2005',
+                    isAdditional: false
+                },
+                {
+                    text: 'Only in 2007 I have started to use the internet. But I have no idea what was going on, just surfing.',
+                    tagText: 'Internet',
+                    year: '2007',
+                    key: '2007',
+                    isAdditional: true
+                },
+                {
+                    text: 'My parents gave me my first phone - Sony Xperia K550i. With 128 Mb build in memory!!!',
+                    tagText: 'Phone',
+                    year: '2008',
+                    key: '2008',
+                    isAdditional: true
+                },
+                {
+                    text: 'I was well known gamer, CS Source, CS Go and eventually Dota2. I have a local team! Good old days :)',
+                    tagText: 'Game',
+                    year: '2012',
+                    key: '2012',
+                    isAdditional: true
+                },
+                {
+                    year: '2013-2015',
+                    text: 'At about high school I have started to learn programming. Nothing interesting, just school-work and simple HTML. At that time I could not realize that it will become my profession.',
+                    key: '2013-2015',
+                    tagText: 'High school',
+                    isAdditional: false
+                },
+                {
+                    year: '2018',
+                    text: 'In summer 2018 some company took a chance and hired me as a C# junior developer. I have worked there for 3 months and left the company at the beginning of spring.  I have recognized, that I dont like C#...',
+                    tagText: 'First work',
+                    key: '2015-2019',
+                    isAdditional: true
+                },
+                {
+                    year: '2015-2019',
+                    text: 'Study at university for Information Technology. I have taken some Java courses and taught myself hard. In 2019 I have graduated with a bachelors degree.',
+                    tagText: 'University',
+                    key: '2015-2019',
+                    isAdditional: false
+                },
+                {
+                    year: '2018 - Present',
+                    text: 'Currently I am working and studying at university, it takes a lot of my time and energy. But I am absolutely happy with it. I have tried many different projects and got valuable experience.',
+                    tagText: 'Work hard',
+                    key: '2020',
                     isAdditional: false
                 },
                 {
                     year: '2020',
-                    text: 'Text text text',
-                    key: '2023-text',
-                    tagText: 'baby step',
-                    isAdditional: false
-                },
-                {
-                    year: '2022',
-                    text: 'Text text text',
-                    tagText: 'baby step baby step  step',
-                    key: '2024-text',
-                    isAdditional: false
-                },
-                {
-                    year: '2020',
-                    text: 'Text text text',
-                    key: '2025-text',
-                    tagText: 'baby step',
-                    isAdditional: false
-                },
-                {
-                    year: '2022',
-                    text: 'Text text text',
-                    tagText: 'baby step baby step  step',
-                    key: '2026-text',
-                    isAdditional: false
-                },
-                {
-                    year: '2020',
-                    text: 'Text text text',
-                    key: '2027-text',
-                    tagText: 'baby step',
-                    isAdditional: false
-                },
-                {
-                    year: '2022',
-                    text: 'Text text text',
-                    tagText: 'baby step baby step  step',
-                    key: '2028-text',
-                    isAdditional: false
+                    text: 'Became interested in the Javascript language and front-end development. Understood that I want to be an full-stack engineer.',
+                    tagText: 'Java Script',
+                    key: '2020',
+                    isAdditional: true
                 }
             ]
         },
