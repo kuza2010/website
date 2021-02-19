@@ -1,16 +1,20 @@
 <template>
-    <c-flex m="0 1rem" flex-direction="column"
-            align-items="center"
+    <c-flex
+        m="0 1rem"
+        flex-direction="column"
+        align-items="center"
     >
         <c-box :mt="[6,12]">
-            <c-heading mt="0" :mb="[4,8]"
-                       text-align="center" mx="auto"
+            <c-heading
+                :mb="[4,8]"
+                mt="0" mx="auto"
+                text-align="center"
             >
                 About me
             </c-heading>
             <c-stack
-                text-align="justify"
                 :mx="[0,6,0]"
+                text-align="justify"
             >
                 <c-text :font-size="['md','lg']">
                     Hi there! I'm Artyom Danilin. I'm a developer,
@@ -28,7 +32,7 @@
                     Now I continue working with Java and studying some frontend stuff. I am going to be a
                     <span :style="{ 'font-weight': 'bold'}">full-stack developer</span>
                 </c-text>
-                <c-text>
+                <c-text :font-size="['md','lg']">
                     I grew up here in Nizhny Novgorod, went to school, graduating with a beholders degree in Computer
                     Engineering.
                     I spend my free time doing sport, cooking, listening to music and enjoying time with my closest
@@ -48,19 +52,17 @@
                 >
                     <c-box>
                         📭
-                        <c-link :style="linkStyle" :href="`mailto:${myEmail}`"
-                                :class="colorMode === 'dark'? 'link-dark' :'link-light'"
-                        >
-                            {{ myEmail }}
-                        </c-link>
+                        <a-d-text-link :style="linkStyle"
+                                       :href="`mailto:${myEmail}`"
+                                       :text="myEmail"
+                        />
                     </c-box>
                     <c-box>
                         🦑
-                        <c-link :style="linkStyle" :href="myGithub"
-                                :class="colorMode === 'dark'? 'link-dark' :'link-light'"
-                        >
-                            @kuza2010
-                        </c-link>
+                        <a-d-text-link :style="linkStyle"
+                                       :href="myGithub"
+                                       text="@kuza2010"
+                        />
                     </c-box>
                 </c-flex>
             </c-stack>
@@ -70,17 +72,18 @@
 </template>
 
 <script lang="js">
-import { CBox, CLink, CFlex, CStack, CHeading, CText } from '@chakra-ui/vue'
+import { CBox, CFlex, CStack, CHeading, CText } from '@chakra-ui/vue'
 import ADTimeline from '~/components/timeline/ADTimeline'
 import LinkWithIcon from '~/components/common/LinkWithIcon'
+import ADTextLink from '~/components/common/ADTextLink'
 
 export default {
     name: 'About',
     components: {
+        ADTextLink,
         LinkWithIcon,
         ADTimeline,
         CBox,
-        CLink,
         CFlex,
         CText,
         CHeading,
@@ -188,55 +191,6 @@ export default {
 }
 </script>
 
-// https://css-tricks.com/4-ways-to-animate-the-color-of-a-text-link-on-hover/
 <style scoped lang="scss">
-
-.link-light {
-    overflow: hidden;
-    background: linear-gradient(to right, var(--info-bold), var(--info-bold) 50%, var(--black-accent) 50%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% 100%;
-    background-position: 100%;
-    transition: background-position 275ms ease;
-    text-decoration: none;
-
-    &:hover {
-        background-position: 0 100%;
-    }
-
-    & :visited {
-        color: var(--text-black) !important;
-    }
-
-    & :active {
-        color: var(--text-black) !important
-    }
-
-}
-
-.link-dark {
-    overflow: hidden;
-    background: linear-gradient(to right, var(--warning-bold), var(--warning-bold) 50%, var(--text-light) 50%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% 100%;
-    background-position: 100%;
-    transition: background-position 275ms ease;
-    text-decoration: none;
-
-    &:hover {
-        background-position: 0 100%;
-    }
-
-    & :visited {
-        color: var(--text-light) !important;
-    }
-
-    & :active {
-        color: var(--text-light) !important
-    }
-
-}
 
 </style>
