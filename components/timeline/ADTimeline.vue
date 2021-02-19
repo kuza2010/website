@@ -8,7 +8,7 @@
                 :class="getClassForArrow(idx)"
             >
                 <c-box
-                    :class="colorMode==='light'?'period light':'period dark'"
+                    :class="getClassForTimelineBox(timeline)"
                     :style="getTimelineAlignment(idx)==='left'?{'margin-left':'auto'}:{'margin-right':'auto'}"
                     :max-width="['100%','70%']"
                 >
@@ -20,7 +20,6 @@
                         <c-heading my="1" size="md">
                             {{ timeline.year }}
                         </c-heading>
-
                         <c-text
                             :bg="getTagBackgroundColor(idx)"
                             my="0" font-weight="semibold"
@@ -117,6 +116,17 @@ export default {
 
             return clazz
         },
+        getClassForTimelineBox (timeline) {
+            let clazz = ''
+
+            if (this.colorMode === 'light') {
+                clazz = clazz.concat('period light')
+            } else {
+                clazz = clazz.concat('period dark')
+            }
+
+            return clazz.concat(timeline.isAdditional ? ' additional' : '')
+        },
         showAllTimeLine () {
             this.showAdditionalTimelineInfo = !this.showAdditionalTimelineInfo
         }
@@ -192,11 +202,21 @@ export default {
     &.dark {
         background-color: var(--black-accent);
         border-color: var(--color-border-dark);
+
+        &.additional {
+            background-color: var(--primary-black);
+            border-color: var(--color-border-dark);
+        }
     }
 
     &.light {
         background-color: var(--primary-light);
         border-color: var(--color-border-light);
+
+        &.additional {
+            background-color: var(--purple-200);
+            border-color: var(--color-border-light);
+        }
     }
 
     &:not(:hover) {
