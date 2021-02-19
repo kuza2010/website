@@ -1,6 +1,7 @@
 import pkg from './package.json'
 import customTheme from './config/custom-theme.js'
 import sortedPosts from './plugins/blog_grabber.server'
+import myHistory from './timeline-data'
 
 export default {
     head: {
@@ -39,13 +40,14 @@ export default {
         '@assets/global-defined-styles.css'
     ],
     plugins: [
-        'plugins/common',
+        'plugins/chakra-ui',
         'plugins/directives',
         'plugins/blog_grabber.server.js' // only server-side
     ],
     components: true,
     publicRuntimeConfig: {
         sortedPosts,
+        myHistory,
         email: 'kyza20106@yandex.ru',
         github: 'https://github.com/kuza2010'
     },
