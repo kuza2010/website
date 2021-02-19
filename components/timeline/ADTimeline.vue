@@ -1,6 +1,8 @@
 <template>
     <c-box text-align="center">
-        <c-heading>Timeline</c-heading>
+        <c-heading ref="timelineAnchor">
+            Timeline
+        </c-heading>
         <c-box :class="colorMode==='light'?'timeline light':'timeline dark'">
             <c-box
                 v-for="(timeline,idx) in filteredTimelines"
@@ -129,6 +131,10 @@ export default {
         },
         showAllTimeLine () {
             this.showAdditionalTimelineInfo = !this.showAdditionalTimelineInfo
+            this.scrollToAnchor()
+        },
+        scrollToAnchor () {
+            this.$refs.timelineAnchor.$el.scrollIntoView({ behavior: 'smooth' })
         }
     }
 }

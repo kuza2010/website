@@ -145,31 +145,31 @@ export default {
                     isAdditional: true
                 },
                 {
-                    year: '2013-2015',
                     text: 'At about high school I have started to learn programming. Nothing interesting, just school-work and simple HTML. At that time I could not realize that it will become my profession.',
-                    key: '2013-2015',
                     tagText: 'High school',
+                    year: '2013-2015',
+                    key: '2013-2015',
                     isAdditional: false
                 },
                 {
-                    year: '2018',
                     text: 'In summer 2018 some company took a chance and hired me as a C# junior developer. I have worked there for 3 months and left the company at the beginning of spring.  I have recognized, that I dont like C#...',
                     tagText: 'First work',
-                    key: '2015-2019',
+                    year: '2018',
+                    key: '2018',
                     isAdditional: true
                 },
                 {
-                    year: '2015-2019',
                     text: 'Study at university for Information Technology. I have taken some Java courses and taught myself hard. In 2019 I have graduated with a bachelors degree.',
                     tagText: 'University',
+                    year: '2015-2019',
                     key: '2015-2019',
                     isAdditional: false
                 },
                 {
-                    year: '2018 - Present',
                     text: 'Currently I am working and studying at university, it takes a lot of my time and energy. But I am absolutely happy with it. I have tried many different projects and got valuable experience.',
                     tagText: 'Work hard',
-                    key: '2020',
+                    year: '2018 - Present',
+                    key: '2018-present',
                     isAdditional: false
                 },
                 {
