@@ -1,8 +1,10 @@
 <template>
-    <a-d-button :size="size" :text="text"
-                :class="colorMode==='dark'? 'footer-button-dark': 'footer-button-light'"
-                color="primary" mx="4"
-    />
+    <nuxt-link :to="to">
+        <a-d-button :size="size" :text="text"
+                    :class="colorMode==='dark'? 'footer-button-dark': 'footer-button-light'"
+                    color="primary" mx="4"
+        />
+    </nuxt-link>
 </template>
 
 <script>
@@ -12,7 +14,7 @@ export default {
     name: 'FooterButton',
     components: { ADButton },
     inject: ['$chakraColorMode'],
-    props: ['size', 'text'],
+    props: ['size', 'text', 'to'],
     computed: {
         colorMode () {
             return this.$chakraColorMode()
@@ -22,6 +24,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+a {
+    text-decoration: none;
+}
 
 .footer-button-dark {
     border: 1px solid var(--black-accent);

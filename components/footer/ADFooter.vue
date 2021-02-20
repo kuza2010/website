@@ -9,9 +9,9 @@
                     mx="auto" mt="1"
                     justify-content="center"
             >
-                <footer-button text="About"/>
-                <footer-button text="Blog"/>
-                <footer-button text="Guide"/>
+                <footer-button text="About" to="/about"/>
+                <footer-button text="Home" to="/"/>
+                <footer-button text="Blog" to="/blog"/>
             </c-flex>
             <c-flex :w="['60%', '35%', '25%']"
                     mx="auto" mt="8"
