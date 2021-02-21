@@ -1,20 +1,24 @@
 <template>
     <chakra-theme-wrapper>
-        <app-layout header footer>
+        <app-layout header>
             <nuxt/>
         </app-layout>
     </chakra-theme-wrapper>
 </template>
 
-<script lang="js">
+<script>
 import ChakraThemeWrapper from '~/components/helpers/ChakraThemeWrapper'
 import AppLayout from '~/components/AppLayout'
 
 export default {
-    name: 'App',
+    name: 'ErrorLayout',
     components: {
         AppLayout,
         ChakraThemeWrapper
     }
 }
 </script>
+
+<style scoped>
+
+</style>

@@ -1,6 +1,6 @@
 <template>
     <c-box :class="colorMode === 'dark'? 'dark-mode' :'light-mode'">
-        <a-d-navbar/>
+        <a-d-navbar v-if="header"/>
         <c-flex :pt="[4, 24]"
                 max-w="1150px" w="100%"
                 mr="auto" ml="auto"
@@ -8,7 +8,7 @@
         >
             <slot/>
         </c-flex>
-        <a-d-footer/>
+        <a-d-footer v-if="footer"/>
     </c-box>
 </template>
 
@@ -26,6 +26,18 @@ export default {
         ADFooter
     },
     inject: ['$chakraColorMode', '$toggleColorMode'],
+    props: {
+        header: {
+            type: Boolean,
+            required: false,
+            default: false
+        },
+        footer: {
+            type: Boolean,
+            required: false,
+            default: false
+        }
+    },
     computed: {
         colorMode () {
             return this.$chakraColorMode()
