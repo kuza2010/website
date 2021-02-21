@@ -20,7 +20,7 @@ export default {
         ADSummary,
         CBox
     },
-    inject: ['$chakraColorMode', '$toggleColorMode'],
+    inject: ['$chakraColorMode'],
     computed: {
         colorMode () {
             return this.$chakraColorMode()

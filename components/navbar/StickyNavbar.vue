@@ -20,7 +20,7 @@ export default {
     components: {
         CFlex
     },
-    inject: ['$chakraColorMode', '$toggleColorMode'],
+    inject: ['$chakraColorMode'],
     props: {
         stickyBottom: {
             type: Boolean,

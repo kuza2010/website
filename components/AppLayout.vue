@@ -25,7 +25,7 @@ export default {
         ADNavbar,
         ADFooter
     },
-    inject: ['$chakraColorMode', '$toggleColorMode'],
+    inject: ['$chakraColorMode'],
     props: {
         header: {
             type: Boolean,

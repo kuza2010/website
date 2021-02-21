@@ -65,7 +65,7 @@ export default {
         CHeading,
         CText
     },
-    inject: ['$chakraColorMode', '$toggleColorMode'],
+    inject: ['$chakraColorMode'],
     computed: {
         colorMode () {
             return this.$chakraColorMode()
