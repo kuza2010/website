@@ -16,6 +16,7 @@
     "@chakra-ui/nuxt": "^0.2.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@nuxtjs/emotion": "^0.1.0",
+    "@nuxtjs/vercel-builder": "^0.20.3",
     "core-js": "^3.8.2",
     "gray-matter": "^4.0.2",
     "normalize.css": "^8.0.1",
