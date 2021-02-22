@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Chakra from '@chakra-ui/vue'
 import {
     faBlog,
+    faCoffee,
     faEnvelopeOpen,
     faExternalLinkAlt,
     faHamburger,
@@ -24,7 +25,8 @@ Vue.use(Chakra, {
             faExternalLinkAlt,
             faEnvelopeOpen,
             faSnowplow,
-            faHome
+            faHome,
+            faCoffee
         },
         iconPack: 'fa',
         extend: {
