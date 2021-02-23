@@ -7,8 +7,9 @@
       "config": {
         "serverFiles": [
           ".nuxt/content/**",
-          "content/**",
-          "api/**"
+          "plugins/**",
+          "config/**",
+          "content/**"
         ]
       }
     }
