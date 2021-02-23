@@ -10,7 +10,8 @@
           "plugins/**",
           "timeline-data.js",
           "config/**",
-          "content/**"
+          "content/**",
+          "pages/blog/**"
         ]
       }
     }

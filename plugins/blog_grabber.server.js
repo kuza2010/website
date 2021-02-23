@@ -16,6 +16,7 @@ const fileNames = fs.readdirSync(blogDir)
 
 // collect metadata
 const postMetadata = fileNames
+    .filter(filename => filename.includes('mdx'))
     .map((fileName) => {
         const postFullPath = path.join(blogDir, fileName)
         const content = fs.readFileSync(postFullPath, 'utf-8')
