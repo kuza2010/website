@@ -5,7 +5,7 @@
     >
         <c-box mb="24">
             <c-heading
-                as="h1" font-size="6xl"
+                as="h1" :font-size="['5xl', '6xl']"
                 mx="auto" mb="0"
             >
                 <c-icon :name="icon"/>

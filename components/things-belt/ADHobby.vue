@@ -1,25 +1,28 @@
 <template>
     <c-pseudo-box v-if="enjoy"
-                  :_hover="{ bg: 'success' }"
-                  bg="successBold" rounded="0.25rem"
+                  :_hover="{ bg: 'successBold' }"
+                  bg="success" rounded="0.25rem"
                   px="3" py="1"
                   mx="1" my="1"
     >
         <c-text is-truncated m="0"
-                font-weight="semibold" color="textBlack"
+                font-weight="semibold"
+                color="textBlack"
         >
             {{ text }}
         </c-text>
     </c-pseudo-box>
 
     <c-pseudo-box v-else
-                  :_hover="{ bg: 'danger' }"
-                  bg="dangerBold" rounded="0.25rem"
+                  :_hover="{ bg: 'dangerBold' }"
+                  bg="danger"
+                  rounded="0.25rem"
                   px="3" py="1"
                   mx="1" my="1"
     >
         <c-text is-truncated m="0"
-                font-weight="semibold" color="textBlack"
+                font-weight="semibold"
+                color="textBlack"
         >
             {{ text }}
         </c-text>
@@ -35,7 +38,6 @@ export default {
         CPseudoBox,
         CText
     },
-    // eslint-disable-next-line vue/require-prop-types
     props: {
         text: {
             type: String,

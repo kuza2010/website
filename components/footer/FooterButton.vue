@@ -14,6 +14,7 @@ export default {
     name: 'FooterButton',
     components: { ADButton },
     inject: ['$chakraColorMode'],
+    // eslint-disable-next-line vue/require-prop-types
     props: ['size', 'text', 'to'],
     computed: {
         colorMode () {

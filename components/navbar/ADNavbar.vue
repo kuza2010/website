@@ -1,19 +1,13 @@
 <template>
-    <sticky-nav-bar v-if="!isMobileView"
-                    justify-content="flex-end"
-    >
-        <nuxt-link class="navbar-logo" to="/">
-            <navbar-button text="Danilin Artyom"/>
-        </nuxt-link>
-        <nuxt-link to="/about">
-            <navbar-button text="About"/>
-        </nuxt-link>
-        <nuxt-link to="/blog">
-            <navbar-button text="Blog"/>
-        </nuxt-link>
-        <nuxt-link to="/guide">
-            <navbar-button text="Guide"/>
-        </nuxt-link>
+    <sticky-nav-bar v-if="!isMobileView" justify-content="flex-end">
+        <navbar-button
+            class="navbar-logo"
+            text="Danilin Artyom"
+            @onButtonClick="navigateTo('/')"
+        />
+        <navbar-button text="About" @onButtonClick="navigateTo('/about')"/>
+        <navbar-button text="Blog" @onButtonClick="navigateTo('/blog')"/>
+        <navbar-button text="Guide" @onButtonClick="navigateTo('/guide')"/>
         <themes-switcher/>
     </sticky-nav-bar>
 
@@ -23,21 +17,21 @@
                     flex-direction="column"
                     class="mobile-navbar"
     >
-        <nuxt-link to="/about">
-            <mobile-navbar-button icon="user-graduate" text="About"
-                                  to="/about"
-            />
-        </nuxt-link>
-        <nuxt-link to="/blog">
-            <mobile-navbar-button icon="blog" text="Blog"
-                                  to="/blog"
-            />
-        </nuxt-link>
-        <nuxt-link to="/guide">
-            <mobile-navbar-button icon="screwdriver" text="Guide"
-                                  to="/guide"
-            />
-        </nuxt-link>
+        <mobile-navbar-button
+            icon="user-graduate"
+            text="About"
+            @onButtonClick="navigateTo('/about')"
+        />
+        <mobile-navbar-button
+            icon="blog"
+            text="Blog"
+            @onButtonClick="navigateTo('/blogt')"
+        />
+        <mobile-navbar-button
+            icon="screwdriver"
+            text="Guide"
+            @onButtonClick="navigateTo('/guide')"
+        />
         <mobile-themes-switcher/>
     </sticky-nav-bar>
 </template>
@@ -66,7 +60,6 @@ export default {
     },
     computed: {
         isMobileView () {
-            // show hamburger if the screen size less 600 px
             return this.width <= 600
         }
     },
@@ -82,6 +75,18 @@ export default {
     methods: {
         onWindowResize () {
             this.width = window.innerWidth
+        },
+        navigateTo (path) {
+            if (this.$route.path === path) {
+                window.scroll({
+                    top: 0,
+                    left: 0,
+                    behavior: 'smooth'
+                })
+                return
+            }
+
+            this.$router.push({ path })
         }
     }
 }

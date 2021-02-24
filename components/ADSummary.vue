@@ -15,7 +15,7 @@
             >
                 In 2018 I successfully graduated from
                 <link-with-icon icon="external-link-alt" text="NNSTU"
-                                to="#" is-external-link
+                                to="https://www.nntu.ru/" is-external-link
                 />
                 with bachelor's degree and continue my education as a master. I am very keen on programming, dedicate to
                 be a full-stack engineer 📚. Here in my personal slice of the internet you can get to know me better.
@@ -23,13 +23,16 @@
             <c-flex justify-content="flex-start"
                     class="button-line"
             >
-                <a-d-button size="lg">
+                <a-d-button size="lg" @onClick="onStuffClick">
                     <c-text font-size="lg" mr="5px">
                         🏆
                     </c-text>
                     My stuff
                 </a-d-button>
-                <a-d-button :mt="[1,0]" size="lg">
+                <a-d-button :mt="[1,0]"
+                            size="lg"
+                            @onClick="onFeedbackClick"
+                >
                     <c-text font-size="lg" mr="5px">
                         🎙️
                     </c-text>
@@ -69,6 +72,20 @@ export default {
     computed: {
         colorMode () {
             return this.$chakraColorMode()
+        }
+    },
+    methods: {
+        onStuffClick () {
+
+        },
+        onFeedbackClick () {
+            this.$toast({
+                title: 'Give me feedback',
+                description: `Please send your feedback here: ${this.$config.email} `,
+                status: 'success',
+                position: window.innerWidth <= 600 ? 'top-left' : 'bottom',
+                duration: 10000
+            })
         }
     }
 }

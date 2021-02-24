@@ -1,29 +1,18 @@
 <template>
     <!-- render button with text -->
-    <c-pseudo-box v-if="!icon"
-                  as="button"
-                  border="0" p="0.75rem"
-                  color="white"
-                  rounded="0.5rem"
-                  background="none" font-weight="600"
-                  font-size="20px" line-height="24px"
-                  :class="colorMode === 'dark'? 'navbar-btn-dark' :'navbar-btn-light'"
-    >
-        {{ text }}
-    </c-pseudo-box>
-    <!-- render button with icon -->
-    <c-pseudo-box v-else
-                  as="button"
-                  border="0" p="0.75rem"
-                  color="white"
-                  rounded="0.5rem" transition="opacity 0.5s"
-                  background="none" font-weight="600"
-                  font-size="20px" line-height="24px"
-                  :class="colorMode === 'dark'? 'navbar-btn-dark' :'navbar-btn-light'"
-                  @click="onButtonClick"
+    <c-pseudo-box
+        as="button"
+        border="0" p="0.75rem"
+        color="white"
+        rounded="0.5rem"
+        background="none" font-weight="600"
+        font-size="20px" line-height="24px"
+        :class="colorMode === 'dark'? 'navbar-btn-dark' :'navbar-btn-light'"
+        @click.native="onButtonClick"
     >
         {{ text }}
         <c-icon
+            v-if="icon"
             :name="icon"
             :color="color"
             :aria-label="ariaLabel || icon"

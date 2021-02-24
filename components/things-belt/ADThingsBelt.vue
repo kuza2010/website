@@ -5,13 +5,17 @@
                              open-popover-main-text="😍"
                              popover-text="I'm really keen on ..."
         />
-        <c-flex border-top="1px" pt="3"
-                :border-color="colorMode === 'dark' ?'primary' :'brand.purple.800'"
-                flex-wrap="wrap" flex-direction="row"
-                justify-content="space-between"
+        <c-flex
+            :border-color="colorMode === 'dark' ?'primary' :'brand.purple.800'"
+            border-top="1px"
+            pt="3"
+            flex-wrap="wrap"
+            flex-direction="row"
+            justify-content="space-between"
         >
             <a-d-hobby v-for="l in like"
-                       :key="l.thing" :text="l.thing"
+                       :key="l.thing"
+                       :text="l.thing"
                        :enjoy="l.enjoy"
             />
         </c-flex>
@@ -20,13 +24,16 @@
                              open-popover-main-text="🤮"
                              popover-text="I'm not keen/hate on ..."
         />
-        <c-flex border-top="1px" pt="3"
-                :border-color="colorMode === 'dark' ?'primary' :'brand.purple.800'"
-                flex-wrap="wrap" flex-direction="row"
-                justify-content="space-between"
+        <c-flex
+            :border-color="colorMode === 'dark' ?'primary' :'brand.purple.800'"
+            border-top="1px" pt="3"
+            flex-wrap="wrap"
+            flex-direction="row"
+            justify-content="space-between"
         >
             <a-d-hobby v-for="d in dislike"
-                       :key="d.thing" :text="d.thing"
+                       :key="d.thing"
+                       :text="d.thing"
                        :enjoy="d.enjoy"
             />
         </c-flex>

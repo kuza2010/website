@@ -22,7 +22,7 @@
                     and open source lover. I'm a second year master at
                     <link-with-icon icon="external-link-alt"
                                     text="NNSTU"
-                                    to="#" is-external-link
+                                    to="https://www.nntu.ru/" is-external-link
                     />
                     I work at MERA-NN company in Nizhny Novgorod as a software developer 👨‍💻<br>
                 </c-text>
