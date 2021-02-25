@@ -2,7 +2,11 @@
     <c-flex :flex-direction="['column-reverse', 'row']"
             m="0 1rem" justify-content="space-between"
     >
-        <c-box :mr="[0,12]" :mt="[2,12]">
+        <c-box
+            :mr="[0,12]"
+            :mt="[2,12]"
+            :style="!showAvatar? {'margin-right': '0px'}:{}"
+        >
             <c-heading :font-size="['2rem', '2.6rem']"
                        mt="0"
             >
@@ -40,7 +44,11 @@
                 </a-d-button>
             </c-flex>
         </c-box>
-        <c-box :mb="[4,0]" :mt="[2,12]">
+        <c-box
+            v-if="showAvatar"
+            :mb="[4,0]"
+            :mt="[2,12]"
+        >
             <c-image :rounded="['full', 16]"
                      :src="'./me-865.jpg'"
                      :m="['auto']"
@@ -69,10 +77,28 @@ export default {
         CText
     },
     inject: ['$chakraColorMode'],
+    data () {
+        return {
+            // TODO: how can i get width before rendering
+            width: 1024
+        }
+    },
     computed: {
         colorMode () {
             return this.$chakraColorMode()
+        },
+        showAvatar () {
+            return this.width < 600 || this.width > 900
         }
+    },
+    destroyed () {
+        window.removeEventListener('resize', this.onWindowResize)
+    },
+    mounted () {
+        this.$nextTick(function () {
+            this.onWindowResize()
+        })
+        window.addEventListener('resize', this.onWindowResize)
     },
     methods: {
         onStuffClick () {
@@ -86,6 +112,9 @@ export default {
                 position: window.innerWidth <= 600 ? 'top-left' : 'bottom',
                 duration: 10000
             })
+        },
+        onWindowResize () {
+            this.width = window.innerWidth
         }
     }
 }
