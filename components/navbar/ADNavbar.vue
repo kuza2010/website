@@ -25,7 +25,7 @@
         <mobile-navbar-button
             icon="blog"
             text="Blog"
-            @onButtonClick="navigateTo('/blogt')"
+            @onButtonClick="navigateTo('/blog')"
         />
         <mobile-navbar-button
             icon="screwdriver"
