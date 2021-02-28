@@ -39,6 +39,14 @@ export default {
         'normalize.css/normalize.css',
         '@assets/global-defined-styles.css'
     ],
+    env: {
+        clientId: process.env.CLIENT_ID || null,
+        clientSecret: process.env.CLIENT_SECRET || null,
+        refreshToken: process.env.REFRESH_TOKEN || null
+    },
+    serverMiddleware: [
+        'api/current-track'
+    ],
     plugins: [
         'plugins/chakra-ui',
         'plugins/directives',

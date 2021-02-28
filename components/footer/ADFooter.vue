@@ -2,9 +2,18 @@
     <footer :class="colorMode === 'dark'? 'dark-mode' :'light-mode'">
         <c-flex flex-direction="column"
                 justify-content="center"
-                :pt="[12,16]"
+                :pt="[6,8]"
                 :pb="[32,16]"
         >
+            <c-flex max-w="1150px" w="100%"
+                    mx="auto"
+            >
+                <c-box ml="4" :mb="[4,1]">
+                    <now-playing :color-scheme="colorMode === 'dark' ? spotifyGreen:spotifyBlack"
+                                 :current-track="currentTrack"
+                    />
+                </c-box>
+            </c-flex>
             <c-flex :w="['65%', '35%', '25%']"
                     mx="auto" mt="1"
                     justify-content="center"
@@ -26,28 +35,52 @@
 </template>
 
 <script>
-import { CFlex } from '@chakra-ui/vue'
+import { CFlex, CBox } from '@chakra-ui/vue'
 import Theme from '~/config/custom-theme'
 import FooterLink from '~/components/footer/FooterLink'
 import FooterButton from '~/components/footer/FooterButton'
+import NowPlaying from '~/components/NowPlaying'
 
 export default {
     name: 'ADFooter',
     components: {
+        NowPlaying,
         FooterButton,
         FooterLink,
-        CFlex
+        CFlex,
+        CBox
     },
     inject: ['$chakraColorMode'],
     data () {
         return {
-            darkThemeBorderColor: Theme.colors.textLight
+            spotifyBlack: Theme.colors.brand.spotify.black,
+            spotifyGreen: Theme.colors.brand.spotify.green,
+            currentTrack: {
+                isEmpty: true,
+                track: null,
+                artists: [],
+                href: null
+            }
         }
     },
     computed: {
         colorMode () {
             return this.$chakraColorMode()
         }
+    },
+    async mounted () {
+        const res = await fetch('api/current-track')
+        if (!res.ok) {
+            this.currentTrack = {
+                isEmpty: true,
+                track: null,
+                artists: [],
+                href: null
+            }
+        }
+
+        const { isEmpty, track, artists, href } = await res.json()
+        this.currentTrack = { isEmpty, track, artists, href }
     }
 }
 </script>

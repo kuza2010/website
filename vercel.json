@@ -6,12 +6,13 @@
       "use": "@nuxtjs/vercel-builder",
       "config": {
         "serverFiles": [
-          ".nuxt/content/**",
-          "plugins/**",
-          "timeline-data.js",
           "config/**",
+          "plugins/**",
           "content/**",
-          "pages/blog/**"
+          "pages/blog/**",
+          ".nuxt/content/**",
+          "timeline-data.js",
+          "api/**"
         ]
       }
     }

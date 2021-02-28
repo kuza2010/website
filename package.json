@@ -1,8 +1,8 @@
 {
   "name": "website",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Danilin Artyom aka kyza2010",
-  "description": "This is my personal web site build on Next.js",
+  "description": "This is my personal website built on Nuxt.js",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -19,6 +19,7 @@
     "@nuxtjs/vercel-builder": "^0.20.3",
     "core-js": "^3.8.2",
     "gray-matter": "^4.0.2",
+    "node-fetch": "^2.6.1",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.14.12"
   },

@@ -50,6 +50,10 @@ export default {
                 700: '#967ebd',
                 800: '#7b5dac',
                 900: '#4d2b84'
+            },
+            spotify: {
+                green: '#1db954',
+                black: '#191414'
             }
         }
     }

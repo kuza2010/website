@@ -40,6 +40,9 @@ body {
     --purple-800: #7b5dac;
     --purple-900: #4d2b84;
 
+    --spotify-green: #1db954;
+    --spotify-black: #191414;
+
     /* text */
     --text-secondary: #8b949e;
     --text-black: #24292e; /* #1A202C */
@@ -78,33 +81,4 @@ nav.light-mode {
 
 nav.dark-mode {
     background-color: var(--secondary-black-transparent) !important;
-}
-
-/* Helpers */
-
-.visible {
-    visibility: visible !important;
-}
-
-.collapse {
-    visibility: collapse !important;
-}
-
-.invisible {
-    display: none !important;
-}
-
-
-/* transitions */
-
-.hidden {
-    opacity: 0;
-}
-
-.element-is-visible {
-    opacity: 1;
-    transform: translate(0, 0);
-    -webkit-transition: all 1s ease-out;
-    -moz-transition: all 1s ease-out;
-    transition: all 1s ease-out;
 }
