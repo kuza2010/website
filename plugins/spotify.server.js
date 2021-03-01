@@ -31,13 +31,19 @@ async function _getAccessToken () {
 
 async function getNowPlaying () {
     const { access_token: accessToken } = await _getAccessToken()
-
-    return fetch(NOW_PLAYED_ENDPOINT, {
+    const r = await fetch(NOW_PLAYED_ENDPOINT, {
         method: 'GET',
         headers: {
             Authorization: `Bearer ${accessToken}`
         }
     })
+
+    // we cant parse 204
+    if (r.ok && r.status !== 204) {
+        return r.json()
+    }
+
+    throw new Error('Cant retrieve current playing track')
 }
 
 export default getNowPlaying
