@@ -1,8 +1,9 @@
 {
   "name": "website",
   "version": "1.0.1",
-  "author": "Danilin Artyom aka kyza2010",
-  "description": "This is my personal website built on Nuxt.js",
+  "author": "Danilin Artyom",
+  "nickname": "kyza2010",
+  "description": "This is Danilin Artyom personal website",
   "private": true,
   "scripts": {
     "dev": "nuxt",

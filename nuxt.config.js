@@ -5,7 +5,7 @@ import myHistory from './timeline-data'
 
 export default {
     head: {
-        title: pkg.name,
+        title: pkg.author,
         htmlAttrs: { lang: 'en' },
         meta: [
             { charset: 'utf-8' },
@@ -23,7 +23,7 @@ export default {
             {
                 rel: 'icon',
                 type: 'image/x-icon',
-                href: '/favicon.ico'
+                href: '/favicons/favicon.ico'
             },
             {
                 rel: 'preconnect',

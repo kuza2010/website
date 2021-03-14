@@ -90,6 +90,11 @@ export default {
         CStack
     },
     inject: ['$chakraColorMode'],
+    head () {
+        return {
+            title: 'About me - Artyom Danilin'
+        }
+    },
     computed: {
         colorMode () {
             return this.$chakraColorMode()

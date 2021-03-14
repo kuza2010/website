@@ -21,6 +21,11 @@ export default {
         CBox
     },
     inject: ['$chakraColorMode'],
+    head () {
+        return {
+            title: 'Danilin Artyom – developer, creator, student'
+        }
+    },
     computed: {
         colorMode () {
             return this.$chakraColorMode()
