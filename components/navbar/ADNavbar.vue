@@ -1,8 +1,10 @@
 <template>
-    <sticky-nav-bar v-if="!isMobileView" justify-content="flex-end">
+    <sticky-nav-bar v-if="!isMobileView"
+                    justify-content="flex-end"
+    >
         <navbar-button
             class="navbar-logo"
-            text="Danilin Artyom"
+            text="☕ Danilin Artyom"
             @onButtonClick="navigateTo('/')"
         />
         <navbar-button text="About" @onButtonClick="navigateTo('/about')"/>
