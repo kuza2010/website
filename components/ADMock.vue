@@ -16,7 +16,7 @@
                 font-size="md"
                 font-weight="semibold"
             >
-                currently this page is in development... :(
+                {{fallbackMessage}}
             </c-text>
             <nuxt-link to="/" mt="4">
                 <a-d-button size="sm">
@@ -43,7 +43,21 @@ export default {
     },
     layout: 'with-header',
     // eslint-disable-next-line vue/require-prop-types
-    props: ['status', 'icon']
+    props: {
+        status: {
+            type: String,
+            required: true
+        },
+        icon: {
+            type: String,
+            required: true
+        },
+        fallbackMessage: {
+            type: String,
+            required: false,
+            default: 'currently this page is in development... :('
+        }
+    }
 }
 </script>
 

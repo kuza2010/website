@@ -1,5 +1,8 @@
 <template>
-    <a-d-mock icon="snowplow" status="4o4"/>
+    <a-d-mock icon="snowplow"
+              status="4o4"
+              fallback-message="Probably you are wrong with page..."
+    />
 </template>
 
 <script lang="js">
@@ -10,7 +13,9 @@ export default {
     components: {
         ADMock
     },
-    layout: 'with-header'
+    layout: 'with-header',
+    // eslint-disable-next-line vue/require-prop-types
+    props: ['error']
 }
 </script>
 
