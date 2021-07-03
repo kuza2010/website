@@ -22,7 +22,7 @@
         <!--   things i dont like    -->
         <ad-things-indicator main-text=" 🙄"
                              open-popover-main-text="🤮"
-                             popover-text="I'm not keen/hate on ..."
+                             popover-text="I'm not keen on/hate ..."
         />
         <c-flex
             :border-color="colorMode === 'dark' ?'primary' :'brand.purple.800'"

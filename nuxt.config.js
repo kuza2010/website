@@ -57,7 +57,8 @@ export default {
         sortedPosts,
         myHistory,
         email: 'kyza20106@yandex.ru',
-        github: 'https://github.com/kuza2010'
+        github: 'https://github.com/kuza2010',
+        linkedIn: 'https://www.linkedin.com/in/artyom-danilin-a11026194'
     },
     buildModules: [
         '@nuxtjs/eslint-module',

@@ -19,53 +19,53 @@ const myHistory = [
         isAdditional: false
     },
     {
-        text: 'Went to school and meet friends who helps me if I need it.',
+        text: 'Go to school in Nizhny Novgorod and met my best friends.',
         tagText: 'School',
         year: '2004',
         key: '2004',
         isAdditional: false
     },
     {
-        text: 'My parents gets first computer. It was Windows XP. I have used PC a lot, but not for programming, just playing.',
+        text: 'My parents buy first computer with Pentium 2 and Windows XP on the board. I was using PC a lot, but not for programming, just playing.',
         tagText: 'Baby step',
         year: '2005',
         key: '2005',
         isAdditional: false
     },
     {
-        text: 'Only in 2007 I have started to use the internet. But I have no idea what was going on, just surfing.',
+        text: 'Only back in 2007 I started to use the Internet. But I had not idea what was going on...',
         tagText: 'Internet',
         year: '2007',
         key: '2007',
         isAdditional: true
     },
     {
-        text: 'My parents gave me my first phone - Sony Xperia K550i. With 128 Mb build in memory!!!',
+        text: 'My parents present my first phone - Sony Xperia K550i. With 128 Mb build in memory!!!',
         tagText: 'Phone',
         year: '2008',
         key: '2008',
         isAdditional: true
     },
     {
-        text: 'I was well known gamer, CS Source, CS Go and eventually Dota2. I have a local team! Good old days :)',
+        text: 'I was a well-known gamer, CS-Source, CS-Go and eventually Dota2. I had a local team! Good old days :)',
         tagText: 'Game',
         year: '2012',
         key: '2012',
         isAdditional: true
     },
     {
-        text: 'At about high school I have started to learn programming. Nothing interesting, just school-work and simple HTML. At that time I could not realize that it will become my profession.',
+        text: 'At about high school I have started learn programming. Nothing interesting, just laboratory work and simple HTML. At that time I could not realize that it will become my profession.',
         tagText: 'High school',
         year: '2013-2015',
         key: '2013-2015',
-        isAdditional: false
+        isAdditional: true
     },
     {
-        text: 'In summer 2018 some company took a chance and hired me as a C# junior developer. I have worked there for 3 months and left the company at the beginning of spring.  I have recognized, that I dont like C#...',
+        text: 'In summer 2018 some company took a chance and hired me as a C# junior developer. I have worked there for 3 months and left the company at the beginning of spring.  I have recognized, that I don\'t like C# and .Net.',
         tagText: 'First work',
         year: '2018',
         key: '2018',
-        isAdditional: true
+        isAdditional: false
     },
     {
         text: 'Study at university for Information Technology. I have taken some Java courses and taught myself hard. In 2019 I have graduated with a bachelors degree.',
@@ -75,10 +75,10 @@ const myHistory = [
         isAdditional: false
     },
     {
-        text: 'Currently I am working and studying at university, it takes a lot of my time and energy. But I am absolutely happy with it. I have tried many different projects and got valuable experience.',
+        text: 'Work and university. The last one takes a lot of my time and energy. But I am absolutely happy with it. I have tried many different projects and got valuable experience.',
         tagText: 'Work hard',
-        year: '2018 - Present',
-        key: '2018-present',
+        year: '2018-2021',
+        key: '2018-2021',
         isAdditional: false
     },
     {
@@ -87,6 +87,13 @@ const myHistory = [
         tagText: 'Java Script',
         key: '2020',
         isAdditional: true
+    },
+    {
+        year: '2021',
+        text: 'Graduate a master degree with distinctions.',
+        tagText: 'Finish university',
+        key: '2021',
+        isAdditional: false
     }
 ].sort((a, b) => a.year > b.year ? 1 : -1)
 
