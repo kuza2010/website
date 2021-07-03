@@ -1,5 +1,5 @@
 <template>
-    <c-box :class="colorMode === 'dark'? 'dark-mode' :'light-mode'">
+    <c-box id="app" :class="colorMode === 'dark'? 'dark-mode' :'light-mode'">
         <a-d-navbar v-if="header"/>
         <c-flex :pt="[4, 24]"
                 max-w="1150px" w="100%"

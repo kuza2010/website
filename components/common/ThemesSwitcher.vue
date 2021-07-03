@@ -16,21 +16,27 @@ export default {
     computed: {
         colorMode () {
             return this.$chakraColorMode()
+        },
+        userColorMode () {
+            const userSelectedColorMode = localStorage.getItem('color-mode')
+            return userSelectedColorMode === undefined ? 'light' : userSelectedColorMode
         }
     },
     mounted () {
-        const mode = localStorage.getItem('color-mode')
-        if (!mode) {
+        if (this.colorMode !== this.userColorMode) {
+            this.toggleColorMode()
             return
         }
-        if (this.$chakraColorMode() !== mode) {
-            this.toggleColorMode()
-        }
+
+        document.body.classList.add(this.colorMode)
     },
     methods: {
         toggleColorMode () {
+            const prev = this.colorMode
             this.$toggleColorMode()
-            localStorage.setItem('color-mode', this.$chakraColorMode())
+            localStorage.setItem('color-mode', this.colorMode)
+            document.body.classList.remove(prev)
+            document.body.classList.add(this.colorMode)
         }
     }
 }

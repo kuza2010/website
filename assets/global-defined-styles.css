@@ -18,6 +18,8 @@ body {
     /* two colors */
     --color-border-light: #d1d5da;
     --color-border-dark: #30363d;
+    --scrollbar-track-bg-dark: #424242;
+    --scrollbar-track-bg-light: #faf9fc;
 
 
     --success: #a9e5c1;
@@ -57,7 +59,6 @@ body {
     /* common visited */
     --link-primary-visited: #8b949e; /* --text-secondary  */
 
-
     /* navbar */
     --transparent-white-15: rgba(255, 255, 255, 0.15);
 }
@@ -74,7 +75,7 @@ body {
     color: var(--text-black) !important;
 }
 
-/* Navigation bar style*/
+/* Navigation bar style */
 nav.light-mode {
     background-color: var(--secondary-light-transparent) !important;
 }
@@ -82,3 +83,33 @@ nav.light-mode {
 nav.dark-mode {
     background-color: var(--secondary-black-transparent) !important;
 }
+
+
+/* Scrollbar light style */
+body.light::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: var(--scrollbar-track-bg-light);
+}
+
+body.light::-webkit-scrollbar {
+    width: 10px;
+}
+
+body.light::-webkit-scrollbar-thumb {
+    background-color: var(--purple-800);
+}
+
+/* Scrollbar dark style */
+body.dark::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: var(--scrollbar-track-bg-dark);
+}
+
+body.dark::-webkit-scrollbar {
+    width: 10px;
+}
+
+body.dark::-webkit-scrollbar-thumb {
+    background-color: var(--primary-black);
+}
+
