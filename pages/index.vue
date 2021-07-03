@@ -23,7 +23,7 @@ export default {
     inject: ['$chakraColorMode'],
     head () {
         return {
-            title: 'Danilin Artyom – developer, creator, student'
+            title: 'AD website'
         }
     },
     computed: {
