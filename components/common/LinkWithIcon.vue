@@ -66,6 +66,7 @@ export default {
 <style scoped lang="scss">
 
 .light-link {
+    font-weight: bold;
     color: var(--link-primary-light) !important;
 
     &:visited {
@@ -82,6 +83,7 @@ export default {
 }
 
 .dark-link {
+    font-weight: bold;
     color: var(--link--primary-dark) !important;
 
     &:visited {
