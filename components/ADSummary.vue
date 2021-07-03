@@ -10,7 +10,7 @@
             <c-heading :font-size="['2rem', '2.6rem']"
                        mt="0"
             >
-                Hey! I'm Artyom Danilin. I'm a software engineer and NNSTU student.
+                Hey! I'm Artyom Danilin. I'm a software engineer.
             </c-heading>
             <c-text font-weight="normal"
                     class="github-text-secondary"
