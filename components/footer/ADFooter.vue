@@ -64,7 +64,7 @@ export default {
         }
     },
     async fetch () {
-        await fetch(`${this.$config.apiBaseUrl}/api/current-track`)
+        this.currentTrack = await fetch(`${this.$config.apiBaseUrl}/api/current-track`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Can not fetch current playing track, details: ', response.statusText)
@@ -72,15 +72,8 @@ export default {
                     return response.json()
                 }
             })
-            .then(({ isEmpty, track, artists, href }) => { this.currentTrack = { isEmpty, track, artists, href } })
-            .catch((_) => {
-                this.currentTrack = {
-                    isEmpty: true,
-                    track: null,
-                    artists: [],
-                    href: null
-                }
-            })
+            // eslint-disable-next-line no-console
+            .catch((err) => { console.error(`Can not fetch current playing track, details: ${err}`) })
     },
     computed: {
         colorMode () {

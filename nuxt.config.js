@@ -59,7 +59,7 @@ export default {
         email: 'kyza20106@yandex.ru',
         github: 'https://github.com/kuza2010',
         linkedIn: 'https://www.linkedin.com/in/artyom-danilin-a11026194',
-        apiBaseUrl: process.env.NODE_ENV !== 'production' ? 'http://localhost:3000' : process.env.NUXT_ENV_VERCEL_URL
+        apiBaseUrl: process.env.NODE_ENV !== 'production' ? 'http://localhost:3000' : `https://${process.env.VERCEL_URL}`
     },
     buildModules: [
         '@nuxtjs/eslint-module',
