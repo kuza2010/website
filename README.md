@@ -12,6 +12,7 @@ current playing track from Spotify. So, the variables:
 - CLIENT_SECRET your client secret, find it [here](https://developer.spotify.com/dashboard/applications)
 - REFRESH_TOKEN a permanent refresh token, for more information
   see [Spotify token](https://khalilstemmler.com/articles/tutorials/getting-the-currently-playing-song-spotify/)
+- API_BASE_URL base rest api url, in **[dev]** environment value is: `http://localhost:3000/`
 
 ___
 Example:
