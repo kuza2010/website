@@ -82,7 +82,8 @@ export default {
     },
     watch: {
         '$route.query': '$fetch'
-    }
+    },
+    fetchOnServer: false
 }
 </script>
 
