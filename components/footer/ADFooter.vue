@@ -64,7 +64,7 @@ export default {
         }
     },
     async fetch () {
-        this.currentTrack = await fetch(`${this.$config.apiBaseUrl}/api/current-track`)
+        this.currentTrack = await fetch(`${this.$config.apiBaseUrl}api/current-track`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Can not fetch current playing track, details: ', response.statusText)
