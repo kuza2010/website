@@ -58,7 +58,8 @@ export default {
         myHistory,
         email: 'kyza20106@yandex.ru',
         github: 'https://github.com/kuza2010',
-        linkedIn: 'https://www.linkedin.com/in/artyom-danilin-a11026194'
+        linkedIn: 'https://www.linkedin.com/in/artyom-danilin-a11026194',
+        apiBaseUrl: process.env.NODE_ENV !== 'production' ? 'http://localhost:3000' : process.env.VUE_APP_VERCEL_URL
     },
     buildModules: [
         '@nuxtjs/eslint-module',

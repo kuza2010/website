@@ -63,24 +63,32 @@ export default {
             }
         }
     },
+    async fetch () {
+        await fetch(`${this.$config.apiBaseUrl}/api/current-track`)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Can not fetch current playing track, details: ', response.statusText)
+                } else {
+                    return response.json()
+                }
+            })
+            .then(({ isEmpty, track, artists, href }) => { this.currentTrack = { isEmpty, track, artists, href } })
+            .catch((_) => {
+                this.currentTrack = {
+                    isEmpty: true,
+                    track: null,
+                    artists: [],
+                    href: null
+                }
+            })
+    },
     computed: {
         colorMode () {
             return this.$chakraColorMode()
         }
     },
-    async mounted () {
-        const res = await fetch('api/current-track')
-        if (!res.ok) {
-            this.currentTrack = {
-                isEmpty: true,
-                track: null,
-                artists: [],
-                href: null
-            }
-        }
-
-        const { isEmpty, track, artists, href } = await res.json()
-        this.currentTrack = { isEmpty, track, artists, href }
+    watch: {
+        '$route.query': '$fetch'
     }
 }
 </script>
