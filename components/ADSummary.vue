@@ -17,12 +17,8 @@
                     color="textSecondary"
                     :font-size="['1rem', '1.25rem', '1.3rem']"
             >
-                In 2018 I successfully graduated from
-                <link-with-icon icon="external-link-alt" text="NNSTU"
-                                to="https://www.nntu.ru/" is-external-link
-                />
-                with bachelor's degree and continue my education as a master. I am very keen on programming, dedicate to
-                be a full-stack engineer 📚. Here in my personal slice of the internet you can get to know me better.
+                I am very keen on programming, dedicate to
+                be a full-stack engineer 📚. Here is my personal slice of the internet you can get to know me better.
             </c-text>
             <c-flex justify-content="flex-start"
                     class="button-line"
