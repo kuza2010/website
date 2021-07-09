@@ -89,6 +89,13 @@ const myHistory = [
         isAdditional: true
     },
     {
+        year: '2020-2021',
+        text: 'I have small experience in CNN for Steganography Analysis. Yeah...',
+        tagText: 'Machine Learning',
+        key: '2020-2021',
+        isAdditional: true
+    },
+    {
         year: '2021',
         text: 'Graduate a master degree with distinctions.',
         tagText: 'Finish university',
