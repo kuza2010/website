@@ -1,7 +1,7 @@
 import pkg from './package.json'
+import myHistory from './config/timeline-data'
 import customTheme from './config/custom-theme.js'
 import sortedPosts from './plugins/blog_grabber.server'
-import myHistory from './timeline-data'
 
 export default {
     head: {
