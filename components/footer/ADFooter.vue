@@ -9,7 +9,7 @@
                     mx="auto"
             >
                 <c-box ml="4" :mb="[4,1]">
-                    <now-playing :color-scheme="colorMode === 'dark' ? spotifyGreen:spotifyBlack"
+                    <now-playing :color-scheme="colorMode === 'dark' ? spotifyGreen: spotifyBlack"
                                  :current-track="currentTrack"
                     />
                 </c-box>
@@ -26,8 +26,8 @@
                     mx="auto" mt="8"
                     justify-content="center"
             >
-                <footer-link icon="guthubIcon" href="https://github.com/kuza2010"/>
-                <footer-link icon="linkedInIcon" href="https://www.linkedin.com/in/artyom-danilin-a11026194"/>
+                <footer-link icon="guthubIcon" :href="$config.github"/>
+                <footer-link icon="linkedInIcon" :href="$config.linkedIn"/>
                 <footer-link icon="gmailIcon" :href="`mailto:${$config.email}`"/>
             </c-flex>
         </c-flex>
@@ -73,7 +73,9 @@ export default {
                 }
             })
             // eslint-disable-next-line no-console
-            .catch((err) => { console.error(`Can not fetch current playing track, details: ${err}`) })
+            .catch((err) => {
+                console.error(`Can not fetch current playing track, details: ${err}`)
+            })
     },
     computed: {
         colorMode () {
