@@ -111,9 +111,6 @@ export default {
         myLinkedIn () {
             return this.$config.linkedIn
         },
-        // timeline () {
-        //     return this.$config.myHistory
-        // },
         linkStyle () {
             return {
                 'font-weight': '600',
