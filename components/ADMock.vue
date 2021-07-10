@@ -16,7 +16,7 @@
                 font-size="md"
                 font-weight="semibold"
             >
-                {{fallbackMessage}}
+                {{ fallbackMessage }}
             </c-text>
             <nuxt-link to="/" mt="4">
                 <a-d-button size="sm">

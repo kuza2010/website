@@ -1,5 +1,4 @@
 import pkg from './package.json'
-import myHistory from './config/timeline-data'
 import customTheme from './config/custom-theme.js'
 import sortedPosts from './plugins/blog_grabber.server'
 
@@ -55,7 +54,6 @@ export default {
     components: true,
     publicRuntimeConfig: {
         sortedPosts,
-        myHistory,
         email: 'kyza20106@yandex.ru',
         github: 'https://github.com/kuza2010',
         linkedIn: 'https://www.linkedin.com/in/artyom-danilin/',

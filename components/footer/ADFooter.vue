@@ -72,8 +72,8 @@ export default {
                     return response.json()
                 }
             })
-            // eslint-disable-next-line no-console
             .catch((err) => {
+                // eslint-disable-next-line no-console
                 console.error(`Can not fetch current playing track, details: ${err}`)
             })
     },

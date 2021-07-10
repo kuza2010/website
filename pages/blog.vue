@@ -10,11 +10,11 @@ export default {
     components: {
         ADMock
     },
+    layout: 'with-header',
     head () {
         return {
             title: 'Blog - in dev'
         }
-    },
-    layout: 'with-header'
+    }
 }
 </script>

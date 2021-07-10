@@ -75,6 +75,7 @@ import { CBox, CFlex, CStack, CHeading, CText } from '@chakra-ui/vue'
 import ADTimeline from '~/components/timeline/ADTimeline'
 import LinkWithIcon from '~/components/common/LinkWithIcon'
 import ADTextLink from '~/components/common/ADTextLink'
+import timeline from '~/static/json/timeline.json'
 
 export default {
     name: 'About',
@@ -89,6 +90,9 @@ export default {
         CStack
     },
     inject: ['$chakraColorMode'],
+    asyncData ({ params }) {
+        return { timeline }
+    },
     head () {
         return {
             title: 'About me - Artyom Danilin'
@@ -107,9 +111,9 @@ export default {
         myLinkedIn () {
             return this.$config.linkedIn
         },
-        timeline () {
-            return this.$config.myHistory
-        },
+        // timeline () {
+        //     return this.$config.myHistory
+        // },
         linkStyle () {
             return {
                 'font-weight': '600',
