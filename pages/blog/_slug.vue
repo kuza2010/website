@@ -4,10 +4,23 @@
             flex-direction="column"
     >
         <article>
-            <h1>{{ article.title }}</h1>
-            <p>{{ article.description }}</p>
-            <p>Article last updated: {{ formatDate(article.updatedAt) }}</p>
-            <p>Article Tag: {{ article.tag }}</p>
+            <c-heading :font-size="['2rem', '2.6rem']" align="center">
+                {{ article.title }}
+            </c-heading>
+            <c-aspect-ratio-box :ratio="4/3"
+                                max-w="400px" m="auto"
+            >
+                <c-image :src="`/articles/${article.img}`"
+                         alt="sage mode naruto" object-fit="cover"
+                />
+            </c-aspect-ratio-box>
+            <c-text>{{ article.description }}</c-text>
+            <c-text font-size="xs">
+                Article last updated: {{ formatDate(article.updatedAt) }}
+            </c-text>
+            <c-text v-if="isThereArticle(article)">
+                Article Tag: {{ formatArticlesTag(article.languageTags) }}
+            </c-text>
 
             <nuxt-content :document="article"/>
         </article>
@@ -15,16 +28,21 @@
 </template>
 
 <script>
-import { CFlex } from '@chakra-ui/vue'
+import { CFlex, CHeading, CAspectRatioBox, CImage, CText } from '@chakra-ui/vue'
+
 export default {
-    components: { CFlex },
+    components: {
+        CFlex,
+        CHeading,
+        CAspectRatioBox,
+        CImage,
+        CText
+    },
     async asyncData ({
         $content,
         params
     }) {
         const article = await $content('articles', params.slug).fetch()
-
-        console.log(article)
         return { article }
     },
     methods: {
@@ -35,6 +53,12 @@ export default {
                 day: 'numeric'
             }
             return new Date(date).toLocaleDateString('en', options)
+        },
+        formatArticlesTag (tags) {
+            return tags.join(', ')
+        },
+        isThereArticle (article) {
+            return article.languageTags && article.languageTags.length > 0
         }
     }
 
