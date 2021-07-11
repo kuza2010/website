@@ -1,6 +1,5 @@
 import pkg from './package.json'
 import customTheme from './config/custom-theme.js'
-import sortedPosts from './plugins/blog_grabber.server'
 
 export default {
     head: {
@@ -53,24 +52,27 @@ export default {
     ],
     components: true,
     publicRuntimeConfig: {
-        sortedPosts,
         email: 'kyza20106@yandex.ru',
         github: 'https://github.com/kuza2010',
         linkedIn: 'https://www.linkedin.com/in/artyom-danilin/',
         apiBaseUrl: process.env.NODE_ENV !== 'production' ? 'http://localhost:3000/' : process.env.API_BASE_URL
     },
     buildModules: [
-        '@nuxtjs/eslint-module',
-        '@nuxtjs/mdx'
+        '@nuxtjs/eslint-module'
     ],
     modules: [
         '@chakra-ui/nuxt',
-        '@nuxtjs/emotion'
+        '@nuxtjs/emotion',
+        '@nuxt/content'
     ],
     build: {},
     // Chakra UI
     chakra: {
         extendTheme: customTheme,
         autoImport: true
+    },
+    // @nuxt/content
+    content: {
+        apiPrefix: 'content-api'
     }
 }

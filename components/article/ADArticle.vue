@@ -4,7 +4,7 @@
             :class="colorMode ==='dark' ? 'article-dark': 'article-light'"
             w="95%" rounded="6px"
             p="1" justify-content="flex-start"
-            cursor="pointer"
+            cursor="pointer" @click.native="navigateToPost"
     >
         <c-badge v-if="isNew"
                  :ml="[1,4]" :mt="[4,0]"
@@ -30,7 +30,7 @@
         <c-flex :ml="[0,'auto']" :mr="[0, 1]"
                 :mb="[4,0]" :mt="[2,0]"
         >
-            <a-d-tag v-for="(tag, index) in tagArray"
+            <a-d-tag v-for="(tag, index) in tagArray.slice(0,4)"
                      :key="tag" :text="tag"
                      :hover-color="getHoverColor(index)"
                      :color="getColor(index)"
@@ -80,10 +80,21 @@ export default {
     },
     methods: {
         getColor (idx) {
+            if (idx >= this.tagColors.length) {
+                return this.tagColors[idx % this.tagColors.length].bg
+            }
             return this.tagColors[idx].bg
         },
         getHoverColor (idx) {
+            if (idx >= this.tagColors.length) {
+                return this.tagColors[idx % this.tagColors.length].hc
+            }
             return this.tagColors[idx].hc
+        },
+        navigateToPost () {
+            this.$router.push({
+                path: `/blog/${this.id}`
+            })
         }
     }
 }

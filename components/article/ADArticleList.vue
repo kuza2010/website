@@ -14,7 +14,7 @@
         <a-d-empty-article v-if="!articleList || articleList.length === 0"/>
 
         <a-d-article v-for="article in articleList" v-else
-                     :id="article.title" :key="article.title"
+                     :id="article.slug" :key="article.title"
                      :title="article.title" :is-new="article.isNew"
                      :data="article.publishedAt" :tag-array="article.languageTags"
         />
