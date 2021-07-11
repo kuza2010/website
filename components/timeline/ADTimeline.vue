@@ -5,39 +5,43 @@
         </c-heading>
         <c-box :class="colorMode==='light'?'timeline light':'timeline dark'">
             <c-box
-                v-for="(timeline,idx) in filteredTimelines"
+                v-for="(timeline,idx) in timelines"
                 :key="timeline.key"
-                :class="getClassForArrow(idx)"
             >
                 <c-box
-                    :class="getClassForTimelineBox(timeline)"
-                    :style="getTimelineAlignment(idx)==='left'?{'margin-left':'auto'}:{'margin-right':'auto'}"
-                    :max-width="['100%','70%']"
+                    v-show="shouldShowTimeline(timeline)"
+                    :class="getClassForArrow(idx)"
                 >
-                    <c-flex
-                        :flex-direction="['column-reverse', 'row']"
-                        justify-content="space-between"
-                        align-items="center"
+                    <c-box
+                        :class="getClassForTimelineBox(timeline)"
+                        :style="getTimelineAlignment(idx)==='left'?{'margin-left':'auto'}:{'margin-right':'auto'}"
+                        :max-width="['100%','70%']"
                     >
-                        <c-heading my="1" size="md">
-                            {{ timeline.year }}
-                        </c-heading>
-                        <c-text
-                            :bg="getTagBackgroundColor(idx)"
-                            my="0" font-weight="semibold"
-                            text-transform="uppercase"
-                            px="3" py="1"
-                            max-width="100%" ml="1"
-                            rounded="md" white-space="nowrap"
-                            text-overflow="ellipsis" overflow="hidden"
-                            color="textBlack"
+                        <c-flex
+                            :flex-direction="['column-reverse', 'row']"
+                            justify-content="space-between"
+                            align-items="center"
                         >
-                            {{ timeline.tagText }}
+                            <c-heading my="1" size="md">
+                                {{ timeline.year }}
+                            </c-heading>
+                            <c-text
+                                :bg="getTagBackgroundColor(idx)"
+                                my="0" font-weight="semibold"
+                                text-transform="uppercase"
+                                px="3" py="1"
+                                max-width="100%" ml="1"
+                                rounded="md" white-space="nowrap"
+                                text-overflow="ellipsis" overflow="hidden"
+                                color="textBlack"
+                            >
+                                {{ timeline.tagText }}
+                            </c-text>
+                        </c-flex>
+                        <c-text text-align="left">
+                            {{ timeline.text }}
                         </c-text>
-                    </c-flex>
-                    <c-text text-align="left">
-                        {{ timeline.text }}
-                    </c-text>
+                    </c-box>
                 </c-box>
             </c-box>
         </c-box>
@@ -86,15 +90,15 @@ export default {
     computed: {
         colorMode () {
             return this.$chakraColorMode()
-        },
-        filteredTimelines () {
-            if (this.showAdditionalTimelineInfo) {
-                return this.timelines
-            }
-            return this.timelines.filter(timeline => !timeline.isAdditional)
         }
     },
     methods: {
+        shouldShowTimeline (timeline) {
+            if (this.showAdditionalTimelineInfo) {
+                return true
+            }
+            return !timeline.isAdditional
+        },
         getTagBackgroundColor (idx) {
             while (idx >= this.colors.length) {
                 idx = idx - this.colors.length
