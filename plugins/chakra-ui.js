@@ -9,7 +9,8 @@ import {
     faHome,
     faScrewdriver,
     faSnowplow,
-    faUserGraduate
+    faUserGraduate,
+    faHighlighter
 } from '@fortawesome/free-solid-svg-icons'
 import customTheme from '../config/custom-theme.js'
 import customIcon from '~/config/custom-icon'
@@ -26,7 +27,8 @@ Vue.use(Chakra, {
             faEnvelopeOpen,
             faSnowplow,
             faHome,
-            faCoffee
+            faCoffee,
+            faHighlighter
         },
         iconPack: 'fa',
         extend: {

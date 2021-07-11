@@ -1,42 +1,43 @@
 <template>
     <c-flex max-w="700px" w="100%"
-            mr="auto" ml="auto"
-            flex-direction="column"
+            mx="auto" flex-direction="column"
     >
         <article>
             <c-heading :font-size="['2rem', '2.6rem']" align="center">
                 {{ article.title }}
             </c-heading>
-            <c-aspect-ratio-box :ratio="4/3"
-                                max-w="400px" m="auto"
-            >
-                <c-image :src="`/articles/${article.img}`"
-                         alt="sage mode naruto" object-fit="cover"
+            <a-d-blog-main-image :image="article.img"/>
+            <c-box mx="4">
+                <a-d-blog-summary
+                    :tags="article.languageTags"
+                    :last-updated="article.updatedAt"
+                    :description="article.description"
                 />
-            </c-aspect-ratio-box>
-            <c-text>{{ article.description }}</c-text>
-            <c-text font-size="xs">
-                Article last updated: {{ formatDate(article.updatedAt) }}
-            </c-text>
-            <c-text v-if="isThereArticle(article)">
-                Article Tag: {{ formatArticlesTag(article.languageTags) }}
-            </c-text>
-
-            <nuxt-content :document="article"/>
+                <nuxt-content :document="article"/>
+                <link-with-icon icon="highlighter" text="Change this"
+                                :to="`${$config.github}/website/tree/main/content${article.path}.md`"
+                                is-external-link left
+                />
+                page on github.
+            </c-box>
         </article>
     </c-flex>
 </template>
 
 <script>
-import { CFlex, CHeading, CAspectRatioBox, CImage, CText } from '@chakra-ui/vue'
+import { CFlex, CHeading, CBox } from '@chakra-ui/vue'
+import ADBlogSummary from '~/components/blog/ADBlogSummary'
+import ADBlogMainImage from '~/components/blog/ADBlogMainImage'
+import LinkWithIcon from '~/components/common/LinkWithIcon'
 
 export default {
     components: {
+        LinkWithIcon,
+        ADBlogMainImage,
+        ADBlogSummary,
         CFlex,
         CHeading,
-        CAspectRatioBox,
-        CImage,
-        CText
+        CBox
     },
     async asyncData ({
         $content,
@@ -44,30 +45,29 @@ export default {
     }) {
         const article = await $content('articles', params.slug).fetch()
         return { article }
-    },
-    methods: {
-        formatDate (date) {
-            const options = {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            }
-            return new Date(date).toLocaleDateString('en', options)
-        },
-        formatArticlesTag (tags) {
-            return tags.join(', ')
-        },
-        isThereArticle (article) {
-            return article.languageTags && article.languageTags.length > 0
-        }
     }
-
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 
-article {
+.nuxt-content-container {
+
+    a {
+        text-decoration: none !important;
+        font-weight: 600;
+        color: var(--purple-900);
+
+        &:active {
+            color: var(--purple-600);
+        }
+    }
+
+    .nuxt-content {
+        font-weight: 400;
+        line-height: 1.7;
+        font-size: 17.5px;
+    }
 }
 
 </style>
