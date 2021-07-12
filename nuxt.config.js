@@ -35,7 +35,7 @@ export default {
     },
     css: [
         'normalize.css/normalize.css',
-        '@assets/nuxt-content-styles.scss',
+        '@assets/nuxt-content-styles.css',
         '@assets/global-defined-styles.css'
     ],
     env: {
