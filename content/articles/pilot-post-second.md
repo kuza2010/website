@@ -4,6 +4,7 @@ description: Learning how to use @nuxt/content to create a second blog
 img: pilot-post-title.jpg
 alt: my first blog post
 languageTags: [java-script, nuxt]
+created: 2021-07-11T10:00:00
 ---
 
 ## This is a second blog post

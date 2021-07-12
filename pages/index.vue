@@ -24,22 +24,22 @@ export default {
     inject: ['$chakraColorMode'],
     async asyncData ({ $content }) {
         const articles = await $content('articles')
-            .only(['title', 'createdAt', 'languageTags', 'slug'])
-            .sortBy('createdAt', 'desc')
+            .only(['title', 'created', 'languageTags', 'slug'])
+            .sortBy('created', 'desc')
             .limit(5)
             .fetch()
 
         return {
             posts: articles.map((elem) => {
                 const monthAgo = moment().subtract(1, 'months')
-                const createdAt = moment(elem.createdAt)
+                const createdAt = moment(elem.created)
 
                 return {
                     ...elem,
                     isNew: monthAgo.isBefore(createdAt)
                 }
             })
-                .sort((a, b) => a.createdAt < b.createdAt ? 1 : (a.createdAt > b.createdAt ? 0 : 1))
+                .sort((a, b) => a.created < b.created ? 1 : (a.created > b.created ? 0 : 1))
         }
     },
     head () {
