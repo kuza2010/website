@@ -39,6 +39,7 @@ export default {
                     isNew: monthAgo.isBefore(createdAt)
                 }
             })
+                .sort((a, b) => a.createdAt < b.createdAt ? 1 : (a.createdAt > b.createdAt ? 0 : 1))
         }
     },
     head () {

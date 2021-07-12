@@ -51,23 +51,4 @@ export default {
 
 <style lang="scss">
 
-.nuxt-content-container {
-
-    a {
-        text-decoration: none !important;
-        font-weight: 600;
-        color: var(--purple-900);
-
-        &:active {
-            color: var(--purple-600);
-        }
-    }
-
-    .nuxt-content {
-        font-weight: 400;
-        line-height: 1.7;
-        font-size: 17.5px;
-    }
-}
-
 </style>
