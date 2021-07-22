@@ -14,8 +14,13 @@ export default {
         ADMock
     },
     layout: 'with-header',
-    // eslint-disable-next-line vue/require-prop-types
-    props: ['error']
+    props: {
+        error: {
+            type: Object,
+            default: () => {
+            }
+        }
+    }
 }
 </script>
 

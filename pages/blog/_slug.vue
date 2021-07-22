@@ -41,9 +41,13 @@ export default {
     },
     async asyncData ({
         $content,
-        params
+        params,
+        error
     }) {
-        const article = await $content('articles', params.slug).fetch()
+        const article = await $content('articles', params.slug)
+            .fetch()
+            .catch(_ => error({ statusCode: 404, message: 'Post not found' }))
+
         return { article }
     }
 }
