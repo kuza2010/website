@@ -46,9 +46,17 @@ export default {
     }) {
         const article = await $content('articles', params.slug)
             .fetch()
-            .catch(_ => error({ statusCode: 404, message: 'Post not found' }))
+            .catch(_ => error({
+                statusCode: 404,
+                message: 'Post not found'
+            }))
 
         return { article }
+    },
+    head () {
+        return {
+            title: this.article.title
+        }
     }
 }
 </script>

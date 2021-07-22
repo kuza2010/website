@@ -7,18 +7,15 @@
             :mt="[2,12]"
             :style="!showAvatar? {'margin-right': '0px'}:{}"
         >
-            <c-heading :font-size="['2rem', '2.6rem']"
-                       mt="0"
-            >
-                Hey! I'm Artyom Danilin. I'm a software engineer.
+            <c-heading :font-size="['2rem', '2.6rem']" mt="0">
+                Holla! I'm Artyom Danilin. I'm a software engineer.
             </c-heading>
-            <c-text font-weight="normal"
-                    class="github-text-secondary"
-                    color="textSecondary"
-                    :font-size="['1rem', '1.25rem', '1.3rem']"
+            <c-text :font-size="['1rem', '1.25rem', '1.3rem']"
+                    font-weight="normal" color="textSecondary"
             >
-                I am very keen on programming, dedicate to
-                be a full-stack engineer 📚. Here is my personal slice of the internet you can get to know me better.
+                I am very keen on programming and dedicate to
+                be a full-stack engineer in the nearest future 📚. Here is my personal slice of the Internet where you
+                can get to know me better.
             </c-text>
             <c-flex justify-content="flex-start"
                     class="button-line"
