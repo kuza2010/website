@@ -16,7 +16,7 @@
         <a-d-article v-for="article in articleList" v-else
                      :id="article.slug" :key="article.title"
                      :title="article.title" :is-new="article.isNew"
-                     :data="article.publishedAt" :tag-array="article.languageTags"
+                     :data="article.created" :tag-array="article.languageTags"
         />
     </c-flex>
 </template>

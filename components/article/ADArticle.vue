@@ -17,7 +17,7 @@
             <c-text font-size="sm" font-weight="medium"
                     mb="1"
             >
-                {{ data }}
+                {{ data | articleDateFormat }}
             </c-text>
             <c-text :mb="[0,1]" :white-space="['nowrap', 'normal']"
                     font-size="xl" font-weight="bold"

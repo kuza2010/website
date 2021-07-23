@@ -20,8 +20,8 @@
                         max-w="70%" mx="auto"
                         text-align="center"
                 >
-                    Here I share some of my thinking, insights and views on life. Take a cup of coffee and just make
-                    yourself at home...
+                    Here I share some of my ideas, thinking, insights and views on life. Take a cup of coffee and just
+                    make yourself at home...
                 </c-text>
                 <a-d-article-list :article-list="posts" title="Article list"/>
             </c-stack>
@@ -55,13 +55,11 @@ export default {
             posts: articles.map((elem) => {
                 const monthAgo = moment().subtract(1, 'months')
                 const createdAt = moment(elem.created)
-
                 return {
                     ...elem,
                     isNew: monthAgo.isBefore(createdAt)
                 }
-            })
-                .sort((a, b) => a.created < b.created ? 1 : (a.created > b.created ? 0 : 1))
+            }).sort((a, b) => a.created < b.created ? 1 : (a.created > b.created ? 0 : 1))
         }
     },
     head () {

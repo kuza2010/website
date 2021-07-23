@@ -49,7 +49,8 @@ export default {
     plugins: [
         'plugins/chakra-ui',
         'plugins/directives',
-        'plugins/blog_grabber.server.js' // only server-side
+        'plugins/blog_grabber.server.js', // only server-side
+        'plugins/format-date'
     ],
     components: true,
     publicRuntimeConfig: {
