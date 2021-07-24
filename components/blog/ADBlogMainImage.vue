@@ -3,8 +3,7 @@
                         :max-w="['100%', '85%']"
                         m="auto"
     >
-        <c-image :src="`/articles/${image}`"
-                 alt="sage mode naruto"
+        <c-image :src="`/articles/${image}`" :alt="alt"
                  object-fit="cover"
         />
     </c-aspect-ratio-box>
@@ -23,6 +22,11 @@ export default {
         image: {
             type: String,
             required: true
+        }
+    },
+    computed: {
+        alt () {
+            return this.image.split('.').slice(0, -1).join('.')
         }
     }
 }
