@@ -38,5 +38,4 @@ ___
 [![](https://img.shields.io/badge/-Vercel-red?style=for-the-badge&color=000&logo=vercel)](https://vercel.com/)
 [![](https://img.shields.io/badge/-Nuxt.js-red?style=for-the-badge&color=00C58E&logo=javascript&logoColor=white)](https://nuxtjs.org/)
 [![](https://img.shields.io/badge/-Vue-red?style=for-the-badge&color=4FC08D&logo=vue.js&logoColor=white)](https://vuejs.org/)
-[![](https://img.shields.io/badge/-MDX-red?style=for-the-badge&color=fcb42d)](https://mdxjs.com/)
 [![](https://img.shields.io/badge/-Chakra%20UI-red?style=for-the-badge&color=319795&logo=chakra-ui&logoColor=white)](https://vue.chakra-ui.com/)
