@@ -4,7 +4,7 @@ description: Take a look into machine learning in steganalaysis problem [part 1]
 img: steganalysis/steganalysis-with-cnn.bmp 
 alt: my first blog post 
 languageTags: [python, pytorch, steganalaysis]
-created: 2021-07-21T21:27:00
+created: 2021-08-07T12:27:00
 ---
 
 In this article, we are going to speak about the theoretical part of steganography detection based on convolutional 
