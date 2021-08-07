@@ -20,8 +20,30 @@
     text-align: justify;
   }
 
+  img {
+    display: block;
+    margin: 0 auto;
+
+    &.img-responsive {
+      max-width: 100%;
+    }
+
+  }
+
+  // Text related stuff
   .text-right {
     text-align: right;
   }
+
+  .text-center {
+    text-align: center;
+  }
+
+  // Image related stuff
+  .img-alt {
+    font-size: 0.8em;
+    font-style: italic;
+  }
+
 
 }
