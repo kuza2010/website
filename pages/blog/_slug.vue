@@ -10,7 +10,7 @@
             <c-box mx="4">
                 <a-d-blog-summary
                     :tags="article.languageTags"
-                    :last-updated="article.updatedAt"
+                    :last-updated="article.lastModified"
                     :description="article.description"
                 />
                 <nuxt-content :document="article"/>
