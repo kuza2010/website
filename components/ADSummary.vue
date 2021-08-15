@@ -13,9 +13,8 @@
             <c-text :font-size="['1rem', '1.25rem', '1.3rem']"
                     font-weight="normal" color="textSecondary"
             >
-                I am very keen on programming and dedicate to
-                be a full-stack engineer in the nearest future 📚. Here is my personal slice of the Internet where you
-                can get to know me better.
+                I am keen on programming and dedicate to be a full-stack engineer in the nearest future 📚.
+                Here is my personal slice of the Internet where you can get to know me better.
             </c-text>
             <c-flex justify-content="flex-start"
                     class="button-line"
