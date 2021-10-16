@@ -62,6 +62,7 @@
 
 
   & .nuxt-content-highlight {
+    position: relative;
 
     & > .filename {
       color: var(--primary-light);
