@@ -13,7 +13,9 @@
                     :last-updated="article.lastModified"
                     :description="article.description"
                 />
-                <nuxt-content :document="article"/>
+                <c-box>
+                    <nuxt-content :document="article"/>
+                </c-box>
                 <link-with-icon icon="highlighter" text="Change this"
                                 :to="`${$config.github}/website/tree/main/content${article.path}.md`"
                                 is-external-link left
