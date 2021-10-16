@@ -253,6 +253,6 @@ an example some of the parts proposed network can be improved.
 
 All infrastructure code is deliberately missed and available in a repository. 
 
-Finally, you can find final .py file and other code [here](https://github.com/kuza2010/cnn_staganalysis).
+Finally, you can find final .py file and other code [here](https://github.com/kuza2010/cnn_staganalysis/blob/82faed23844abeb53f2d8d823453648c68212d46/cnn_in_steganalysis.py).
 🎉🎉🎉
 
