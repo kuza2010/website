@@ -75,6 +75,11 @@ export default {
     },
     // @nuxt/content
     content: {
-        apiPrefix: 'content-api'
+        apiPrefix: 'content-api',
+        markdown: {
+            prism: {
+                theme: 'prism-themes/themes/prism-dracula.css'
+            }
+        }
     }
 }

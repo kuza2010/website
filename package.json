@@ -24,7 +24,8 @@
     "moment": "^2.29.1",
     "node-fetch": "^2.6.1",
     "normalize.css": "^8.0.1",
-    "nuxt": "^2.14.12"
+    "nuxt": "^2.14.12",
+    "prism-themes": "^1.9.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^5.0.0",

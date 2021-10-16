@@ -26,9 +26,15 @@
 
 <script>
 import { CFlex, CHeading, CBox } from '@chakra-ui/vue'
+import Prism from 'prismjs'
 import ADBlogSummary from '~/components/blog/ADBlogSummary'
 import ADBlogMainImage from '~/components/blog/ADBlogMainImage'
 import LinkWithIcon from '~/components/common/LinkWithIcon'
+import 'prismjs/plugins/line-numbers/prism-line-numbers.js'
+import 'prismjs/components/prism-python'
+import 'prismjs/components/prism-javascript'
+import 'prismjs/components/prism-json'
+import 'prismjs/components/prism-java'
 
 export default {
     components: {
@@ -57,6 +63,9 @@ export default {
         return {
             title: this.article.title
         }
+    },
+    mounted () {
+        Prism.highlightAll()
     }
 }
 </script>
