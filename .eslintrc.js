@@ -27,10 +27,7 @@ module.exports = {
         }],
         'vue/max-attributes-per-line': ['error', {
             singleline: 2,
-            multiline: {
-                max: 2,
-                allowFirstLine: true
-            }
+            multiline: 2
         }],
         indent: ['error', 4]
     }
