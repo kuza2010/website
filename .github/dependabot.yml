@@ -1,0 +1,15 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    # Look for `package.json` and `lock` files in the `root` directory
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      time: "10:00"
+      timezone: "Europe/Moscow"
+    commit-message:
+      prefix: "dependabot - npm"
+    labels:
+      - "update dependency"
+    pull-request-branch-name:
+      separator: "/"
