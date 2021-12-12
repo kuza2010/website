@@ -8,7 +8,7 @@ updates:
       time: "10:00"
       timezone: "Europe/Moscow"
     commit-message:
-      prefix: "dependabot - npm"
+      prefix: "dependabot"
     labels:
       - "update dependency"
     pull-request-branch-name:
