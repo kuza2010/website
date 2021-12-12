@@ -47,10 +47,9 @@ export default {
         'api/current-track'
     ],
     plugins: [
+        'plugins/filters',
         'plugins/chakra-ui',
-        'plugins/directives',
-        'plugins/blog_grabber.server.js', // only server-side
-        'plugins/format-date'
+        'plugins/directives'
     ],
     components: true,
     publicRuntimeConfig: {
