@@ -1,7 +1,8 @@
 <template>
-    <a-d-mock icon="snowplow"
-              status="4o4"
-              fallback-message="Probably you are wrong with page..."
+    <a-d-mock
+        icon="snowplow"
+        status="4o4"
+        fallback-message="Probably you are wrong with page..."
     />
 </template>
 

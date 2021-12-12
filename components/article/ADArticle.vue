@@ -1,39 +1,45 @@
 <template>
-    <c-flex :mt="[4, 5]" :flex-direction="['column', 'row']"
-            :align-items="['left', 'center']"
-            :class="colorMode ==='dark' ? 'article-dark': 'article-light'"
-            w="95%" rounded="6px"
-            p="1" justify-content="flex-start"
-            cursor="pointer" @click.native="navigateToPost"
+    <c-flex
+        :mt="[4, 5]" :flex-direction="['column', 'row']"
+        :align-items="['left', 'center']"
+        :class="colorMode ==='dark' ? 'article-dark': 'article-light'"
+        w="95%" rounded="6px"
+        p="1" justify-content="flex-start"
+        cursor="pointer" @click.native="navigateToPost"
     >
-        <c-badge v-if="isNew"
-                 :ml="[1,4]" :mt="[4,0]"
-                 py="1" px="2"
-                 w="36px" variant-color="brand.purple"
+        <c-badge
+            v-if="isNew"
+            :ml="[1,4]" :mt="[4,0]"
+            py="1" px="2"
+            w="36px" variant-color="brand.purple"
         >
             New!
         </c-badge>
         <c-box :ml="[1,4]">
-            <c-text font-size="sm" font-weight="medium"
-                    mb="1"
+            <c-text
+                font-size="sm" font-weight="medium"
+                mb="1"
             >
                 {{ data | articleDateFormat }}
             </c-text>
-            <c-text :mb="[0,1]" :white-space="['nowrap', 'normal']"
-                    font-size="xl" font-weight="bold"
-                    my="0" text-overflow="ellipsis"
-                    overflow="hidden"
+            <c-text
+                :mb="[0,1]" :white-space="['nowrap', 'normal']"
+                font-size="xl" font-weight="bold"
+                my="0" text-overflow="ellipsis"
+                overflow="hidden"
             >
                 {{ title }}
             </c-text>
         </c-box>
-        <c-flex :ml="[0,'auto']" :mr="[0, 1]"
-                :mb="[4,0]" :mt="[2,0]"
+        <c-flex
+            :ml="[0,'auto']" :mr="[0, 1]"
+            :mb="[4,0]" :mt="[2,0]"
         >
-            <a-d-tag v-for="(tag, index) in tagArray.slice(0,4)"
-                     :key="tag" :text="tag"
-                     :hover-color="getHoverColor(index)"
-                     :color="getColor(index)"
+            <a-d-tag
+                v-for="(tag, index) in tagArray.slice(0,4)"
+                :key="tag" :text="tag"
+                :hover-color="getHoverColor(index)"
+                :color="getColor(index)"
             />
         </c-flex>
     </c-flex>

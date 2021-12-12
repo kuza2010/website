@@ -10,8 +10,9 @@
         :class="colorMode === 'dark'? 'navbar-btn-dark' :'navbar-btn-light'"
         @click="onButtonClick"
     >
-        <c-flex flex-direction="column"
-                align-items="center" justify-content="center"
+        <c-flex
+            flex-direction="column"
+            align-items="center" justify-content="center"
         >
             <c-icon
                 :name="icon"

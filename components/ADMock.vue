@@ -1,7 +1,8 @@
 <template>
-    <c-flex align-items="center"
-            justify-content="center"
-            class="all-height"
+    <c-flex
+        align-items="center"
+        justify-content="center"
+        class="all-height"
     >
         <c-box mb="24">
             <c-heading

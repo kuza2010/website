@@ -32,9 +32,10 @@
                     I grew up here in Nizhny Novgorod, went to school, graduating with a beholders degree in Computer
                     Engineering. I spend my free time doing sport, cooking, listening to music and enjoying time with
                     my closest friends and family. Head over to my
-                    <link-with-icon icon="external-link-alt"
-                                    text="LinkedIn"
-                                    :to="myLinkedIn" is-external-link
+                    <link-with-icon
+                        icon="external-link-alt"
+                        text="LinkedIn"
+                        :to="myLinkedIn" is-external-link
                     />
                     , if you have something for me.
                 </c-text>
@@ -46,21 +47,24 @@
                     If there is anything you would like to talk about please, feel free and drop me a message by email.
                     It's a big pleasure to hear you!
                 </c-text>
-                <c-flex :font-size="['lg','xl']"
-                        :ml="['0', 'auto']" flex-direction="column"
+                <c-flex
+                    :font-size="['lg','xl']"
+                    :ml="['0', 'auto']" flex-direction="column"
                 >
                     <c-box>
                         📭
-                        <a-d-text-link :style="linkStyle"
-                                       :href="`mailto:${myEmail}`"
-                                       :text="myEmail"
+                        <a-d-text-link
+                            :style="linkStyle"
+                            :href="`mailto:${myEmail}`"
+                            :text="myEmail"
                         />
                     </c-box>
                     <c-box>
                         🦑
-                        <a-d-text-link :style="linkStyle"
-                                       :href="myGithub"
-                                       text="@kuza2010"
+                        <a-d-text-link
+                            :style="linkStyle"
+                            :href="myGithub"
+                            text="@kuza2010"
                         />
                     </c-box>
                 </c-flex>

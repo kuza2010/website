@@ -1,6 +1,7 @@
 <template>
-    <c-flex :flex-direction="['column-reverse', 'row']"
-            m="0 1rem" justify-content="space-between"
+    <c-flex
+        :flex-direction="['column-reverse', 'row']"
+        m="0 1rem" justify-content="space-between"
     >
         <c-box
             :mr="[0,12]"
@@ -10,14 +11,16 @@
             <c-heading :font-size="['2rem', '2.6rem']" mt="0">
                 Holla! I'm Artyom Danilin. I'm a software engineer.
             </c-heading>
-            <c-text :font-size="['1rem', '1.25rem', '1.3rem']"
-                    font-weight="normal" color="textSecondary"
+            <c-text
+                :font-size="['1rem', '1.25rem', '1.3rem']"
+                font-weight="normal" color="textSecondary"
             >
                 I am keen on programming and dedicate to be a full-stack engineer in the nearest future 📚.
                 Here is my personal slice of the Internet where you can get to know me better.
             </c-text>
-            <c-flex justify-content="flex-start"
-                    class="button-line"
+            <c-flex
+                justify-content="flex-start"
+                class="button-line"
             >
                 <a-d-button size="lg" @onClick="onStuffClick">
                     <c-text font-size="lg" mr="5px">
@@ -25,9 +28,10 @@
                     </c-text>
                     My stuff
                 </a-d-button>
-                <a-d-button :mt="[1,0]"
-                            size="lg"
-                            @onClick="onFeedbackClick"
+                <a-d-button
+                    :mt="[1,0]"
+                    size="lg"
+                    @onClick="onFeedbackClick"
                 >
                     <c-text font-size="lg" mr="5px">
                         🎙️
@@ -41,12 +45,13 @@
             :mb="[4,0]"
             :mt="[2,12]"
         >
-            <c-image :rounded="['full', 16]"
-                     :src="'./me-865.jpg'"
-                     :m="['auto']"
-                     :w="['3xs', 'sm']"
-                     alt="The best developer"
-                     display="block" ignore-fallback
+            <c-image
+                :rounded="['full', 16]"
+                :src="'./me-865.jpg'"
+                :m="['auto']"
+                :w="['3xs', 'sm']"
+                alt="The best developer"
+                display="block" ignore-fallback
             />
         </c-box>
     </c-flex>

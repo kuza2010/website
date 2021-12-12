@@ -1,11 +1,13 @@
 <template>
-    <nav :style="navStyle"
-         :class="colorMode === 'dark'? 'dark-mode' :'light-mode'"
+    <nav
+        :style="navStyle"
+        :class="colorMode === 'dark'? 'dark-mode' :'light-mode'"
     >
-        <c-flex mr="auto" ml="auto"
-                max-w="1150px" w="100%"
-                p="1rem" align-items="center"
-                :justify-content="justifyContent"
+        <c-flex
+            mr="auto" ml="auto"
+            max-w="1150px" w="100%"
+            p="1rem" align-items="center"
+            :justify-content="justifyContent"
         >
             <slot/>
         </c-flex>

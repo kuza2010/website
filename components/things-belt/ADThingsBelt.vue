@@ -1,9 +1,10 @@
 <template>
     <c-box :mt="[4,8]" mx="4">
         <!--   things i like     -->
-        <ad-things-indicator main-text="🤗"
-                             open-popover-main-text="😍"
-                             popover-text="I'm really keen on ..."
+        <ad-things-indicator
+            main-text="🤗"
+            open-popover-main-text="😍"
+            popover-text="I'm really keen on ..."
         />
         <c-flex
             :border-color="colorMode === 'dark' ?'primary' :'brand.purple.800'"
@@ -13,16 +14,18 @@
             flex-direction="row"
             justify-content="space-between"
         >
-            <a-d-hobby v-for="l in like"
-                       :key="l.thing"
-                       :text="l.thing"
-                       :enjoy="l.enjoy"
+            <a-d-hobby
+                v-for="l in like"
+                :key="l.thing"
+                :text="l.thing"
+                :enjoy="l.enjoy"
             />
         </c-flex>
         <!--   things i dont like    -->
-        <ad-things-indicator main-text=" 🙄"
-                             open-popover-main-text="🤮"
-                             popover-text="I'm not keen on/hate ..."
+        <ad-things-indicator
+            main-text=" 🙄"
+            open-popover-main-text="🤮"
+            popover-text="I'm not keen on/hate ..."
         />
         <c-flex
             :border-color="colorMode === 'dark' ?'primary' :'brand.purple.800'"
@@ -31,10 +34,11 @@
             flex-direction="row"
             justify-content="space-between"
         >
-            <a-d-hobby v-for="d in dislike"
-                       :key="d.thing"
-                       :text="d.thing"
-                       :enjoy="d.enjoy"
+            <a-d-hobby
+                v-for="d in dislike"
+                :key="d.thing"
+                :text="d.thing"
+                :enjoy="d.enjoy"
             />
         </c-flex>
     </c-box>

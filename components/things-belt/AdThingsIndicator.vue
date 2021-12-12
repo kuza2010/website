@@ -1,17 +1,20 @@
 <template>
-    <c-popover v-slot="{isOpen}"
-               trigger="hover"
-               placement="right"
+    <c-popover
+        v-slot="{isOpen}"
+        trigger="hover"
+        placement="right"
     >
         <c-popover-trigger cursor="help">
             <c-box display="inline-block">
-                <c-text v-if="isOpen"
-                        font-size="3xl" my="4"
+                <c-text
+                    v-if="isOpen"
+                    font-size="3xl" my="4"
                 >
                     {{ openPopoverMainText }}
                 </c-text>
-                <c-text v-else
-                        font-size="3xl" my="4"
+                <c-text
+                    v-else
+                    font-size="3xl" my="4"
                 >
                     {{ mainText }}
                 </c-text>

@@ -1,17 +1,21 @@
 <template>
-    <c-flex :w="size" :h="size"
-            align-items="center" rounded="0.25rem"
-            mx="4"
+    <c-flex
+        :w="size" :h="size"
+        align-items="center" rounded="0.25rem"
+        mx="4"
     >
-        <c-button :class="colorMode === 'dark'? 'footer-link-dark' :'footer-link-light'"
-                  border="none" cursor="pointer"
+        <c-button
+            :class="colorMode === 'dark'? 'footer-link-dark' :'footer-link-light'"
+            border="none" cursor="pointer"
         >
-            <c-link :href="href"
-                    class="no-active-border"
-                    mx="auto" is-external
+            <c-link
+                :href="href"
+                class="no-active-border"
+                mx="auto" is-external
             >
-                <c-icon :name="icon" :size="iconSize"
-                        fill="primary"
+                <c-icon
+                    :name="icon" :size="iconSize"
+                    fill="primary"
                 />
             </c-link>
         </c-button>

@@ -1,12 +1,14 @@
 <template>
-    <c-flex :mt="[4, 5]" flex-direction="column"
-            align-items="center" justify-content="center"
-            w="100%" rounded="6px"
-            p="1"
+    <c-flex
+        :mt="[4, 5]" flex-direction="column"
+        align-items="center" justify-content="center"
+        w="100%" rounded="6px"
+        p="1"
     >
-        <c-heading mt="2" mb="1"
-                   size="xl"
-                   color="dangerBold"
+        <c-heading
+            mt="2" mb="1"
+            size="xl"
+            color="dangerBold"
         >
             There are no articles yet
         </c-heading>

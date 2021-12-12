@@ -1,6 +1,7 @@
 <template>
-    <c-flex max-w="700px" w="100%"
-            mx="auto" flex-direction="column"
+    <c-flex
+        max-w="700px" w="100%"
+        mx="auto" flex-direction="column"
     >
         <article>
             <c-heading :font-size="['2rem', '2.6rem']" align="center">
@@ -16,9 +17,10 @@
                 <c-box>
                     <nuxt-content :document="article"/>
                 </c-box>
-                <link-with-icon icon="highlighter" text="Change this"
-                                :to="`${$config.github}/website/tree/main/content${article.path}.md`"
-                                is-external-link left
+                <link-with-icon
+                    icon="highlighter" text="Change this"
+                    :to="`${$config.github}/website/tree/main/content${article.path}.md`"
+                    is-external-link left
                 />
                 page on github.
             </c-box>

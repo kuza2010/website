@@ -1,6 +1,7 @@
 <template>
-    <sticky-nav-bar v-if="!isMobileView"
-                    justify-content="flex-end"
+    <sticky-nav-bar
+        v-if="!isMobileView"
+        justify-content="flex-end"
     >
         <navbar-button
             class="navbar-logo"
@@ -13,11 +14,12 @@
         <themes-switcher/>
     </sticky-nav-bar>
 
-    <sticky-nav-bar v-else
-                    sticky-bottom
-                    justify-content="space-around"
-                    flex-direction="column"
-                    class="mobile-navbar"
+    <sticky-nav-bar
+        v-else
+        sticky-bottom
+        justify-content="space-around"
+        flex-direction="column"
+        class="mobile-navbar"
     >
         <mobile-navbar-button
             icon="user-graduate"

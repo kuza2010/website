@@ -1,18 +1,21 @@
 <template>
-    <c-link :is-external="isExternalLink" :href="to"
-            :class="colorMode === 'dark'? 'dark-link' :'light-link'"
-            font-weight="normal"
+    <c-link
+        :is-external="isExternalLink" :href="to"
+        :class="colorMode === 'dark'? 'dark-link' :'light-link'"
+        font-weight="normal"
     >
         <span v-if="left">
-            <c-icon :name="icon" :alt="getName"
-                    mt="-5px"
+            <c-icon
+                :name="icon" :alt="getName"
+                mt="-5px"
             />
             {{ text }}
         </span>
         <span v-else>
             {{ text }}
-            <c-icon :name="icon" :alt="getName"
-                    mt="-5px"
+            <c-icon
+                :name="icon" :alt="getName"
+                mt="-5px"
             />
         </span>
     </c-link>

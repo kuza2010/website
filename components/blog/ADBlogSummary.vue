@@ -1,9 +1,11 @@
 <template>
-    <c-stack :spacing="1"
-             m="0" pt="2"
+    <c-stack
+        :spacing="1"
+        m="0" pt="2"
     >
-        <c-heading v-if="description" as="h3"
-                   size="sm" mb="0"
+        <c-heading
+            v-if="description" as="h3"
+            size="sm" mb="0"
         >
             {{ description }}
         </c-heading>
@@ -13,8 +15,9 @@
         </c-text>
 
         <c-text v-if="tags.length > 0" m="0">
-            <c-badge v-for="tag in tags"
-                     :key="tag" mr="2"
+            <c-badge
+                v-for="tag in tags"
+                :key="tag" mr="2"
             >
                 {{ tag }}
             </c-badge>

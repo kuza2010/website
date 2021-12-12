@@ -5,9 +5,10 @@
         align-items="center" class="all-height"
     >
         <c-box :mt="[6,12]">
-            <c-heading :mb="[1]"
-                       mt="0" mx="auto"
-                       text-align="center"
+            <c-heading
+                :mb="[1]"
+                mt="0" mx="auto"
+                text-align="center"
             >
                 Blog
             </c-heading>
@@ -15,10 +16,11 @@
                 :mx="[0,6,0]"
                 text-align="justify"
             >
-                <c-text :font-size="['1rem', '1.25rem', '1.3rem']"
-                        font-weight="normal" color="textSecondary"
-                        max-w="70%" mx="auto"
-                        text-align="center"
+                <c-text
+                    :font-size="['1rem', '1.25rem', '1.3rem']"
+                    font-weight="normal" color="textSecondary"
+                    max-w="70%" mx="auto"
+                    text-align="center"
                 >
                     Here I share some of my ideas, thinking, insights and views on life. Take a cup of coffee and just
                     make yourself at home...

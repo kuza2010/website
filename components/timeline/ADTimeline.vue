@@ -47,9 +47,10 @@
         </c-box>
         <c-box mt="2rem">
             <span :style="{ 'font-weight': 'bold'}">Show more</span>
-            <c-switch color="brand.purple"
-                      size="lg" ml="1rem"
-                      @click="showAllTimeLine"
+            <c-switch
+                color="brand.purple"
+                size="lg" ml="1rem"
+                @click="showAllTimeLine"
             />
         </c-box>
     </c-box>

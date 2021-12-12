@@ -1,28 +1,32 @@
 <template>
-    <c-pseudo-box v-if="enjoy"
-                  :_hover="{ bg: 'successBold' }"
-                  bg="success" rounded="0.25rem"
-                  px="3" py="1"
-                  mx="1" my="1"
+    <c-pseudo-box
+        v-if="enjoy"
+        :_hover="{ bg: 'successBold' }"
+        bg="success" rounded="0.25rem"
+        px="3" py="1"
+        mx="1" my="1"
     >
-        <c-text is-truncated m="0"
-                font-weight="semibold"
-                color="textBlack"
+        <c-text
+            is-truncated m="0"
+            font-weight="semibold"
+            color="textBlack"
         >
             {{ text }}
         </c-text>
     </c-pseudo-box>
 
-    <c-pseudo-box v-else
-                  :_hover="{ bg: 'dangerBold' }"
-                  bg="danger"
-                  rounded="0.25rem"
-                  px="3" py="1"
-                  mx="1" my="1"
+    <c-pseudo-box
+        v-else
+        :_hover="{ bg: 'dangerBold' }"
+        bg="danger"
+        rounded="0.25rem"
+        px="3" py="1"
+        mx="1" my="1"
     >
-        <c-text is-truncated m="0"
-                font-weight="semibold"
-                color="textBlack"
+        <c-text
+            is-truncated m="0"
+            font-weight="semibold"
+            color="textBlack"
         >
             {{ text }}
         </c-text>

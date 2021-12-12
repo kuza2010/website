@@ -1,10 +1,12 @@
 <template>
-    <c-aspect-ratio-box :ratio="4/3"
-                        :max-w="['100%', '85%']"
-                        m="auto"
+    <c-aspect-ratio-box
+        :ratio="4/3"
+        :max-w="['100%', '85%']"
+        m="auto"
     >
-        <c-image :src="`/articles/${image}`" :alt="alt"
-                 object-fit="cover"
+        <c-image
+            :src="`/articles/${image}`" :alt="alt"
+            object-fit="cover"
         />
     </c-aspect-ratio-box>
 </template>

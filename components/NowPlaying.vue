@@ -1,20 +1,23 @@
 <template>
     <c-stack is-inline align="center">
-        <c-icon name="spotifyIcon" size="32px"
-                :fill="colorScheme"
+        <c-icon
+            name="spotifyIcon" size="32px"
+            :fill="colorScheme"
         />
 
         <!--        render link -->
-        <c-link v-if="!currentTrack.isEmpty"
-                :href="currentTrack.href" is-external
-                :class="colorMode === 'dark'? 'track-link-dark' :'track-link-light'"
+        <c-link
+            v-if="!currentTrack.isEmpty"
+            :href="currentTrack.href" is-external
+            :class="colorMode === 'dark'? 'track-link-dark' :'track-link-light'"
         >
             <c-stack is-inline align="center">
-                <c-text white-space="nowrap"
-                        text-overflow="ellipsis"
-                        overflow="hidden"
-                        font-weight="bold"
-                        font-size="sm"
+                <c-text
+                    white-space="nowrap"
+                    text-overflow="ellipsis"
+                    overflow="hidden"
+                    font-weight="bold"
+                    font-size="sm"
                 >
                     {{ currentTrack.track }}
                 </c-text>
@@ -30,11 +33,12 @@
         <!--        render no track -->
         <c-box v-else>
             <c-stack is-inline align="center">
-                <c-text white-space="nowrap"
-                        text-overflow="ellipsis"
-                        overflow="hidden"
-                        font-weight="bold"
-                        font-size="sm"
+                <c-text
+                    white-space="nowrap"
+                    text-overflow="ellipsis"
+                    overflow="hidden"
+                    font-weight="bold"
+                    font-size="sm"
                 >
                     Not playing
                 </c-text>

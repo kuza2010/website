@@ -1,27 +1,31 @@
 <template>
-    <c-pseudo-box v-if="color && hoverColor"
-                  :bg="color" :_hover="{ bg: hoverColor }"
-                  rounded="full" px="3"
-                  py="1" mx="1"
-                  display="flex"
-                  align-items="center"
+    <c-pseudo-box
+        v-if="color && hoverColor"
+        :bg="color" :_hover="{ bg: hoverColor }"
+        rounded="full" px="3"
+        py="1" mx="1"
+        display="flex"
+        align-items="center"
     >
-        <c-text is-truncated m="0"
-                font-weight="semibold" color="textBlack"
-                text-transform="lowercase"
+        <c-text
+            is-truncated m="0"
+            font-weight="semibold" color="textBlack"
+            text-transform="lowercase"
         >
             {{ text }}
         </c-text>
     </c-pseudo-box>
 
-    <c-tag v-else
-           rounded="full" px="3"
-           py="1" mx="1"
-           line-height="1.2"
+    <c-tag
+        v-else
+        rounded="full" px="3"
+        py="1" mx="1"
+        line-height="1.2"
     >
-        <c-text is-truncated m="0"
-                font-weight="semibold" color="textBlack"
-                text-transform="lowercase"
+        <c-text
+            is-truncated m="0"
+            font-weight="semibold" color="textBlack"
+            text-transform="lowercase"
         >
             {{ text }}
         </c-text>
