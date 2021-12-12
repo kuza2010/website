@@ -19,7 +19,7 @@
     "@nuxt/content": "^1.14.0",
     "@nuxtjs/emotion": "^0.1.0",
     "@nuxtjs/vercel-builder": "^0.20.3",
-    "core-js": "^3.8.2",
+    "core-js": "^3.19.3",
     "gray-matter": "^4.0.2",
     "moment": "^2.29.1",
     "node-fetch": "^2.6.1",
