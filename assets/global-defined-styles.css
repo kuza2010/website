@@ -1,10 +1,10 @@
 body {
-    /*add other fonts here*/
+    /* add other fonts here */
     font-family: 'Inter', sans-serif;
     line-height: 1.5;
 
 
-    /* Colors */
+    /* colors */
     --primary-light: #fdf9f5;
     --secondary-light: #593196;
     --extra-bold-light: #3c2166;

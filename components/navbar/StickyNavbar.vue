@@ -49,13 +49,12 @@ export default {
 }
 </script>
 
-<style scoped lang="css">
+<style scoped lang="sass">
+nav
+  backdrop-filter: saturate(180%) blur(20px)
+  display: flex
+  position: fixed
+  z-index: 9999
+  width: 100%
 
-nav {
-    backdrop-filter: saturate(180%) blur(20px);
-    display: flex;
-    position: fixed;
-    z-index: 9999;
-    width: 100%;
-}
 </style>

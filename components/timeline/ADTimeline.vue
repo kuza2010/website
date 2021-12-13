@@ -101,10 +101,9 @@ export default {
             return !timeline.isAdditional
         },
         getTagBackgroundColor (idx) {
-            while (idx >= this.colors.length) {
-                idx = idx - this.colors.length
-            }
-            return this.colors[idx]
+            return idx >= this.colors.length
+                ? this.colors[idx % this.colors.length]
+                : this.colors[idx]
         },
         getTimelineAlignment (idx) {
             if (idx === 0) {
