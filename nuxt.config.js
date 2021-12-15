@@ -33,9 +33,8 @@ export default {
         ]
     },
     css: [
-        'normalize.css/normalize.css',
-        '@assets/nuxt-content-styles.scss',
-        '@assets/global-defined-styles.css'
+        '@assets/normalize/normalize.scss',
+        '@assets/main.scss'
     ],
     env: {
         clientId: process.env.CLIENT_ID || null,

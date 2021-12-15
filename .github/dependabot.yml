@@ -13,6 +13,6 @@ updates:
       - "update dependency"
     pull-request-branch-name:
       separator: "/"
-    # ignore eslint version due to my webstorm 2020.3 does not support eslint > 7.32.0
     ignore:
-      - dependency-name: "eslint"
+      - dependency-name: "eslint"       # ignore eslint version due to my webstorm 2020.3 does not support eslint > 7.32.0
+      - dependency-name: "sass-loader"  # https://stackoverflow.com/questions/66082397/typeerror-this-getoptions-is-not-a-function

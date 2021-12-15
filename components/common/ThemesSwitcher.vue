@@ -1,7 +1,8 @@
 <template>
     <navbar-button
-        :aria-label="colorMode==='light'?'moon': 'sun'"
-        :icon="colorMode==='light'? 'moon': 'sun'"
+        :id="id"
+        :aria-label="colorMode==='light'? 'moon': 'sun'"
+        :icon-left="colorMode==='light'? 'moon': 'sun'"
         @onButtonClick="toggleColorMode"
     />
 </template>
@@ -13,6 +14,11 @@ export default {
     name: 'ThemesSwitcher',
     components: { NavbarButton },
     inject: ['$chakraColorMode', '$toggleColorMode'],
+    data () {
+        return {
+            id: `theme-switcher-${this._uid}`
+        }
+    },
     computed: {
         colorMode () {
             return this.$chakraColorMode()

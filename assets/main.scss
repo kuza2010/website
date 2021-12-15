@@ -1,0 +1,90 @@
+@use 'abstracts/colors';
+@use 'abstracts/variables';
+
+@import 'components/navbar';
+@import 'components/footer';
+@import 'components/now-playing';
+
+@import 'nuxt-content-styles';
+@import 'chakra';
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+
+  // light theme
+  &.light {
+    color: colors.$text-dark;
+    background-color: colors.$primary-light;
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: colors.$scrollbar-track-bg-light;
+    }
+
+    &::-webkit-scrollbar {
+      width: variables.$scrollbar-width;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: colors.$purple-800;
+    }
+
+    a {
+      color: colors.$text-dark !important;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      & :visited {
+        color: colors.$text-dark !important;
+      }
+
+      & :active {
+        color: colors.$text-dark !important
+      }
+
+    }
+
+  }
+
+  // dark theme
+  &.dark {
+    color: colors.$text-light;
+    background-color: colors.$primary-dark;
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: colors.$scrollbar-track-bg-dark;
+    }
+
+    &::-webkit-scrollbar {
+      width: variables.$scrollbar-width;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: colors.$primary-dark;
+    }
+
+    a {
+      color: colors.$text-light !important;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      & :visited {
+        color: colors.$text-light !important;
+      }
+
+      & :active {
+        color: colors.$text-light !important
+      }
+
+    }
+  }
+
+}

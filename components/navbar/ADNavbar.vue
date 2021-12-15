@@ -5,7 +5,8 @@
     >
         <navbar-button
             class="navbar-logo"
-            text="☕ Danilin Artyom"
+            icon-left="sleigh"
+            text="Danilin Artyom"
             @onButtonClick="navigateTo('/')"
         />
         <navbar-button text="About" @onButtonClick="navigateTo('/about')"/>
@@ -18,7 +19,6 @@
         v-else
         sticky-bottom
         justify-content="space-around"
-        flex-direction="column"
         class="mobile-navbar"
     >
         <mobile-navbar-button
@@ -67,14 +67,12 @@ export default {
             return this.width <= 600
         }
     },
+    mounted () {
+        this.$nextTick(() => this.onWindowResize())
+        window.addEventListener('resize', this.onWindowResize)
+    },
     destroyed () {
         window.removeEventListener('resize', this.onWindowResize)
-    },
-    mounted () {
-        this.$nextTick(function () {
-            this.onWindowResize()
-        })
-        window.addEventListener('resize', this.onWindowResize)
     },
     methods: {
         onWindowResize () {
@@ -96,14 +94,14 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@use '/assets/abstracts/_variables.scss' as *;
 
 .navbar-logo {
-    margin-left: 1em;
     margin-right: auto;
 }
 
 .mobile-navbar {
-    height: 5rem;
+    height: $navbar-mobile-height;
 }
 </style>
