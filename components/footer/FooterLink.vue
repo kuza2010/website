@@ -1,8 +1,10 @@
 <template>
     <c-flex
-        :w="size" :h="size"
-        align-items="center" rounded="0.25rem"
         mx="4"
+        rounded="0.25rem"
+        align-items="center"
+        :w="size"
+        :h="size"
     >
         <c-button
             :class="colorMode === 'dark'? 'footer-link-dark' :'footer-link-light'"
@@ -62,31 +64,13 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 
 .no-active-border{
     &:active {
         outline: none;
         box-shadow: none;
         border: none;
-    }
-}
-
-.footer-link-dark {
-    background: var(--black-accent);
-    border: 1px solid var(--black-accent);
-
-    &:hover {
-        background: var(--primary-black);
-        border: 1px solid var(--text-light);
-    }
-}
-
-.footer-link-light {
-    background: var(--purple-900);
-
-    &:hover {
-        background: var(--purple-600);
     }
 }
 

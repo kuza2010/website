@@ -1,0 +1,54 @@
+@use '../abstracts' as *;
+
+footer {
+
+  a {
+    text-decoration: none;
+  }
+
+  & .footer-container {
+    margin-left: $default-margin;
+
+    & .music-list {
+      max-width: $default-page-width;
+    }
+
+  }
+
+  .footer-button-dark {
+    border: 1px solid $dark-accent;
+    background: $dark-accent;
+
+    &:hover {
+      border: 1px solid $text-light;
+      background: $primary-dark;
+    }
+  }
+
+  .footer-button-light {
+    background: $purple-900;
+
+    &:hover {
+      background: $purple-600;
+    }
+  }
+
+  .footer-link-dark {
+    background: $dark-accent;
+    border: 1px solid $dark-accent;
+
+    &:hover {
+      background: $primary-dark;
+      border: 1px solid $text-light;
+    }
+  }
+
+  .footer-link-light {
+    background: $purple-900;
+
+    &:hover {
+      background: $purple-600;
+    }
+  }
+
+}

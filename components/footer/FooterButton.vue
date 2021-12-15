@@ -24,29 +24,3 @@ export default {
     }
 }
 </script>
-
-<style scoped lang="scss">
-
-a {
-    text-decoration: none;
-}
-
-.footer-button-dark {
-    border: 1px solid var(--black-accent);
-    background: var(--black-accent);
-
-    &:hover {
-        border: 1px solid var(--text-light);
-        background: var(--primary-black);
-    }
-}
-
-.footer-button-light {
-    background: var(--purple-900);
-
-    &:hover {
-        background: var(--purple-600);
-    }
-}
-
-</style>

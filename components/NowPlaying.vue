@@ -1,49 +1,56 @@
 <template>
-    <c-stack is-inline align="center">
+    <c-stack
+        is-inline
+        class="track"
+        align="center"
+    >
         <c-icon
-            name="spotifyIcon" size="32px"
-            :fill="colorScheme"
+            size="32px"
+            name="spotifyIcon"
+            :class="colorMode === 'dark' ? 'spotify-light': 'spotify-dark'"
         />
-
         <!--        render link -->
         <c-link
-            v-if="!currentTrack.isEmpty"
-            :href="currentTrack.href" is-external
+            v-if="currentTrack && !currentTrack.isEmpty"
+            is-external
+            :href="currentTrack.href"
             :class="colorMode === 'dark'? 'track-link-dark' :'track-link-light'"
         >
-            <c-stack is-inline align="center">
+            <c-stack
+                is-inline
+                align="center"
+            >
                 <c-text
-                    white-space="nowrap"
-                    text-overflow="ellipsis"
+                    font-size="sm"
                     overflow="hidden"
                     font-weight="bold"
-                    font-size="sm"
+                    white-space="nowrap"
+                    text-overflow="ellipsis"
                 >
                     {{ currentTrack.track }}
-                </c-text>
-                <c-text font-size="sm">
-                    ー
                 </c-text>
                 <c-text font-weight="semibold" font-size="sm">
                     {{ currentTrack.artists }}
                 </c-text>
             </c-stack>
         </c-link>
-
         <!--        render no track -->
         <c-box v-else>
-            <c-stack is-inline align="center">
+            <c-stack
+                is-inline
+                align="center"
+            >
                 <c-text
-                    white-space="nowrap"
-                    text-overflow="ellipsis"
+                    font-size="sm"
                     overflow="hidden"
                     font-weight="bold"
-                    font-size="sm"
+                    white-space="nowrap"
+                    text-overflow="ellipsis"
                 >
                     Not playing
                 </c-text>
                 <c-text font-weight="semibold" font-size="sm">
-                    ー powered by Spotify API
+                    powered by Spotify API
                 </c-text>
             </c-stack>
         </c-box>
@@ -51,11 +58,12 @@
 </template>
 
 <script>
-import { CStack, CText, CLink, CIcon } from '@chakra-ui/vue'
+import { CStack, CText, CLink, CIcon, CBox } from '@chakra-ui/vue'
 
 export default {
     name: 'NowPlaying',
     components: {
+        CBox,
         CStack,
         CText,
         CLink,
@@ -63,7 +71,7 @@ export default {
     },
     inject: ['$chakraColorMode'],
     // eslint-disable-next-line vue/require-prop-types
-    props: ['currentTrack', 'colorScheme'],
+    props: ['currentTrack'],
     computed: {
         colorMode () {
             return this.$chakraColorMode()
@@ -71,48 +79,3 @@ export default {
     }
 }
 </script>
-
-<style scoped lang="scss">
-
-.spotify-logo {
-    height: 28px;
-    width: 28px;
-}
-
-.track-link-light {
-    color: var(--text-black) !important;
-    text-decoration: none;
-
-    &:hover {
-        text-decoration: underline;
-    }
-
-    & :visited {
-        color: var(--text-black) !important;
-    }
-
-    & :active {
-        color: var(--text-black) !important
-    }
-
-}
-
-.track-link-dark {
-    color: var(--text-light) !important;
-    text-decoration: none;
-
-    &:hover {
-        text-decoration: underline;
-    }
-
-    & :visited {
-        color: var(--text-light) !important;
-    }
-
-    & :active {
-        color: var(--text-light) !important
-    }
-
-}
-
-</style>
