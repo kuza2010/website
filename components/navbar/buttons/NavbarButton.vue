@@ -2,20 +2,30 @@
     <!-- render button with text -->
     <c-pseudo-box
         as="button"
-        border="0" p="0.75rem"
-        color="white"
+        border="0"
+        p="0.75rem"
         rounded="0.5rem"
-        background="none" font-weight="600"
-        font-size="20px" line-height="24px"
+        background="none"
+        font-size="20px"
+        line-height="24px"
         :class="colorMode === 'dark'? 'navbar-btn-dark' :'navbar-btn-light'"
         @click.native="onButtonClick"
+        @mouseover="hover = true"
+        @mouseleave="hover = false"
     >
+        <c-icon
+            v-if="iconLeft"
+            :name="iconLeft"
+            :color="color"
+            :aria-label="ariaLabel || iconLeft"
+            :size="iconSize"
+        />
         {{ text }}
         <c-icon
-            v-if="icon"
-            :name="icon"
+            v-if="iconRight"
+            :name="iconRight"
             :color="color"
-            :aria-label="ariaLabel || icon"
+            :aria-label="ariaLabel || iconRight"
             :size="iconSize"
         />
     </c-pseudo-box>
@@ -37,7 +47,12 @@ export default {
             default: '',
             required: false
         },
-        icon: {
+        iconRight: {
+            type: String,
+            default: '',
+            required: false
+        },
+        iconLeft: {
             type: String,
             default: '',
             required: false
@@ -58,9 +73,19 @@ export default {
             required: false
         }
     },
+    data () {
+        return {
+            hover: false
+        }
+    },
     computed: {
         colorMode () {
             return this.$chakraColorMode()
+        }
+    },
+    watch: {
+        hover (newValue) {
+            this.$emit('onHover', newValue)
         }
     },
     methods: {
@@ -71,36 +96,3 @@ export default {
 }
 
 </script>
-
-<style lang="scss" scoped>
-
-button {
-    cursor: pointer;
-
-    &:focus {
-        outline: none;
-        border: 0;
-    }
-
-    &:active {
-        outline: none;
-        background: var(--transparent-white-15) !important;
-        border: 0;
-    }
-}
-
-.navbar-btn-dark {
-    &:hover {
-        background-color: var(--primary-black);
-        color: white;
-    }
-}
-
-.navbar-btn-light {
-    &:hover {
-        background-color: var(--extra-bold-light);
-        color: white;
-    }
-}
-
-</style>

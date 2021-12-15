@@ -70,34 +70,3 @@ export default {
     }
 }
 </script>
-
-<style scoped lang="scss">
-button {
-    cursor: pointer;
-
-    &:focus {
-        outline: none;
-        border: 0;
-    }
-
-    &:active {
-        outline: none;
-        background: var(--transparent-white-15) !important;
-        border: 0;
-    }
-}
-
-.navbar-btn-dark {
-    &:hover {
-        background-color: var(--primary-black);
-        color: white;
-    }
-}
-
-.navbar-btn-light {
-    &:hover {
-        background-color: var(--extra-bold-light);
-        color: white;
-    }
-}
-</style>

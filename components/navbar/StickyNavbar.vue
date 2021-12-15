@@ -1,12 +1,11 @@
 <template>
     <nav
-        :style="navStyle"
+        :style="stickyBottom ? {bottom: 0} : {top: 0}"
         :class="colorMode === 'dark'? 'dark-mode' :'light-mode'"
     >
         <c-flex
-            mr="auto" ml="auto"
             max-w="1150px" w="100%"
-            p="1rem" align-items="center"
+            align-items="center"
             :justify-content="justifyContent"
         >
             <slot/>
@@ -38,23 +37,7 @@ export default {
     computed: {
         colorMode () {
             return this.$chakraColorMode()
-        },
-        navStyle () {
-            if (this.stickyBottom) {
-                return { bottom: 0 }
-            }
-            return { top: 0 }
         }
     }
 }
 </script>
-
-<style scoped lang="sass">
-nav
-  backdrop-filter: saturate(180%) blur(20px)
-  display: flex
-  position: fixed
-  z-index: 9999
-  width: 100%
-
-</style>

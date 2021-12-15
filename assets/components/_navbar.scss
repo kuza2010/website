@@ -1,0 +1,51 @@
+@use '../abstracts' as *;
+
+nav {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  position: fixed;
+  z-index: $z-scrollbar;
+  box-sizing: border-box;
+  justify-content: center;
+  backdrop-filter: saturate(180%) blur(10px);
+
+  &.light-mode {
+    background-color: $secondary-light-transparent;
+  }
+
+  &.dark-mode {
+    background-color: $secondary-dark-transparent;
+  }
+
+  button {
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+
+    &:focus {
+      outline: none;
+      border: 0;
+    }
+
+    &:active {
+      outline: none;
+      border: 0;
+      background: adjust-color($white, $lightness: -30%, $alpha: -0.75) !important;
+    }
+
+    &.navbar-btn-dark {
+      &:hover {
+        background-color: $dark-accent;
+      }
+    }
+
+    &.navbar-btn-light {
+      &:hover {
+        background-color: $primary-accent;
+      }
+    }
+
+  }
+
+}
