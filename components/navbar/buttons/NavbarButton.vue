@@ -16,6 +16,7 @@
         <c-icon
             v-if="iconLeft"
             :name="iconLeft"
+            pr="1"
             :color="color"
             :aria-label="ariaLabel || iconLeft"
             :size="iconSize"

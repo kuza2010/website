@@ -10,7 +10,7 @@
         >
             <navbar-button
                 icon-left="sleigh"
-                text="Danilin Artyom"
+                text="Home"
             />
         </nuxt-link>
         <nuxt-link
