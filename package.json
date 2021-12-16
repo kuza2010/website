@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@chakra-ui/nuxt": "^0.2.4",
-    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@nuxt/content": "^1.14.0",
     "@nuxtjs/emotion": "^0.1.0",
     "@nuxtjs/vercel-builder": "^0.22.1",
