@@ -1,9 +1,5 @@
-import defaultTheme from '@chakra-ui/vue/src/lib/theme/index'
-
-//  custom-theme.js
+// https://vue.chakra-ui.com/extending-theme
 export default {
-    ...defaultTheme,
-
     breakpoints: ['600px', '1150px'],
 
     colors: {

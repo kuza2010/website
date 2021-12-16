@@ -3,14 +3,34 @@
         v-if="!isMobileView"
         justify-content="flex-end"
     >
-        <navbar-button
+        <nuxt-link
+            to="/"
             class="navbar-logo"
-            text="☕ Danilin Artyom"
-            @onButtonClick="navigateTo('/')"
-        />
-        <navbar-button text="About" @onButtonClick="navigateTo('/about')"/>
-        <navbar-button text="Blog" @onButtonClick="navigateTo('/blog')"/>
-        <navbar-button text="Guide" @onButtonClick="navigateTo('/guide')"/>
+            @click.native="navigateTo('/')"
+        >
+            <navbar-button
+                icon-left="sleigh"
+                text="Danilin Artyom"
+            />
+        </nuxt-link>
+        <nuxt-link
+            to="/about"
+            @click.native="navigateTo('/about')"
+        >
+            <navbar-button text="About"/>
+        </nuxt-link>
+        <nuxt-link
+            to="/blog"
+            @click.native="navigateTo('/blog')"
+        >
+            <navbar-button text="Blog"/>
+        </nuxt-link>
+        <nuxt-link
+            to="/guide"
+            @click.native="navigateTo('/guide')"
+        >
+            <navbar-button text="Guide"/>
+        </nuxt-link>
         <themes-switcher/>
     </sticky-nav-bar>
 
@@ -18,7 +38,6 @@
         v-else
         sticky-bottom
         justify-content="space-around"
-        flex-direction="column"
         class="mobile-navbar"
     >
         <mobile-navbar-button
@@ -67,14 +86,12 @@ export default {
             return this.width <= 600
         }
     },
+    mounted () {
+        this.$nextTick(() => this.onWindowResize())
+        window.addEventListener('resize', this.onWindowResize)
+    },
     destroyed () {
         window.removeEventListener('resize', this.onWindowResize)
-    },
-    mounted () {
-        this.$nextTick(function () {
-            this.onWindowResize()
-        })
-        window.addEventListener('resize', this.onWindowResize)
     },
     methods: {
         onWindowResize () {
@@ -96,14 +113,14 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@use '/assets/abstracts/_variables.scss' as *;
 
 .navbar-logo {
-    margin-left: 1em;
     margin-right: auto;
 }
 
 .mobile-navbar {
-    height: 5rem;
+    height: $navbar-mobile-height;
 }
 </style>

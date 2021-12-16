@@ -1,41 +1,49 @@
 <template>
     <c-flex
+        justify-content="space-between"
         :flex-direction="['column-reverse', 'row']"
-        m="0 1rem" justify-content="space-between"
     >
         <c-box
             :mr="[0,12]"
             :mt="[2,12]"
             :style="!showAvatar? {'margin-right': '0px'}:{}"
         >
-            <c-heading :font-size="['2rem', '2.6rem']" mt="0">
-                Holla! I'm Artyom Danilin. I'm a software engineer.
-            </c-heading>
-            <c-text
-                :font-size="['1rem', '1.25rem', '1.3rem']"
-                font-weight="normal" color="textSecondary"
+            <c-heading
+                my="0"
+                :font-size="['4xl', '5xl']"
             >
-                I am keen on programming and dedicate to be a full-stack engineer in the nearest future 📚.
+                Artyom Danilin
+            </c-heading>
+            <c-text my="1">
+                Software designer at <b>Orion Innovation</b>
+                <br>
+                Experienced with Java / Android / JavaScript.
+            </c-text>
+            <c-text
+                font-weight="normal"
+                class="text-secondary"
+                :font-size="['md', 'xl', '1.3rem']"
+            >
+                Working with a varied range of technologies. With an emphasis on backend development.
+                <br>
                 Here is my personal slice of the Internet where you can get to know me better.
             </c-text>
             <c-flex
                 justify-content="flex-start"
                 class="button-line"
             >
-                <a-d-button size="lg" @onClick="onStuffClick">
-                    <c-text font-size="lg" mr="5px">
-                        🏆
-                    </c-text>
-                    My stuff
+                <a-d-button
+                    size="lg"
+                    :class="`${colorMode}-button-link`"
+                >
+                    <nuxt-link to="/blog">
+                        My stuff
+                    </nuxt-link>
                 </a-d-button>
                 <a-d-button
-                    :mt="[1,0]"
                     size="lg"
                     @onClick="onFeedbackClick"
                 >
-                    <c-text font-size="lg" mr="5px">
-                        🎙️
-                    </c-text>
                     Give feedback
                 </a-d-button>
             </c-flex>
@@ -96,9 +104,6 @@ export default {
         window.addEventListener('resize', this.onWindowResize)
     },
     methods: {
-        onStuffClick () {
-
-        },
         onFeedbackClick () {
             this.$toast({
                 title: 'Give me feedback',
@@ -116,12 +121,33 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@use 'assets/abstracts' as *;
+
+.light-button-link {
+    & a {
+        color: $white;
+
+        &:active {
+            color: $white;
+        }
+    }
+}
+
+.dark-button-link {
+    & a {
+        color: $text-dark;
+
+        &:active {
+            color: $text-dark;
+        }
+    }
+}
 
 .button-line {
     flex-direction: row;
 
-    button:first-child {
-        margin-right: 1rem;
+    & :not(:last-child) {
+        margin-right: $default-margin;
     }
 }
 
@@ -131,7 +157,7 @@ export default {
 
         button:first-child {
             margin-right: 0;
-            margin-bottom: 1rem;
+            margin-bottom: $default-margin;
         }
     }
 }

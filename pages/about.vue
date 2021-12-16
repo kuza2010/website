@@ -33,9 +33,10 @@
                     Engineering. I spend my free time doing sport, cooking, listening to music and enjoying time with
                     my closest friends and family. Head over to my
                     <link-with-icon
-                        icon="external-link-alt"
                         text="LinkedIn"
-                        :to="myLinkedIn" is-external-link
+                        is-external-link
+                        icon="external-link-alt"
+                        :to="myLinkedIn"
                     />
                     , if you have something for me.
                 </c-text>
@@ -45,7 +46,7 @@
                 <c-text :font-size="['md','lg']" mt="0">
                     I hope I picked up a good color scheme for my site and your eyes don't hurt.
                     If there is anything you would like to talk about please, feel free and drop me a message by email.
-                    It's a big pleasure to hear you!
+                    It's a big pleasure to hear from you!
                 </c-text>
                 <c-flex
                     :font-size="['lg','xl']"

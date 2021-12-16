@@ -3,7 +3,7 @@
         as="button"
         border="0" p="0.25rem"
         color="white"
-        rounded="0.5rem" transition="opacity 0.5s"
+        rounded="md" transition="opacity 0.5s"
         background="none" font-weight="300"
         font-size="12px" line-height="24px"
         w="70px" h="70px"
@@ -70,34 +70,3 @@ export default {
     }
 }
 </script>
-
-<style scoped lang="scss">
-button {
-    cursor: pointer;
-
-    &:focus {
-        outline: none;
-        border: 0;
-    }
-
-    &:active {
-        outline: none;
-        background: var(--transparent-white-15) !important;
-        border: 0;
-    }
-}
-
-.navbar-btn-dark {
-    &:hover {
-        background-color: var(--primary-black);
-        color: white;
-    }
-}
-
-.navbar-btn-light {
-    &:hover {
-        background-color: var(--extra-bold-light);
-        color: white;
-    }
-}
-</style>

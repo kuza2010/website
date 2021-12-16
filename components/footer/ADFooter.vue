@@ -1,35 +1,36 @@
 <template>
     <footer :class="colorMode === 'dark'? 'dark-mode' :'light-mode'">
         <c-flex
+            class="footer-container"
             flex-direction="column"
             justify-content="center"
             :pt="[6,8]"
             :pb="[32,16]"
         >
             <c-flex
-                max-w="1150px" w="100%"
+                w="100%"
                 mx="auto"
+                class="music-list"
             >
-                <c-box ml="4" :mb="[4,1]">
-                    <now-playing
-                        :color-scheme="colorMode === 'dark' ? spotifyGreen: spotifyBlack"
-                        :current-track="currentTrack"
-                    />
+                <c-box :mb="[4,1]">
+                    <now-playing :current-track="currentTrack"/>
                 </c-box>
             </c-flex>
             <c-flex
-                :w="['65%', '35%', '25%']"
-                mx="auto" mt="1"
+                mt="1"
+                mx="auto"
                 justify-content="center"
+                :w="['65%', '35%', '25%']"
             >
                 <footer-button text="About" to="/about"/>
                 <footer-button text="Home" to="/"/>
                 <footer-button text="Blog" to="/blog"/>
             </c-flex>
             <c-flex
-                :w="['60%', '35%', '25%']"
-                mx="auto" mt="8"
+                mt="8"
+                mx="auto"
                 justify-content="center"
+                :w="['60%', '35%', '25%']"
             >
                 <footer-link icon="guthubIcon" :href="$config.github"/>
                 <footer-link icon="linkedInIcon" :href="$config.linkedIn"/>
@@ -41,7 +42,6 @@
 
 <script>
 import { CFlex, CBox } from '@chakra-ui/vue'
-import Theme from '~/config/custom-theme'
 import FooterLink from '~/components/footer/FooterLink'
 import FooterButton from '~/components/footer/FooterButton'
 import NowPlaying from '~/components/NowPlaying'
@@ -58,8 +58,6 @@ export default {
     inject: ['$chakraColorMode'],
     data () {
         return {
-            spotifyBlack: Theme.colors.brand.spotify.black,
-            spotifyGreen: Theme.colors.brand.spotify.green,
             currentTrack: {
                 isEmpty: true,
                 track: null,
@@ -93,10 +91,3 @@ export default {
     fetchOnServer: false
 }
 </script>
-
-<style scoped lang="scss">
-
-footer {
-}
-
-</style>

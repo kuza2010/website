@@ -1,5 +1,4 @@
 import pkg from './package.json'
-import customTheme from './config/custom-theme.js'
 
 export default {
     head: {
@@ -34,9 +33,8 @@ export default {
         ]
     },
     css: [
-        'normalize.css/normalize.css',
-        '@assets/nuxt-content-styles.scss',
-        '@assets/global-defined-styles.css'
+        '@assets/normalize/normalize.scss',
+        '@assets/main.scss'
     ],
     env: {
         clientId: process.env.CLIENT_ID || null,
@@ -66,12 +64,6 @@ export default {
         '@nuxtjs/emotion',
         '@nuxt/content'
     ],
-    build: {},
-    // Chakra UI
-    chakra: {
-        extendTheme: customTheme,
-        autoImport: true
-    },
     // @nuxt/content
     content: {
         apiPrefix: 'content-api',

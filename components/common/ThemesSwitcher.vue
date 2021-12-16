@@ -1,7 +1,7 @@
 <template>
     <navbar-button
-        :aria-label="colorMode==='light'?'moon': 'sun'"
-        :icon="colorMode==='light'? 'moon': 'sun'"
+        :aria-label="colorMode==='light'? 'moon': 'sun'"
+        :icon-left="colorMode==='light'? 'moon': 'sun'"
         @onButtonClick="toggleColorMode"
     />
 </template>

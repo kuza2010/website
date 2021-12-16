@@ -3,7 +3,8 @@
         v-if="hasSlot"
         variant-color="brand.purple"
         v-bind="$attrs"
-        border="none" cursor="pointer"
+        border="none"
+        cursor="pointer"
         @click="onClick"
     >
         <slot/>
@@ -12,7 +13,8 @@
     <c-button
         v-else-if="withCustomVariant"
         v-bind="$attrs"
-        border="none" cursor="pointer"
+        border="none"
+        cursor="pointer"
         @click="onClick"
     >
         {{ text }}
@@ -22,7 +24,8 @@
         v-else
         variant-color="brand.purple"
         v-bind="$attrs"
-        border="none" cursor="pointer"
+        border="none"
+        cursor="pointer"
         @click="onClick"
     >
         {{ text }}
@@ -61,4 +64,4 @@ export default {
         }
     }
 }
-</script>s
+</script>

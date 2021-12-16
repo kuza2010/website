@@ -101,10 +101,9 @@ export default {
             return !timeline.isAdditional
         },
         getTagBackgroundColor (idx) {
-            while (idx >= this.colors.length) {
-                idx = idx - this.colors.length
-            }
-            return this.colors[idx]
+            return idx >= this.colors.length
+                ? this.colors[idx % this.colors.length]
+                : this.colors[idx]
         },
         getTimelineAlignment (idx) {
             if (idx === 0) {
@@ -146,6 +145,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@use "assets/abstracts/colors" as *;
 
 * {
     box-sizing: border-box;
@@ -167,11 +167,11 @@ export default {
     }
 
     &.dark:after {
-        background-color: var(--black-accent);
+        background-color: $dark-accent;
     }
 
     &.light:after {
-        background-color: var(--secondary-light-transparent);
+        background-color: $secondary-light-transparent;
     }
 }
 
@@ -195,13 +195,13 @@ export default {
     }
 
     &.light:after {
-        background-color: var(--primary-light);
-        border: 2px solid var(--secondary-light-transparent);
+        background-color: $primary-light;
+        border: 2px solid $secondary-light-transparent;
     }
 
     &.dark:after {
-        background-color: var(--purple-400);
-        border: 2px solid var(--purple-900);
+        background-color: $purple-400;
+        border: 2px solid $purple-900;
     }
 }
 
@@ -211,22 +211,22 @@ export default {
     border-radius: 5px;
 
     &.dark {
-        background-color: var(--black-accent);
-        border-color: var(--color-border-dark);
+        background-color: $dark-accent;
+        border-color: $color-border-dark;
 
         &.additional {
-            background-color: var(--primary-black);
-            border-color: var(--color-border-dark);
+            background-color: $primary-dark;
+            border-color: $color-border-dark;
         }
     }
 
     &.light {
-        background-color: var(--primary-light);
-        border-color: var(--color-border-light);
+        background-color: $primary-light;
+        border-color: $color-border-light;
 
         &.additional {
-            background-color: var(--purple-200);
-            border-color: var(--color-border-light);
+            background-color: $purple-200;
+            border-color: $color-border-light;
         }
     }
 
@@ -249,9 +249,9 @@ export default {
         width: 0;
         z-index: 1;
         right: 30px;
-        border: medium solid var(--color-border-dark);
+        border: medium solid $color-border-dark;
         border-width: 10px 0 10px 10px;
-        border-color: transparent transparent transparent var(--color-border-dark);
+        border-color: transparent transparent transparent $color-border-dark;
     }
 }
 
@@ -268,9 +268,9 @@ export default {
         width: 0;
         z-index: 1;
         left: 30px;
-        border: medium solid var(--color-border-dark);
+        border: medium solid $color-border-dark;
         border-width: 10px 10px 10px 0;
-        border-color: transparent var(--color-border-dark) transparent transparent;
+        border-color: transparent $color-border-dark transparent transparent;
     }
 
     /* Fix the circle for containers on the right side */
@@ -292,9 +292,9 @@ export default {
         width: 0;
         z-index: 1;
         right: 30px;
-        border: medium solid var(--color-border-light);
+        border: medium solid $color-border-light;
         border-width: 10px 0 10px 10px;
-        border-color: transparent transparent transparent var(--color-border-light);
+        border-color: transparent transparent transparent $color-border-light;
     }
 }
 
@@ -311,9 +311,9 @@ export default {
         width: 0;
         z-index: 1;
         left: 30px;
-        border: medium solid var(--color-border-light);
+        border: medium solid $color-border-light;
         border-width: 10px 10px 10px 0;
-        border-color: transparent var(--color-border-light) transparent transparent;
+        border-color: transparent $color-border-light transparent transparent;
     }
 
     /* Fix the circle for containers on the right side */

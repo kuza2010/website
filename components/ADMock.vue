@@ -43,7 +43,6 @@ export default {
         ADButton
     },
     layout: 'with-header',
-    // eslint-disable-next-line vue/require-prop-types
     props: {
         status: {
             type: String,
