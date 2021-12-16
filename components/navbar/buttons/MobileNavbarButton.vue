@@ -3,7 +3,7 @@
         as="button"
         border="0" p="0.25rem"
         color="white"
-        rounded="0.5rem" transition="opacity 0.5s"
+        rounded="md" transition="opacity 0.5s"
         background="none" font-weight="300"
         font-size="12px" line-height="24px"
         w="70px" h="70px"

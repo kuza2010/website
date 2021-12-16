@@ -3,15 +3,34 @@
         v-if="!isMobileView"
         justify-content="flex-end"
     >
-        <navbar-button
+        <nuxt-link
+            to="/"
             class="navbar-logo"
-            icon-left="sleigh"
-            text="Danilin Artyom"
-            @onButtonClick="navigateTo('/')"
-        />
-        <navbar-button text="About" @onButtonClick="navigateTo('/about')"/>
-        <navbar-button text="Blog" @onButtonClick="navigateTo('/blog')"/>
-        <navbar-button text="Guide" @onButtonClick="navigateTo('/guide')"/>
+            @click.native="navigateTo('/')"
+        >
+            <navbar-button
+                icon-left="sleigh"
+                text="Danilin Artyom"
+            />
+        </nuxt-link>
+        <nuxt-link
+            to="/about"
+            @click.native="navigateTo('/about')"
+        >
+            <navbar-button text="About"/>
+        </nuxt-link>
+        <nuxt-link
+            to="/blog"
+            @click.native="navigateTo('/blog')"
+        >
+            <navbar-button text="Blog"/>
+        </nuxt-link>
+        <nuxt-link
+            to="/guide"
+            @click.native="navigateTo('/guide')"
+        >
+            <navbar-button text="Guide"/>
+        </nuxt-link>
         <themes-switcher/>
     </sticky-nav-bar>
 

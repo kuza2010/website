@@ -17,11 +17,12 @@
 
     <c-pseudo-box
         v-else
-        :_hover="{ bg: 'dangerBold' }"
+        px="3"
+        py="1"
+        my="1"
         bg="danger"
-        rounded="0.25rem"
-        px="3" py="1"
-        mx="1" my="1"
+        rounded="md"
+        :_hover="{ bg: 'dangerBold' }"
     >
         <c-text
             is-truncated m="0"

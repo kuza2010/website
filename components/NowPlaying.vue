@@ -50,7 +50,7 @@
                     Not playing
                 </c-text>
                 <c-text font-weight="semibold" font-size="sm">
-                    powered by Spotify API
+                    – powered by Spotify API
                 </c-text>
             </c-stack>
         </c-box>

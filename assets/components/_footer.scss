@@ -3,7 +3,13 @@
 footer {
 
   a {
-    text-decoration: none;
+    & :visited {
+      color: $white !important;
+    }
+
+    & :active {
+      color: $white !important;
+    }
   }
 
   & .footer-container {

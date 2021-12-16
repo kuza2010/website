@@ -10,16 +10,8 @@ nav {
   justify-content: center;
   backdrop-filter: saturate(180%) blur(10px);
 
-  &.light-mode {
-    background-color: $secondary-light-transparent;
-  }
-
-  &.dark-mode {
-    background-color: $secondary-dark-transparent;
-  }
-
   button {
-    color: white;
+    color: $white;
     cursor: pointer;
     font-weight: 600;
 
@@ -29,8 +21,8 @@ nav {
     }
 
     &:active {
-      outline: none;
       border: 0;
+      outline: none;
       background: adjust-color($white, $lightness: -30%, $alpha: -0.75) !important;
     }
 
@@ -46,6 +38,26 @@ nav {
       }
     }
 
+  }
+
+  a {
+    text-decoration: none;
+
+    & :visited {
+      color: $white !important;
+    }
+
+    & :active {
+      color: $white !important;
+    }
+  }
+
+  &.light-mode {
+    background-color: $secondary-light-transparent;
+  }
+
+  &.dark-mode {
+    background-color: $secondary-dark-transparent;
   }
 
 }

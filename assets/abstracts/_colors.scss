@@ -1,5 +1,14 @@
 /* general */
 $white: #ffffff;
+$black: #000000;
+$success: #a9e5c1;
+$success-bold: #84dba7;
+$info: #b8e3f5;
+$info-bold: #7acced;
+$warning: #fbe5c0;
+$warning-bold: #f7cf89;
+$danger: #fec8c8;
+$danger-bold: #fd9898;
 
 /* main colors theme light and dark colors */
 $primary-light: #fdf9f5;
@@ -12,22 +21,15 @@ $dark-accent: #21262d;
 $secondary-dark: #161b22;
 $secondary-dark-transparent: rgba(22, 27, 34, 0.8);
 
-/* two colors */
+/* borders */
 $color-border-light: #d1d5da;
 $color-border-dark: #30363d;
+
+/* scrollbar */
 $scrollbar-track-bg-dark: #424242;
 $scrollbar-track-bg-light: #faf9fc;
 
-
-$success: #a9e5c1;
-$success-bold: #84dba7;
-$info: #b8e3f5;
-$info-bold: #7acced;
-$warning: #fbe5c0;
-$warning-bold: #f7cf89;
-$danger: #fec8c8;
-$danger-bold: #fd9898;
-
+/* brand */
 $purple-50: #faf9fc;
 $purple-100: #f0ecf5;
 $purple-200: #e4deee;
@@ -39,7 +41,7 @@ $purple-700: #967ebd;
 $purple-800: #7b5dac;
 $purple-900: #4d2b84;
 
-/* spotify colors */
+/* brand spotify colors */
 $spotify-light: #1db954;
 $spotify-dark: #191414;
 
@@ -49,13 +51,11 @@ $text-light: #c9d1d9;
 $text-secondary: #8b949e;
 
 /* link */
-$link-primary-light: #593196; /* $secondary-light  */
-$link-primary-active-light: #0d1117; /* $secondary-black   */
-$link-primary-dark: #7b5dac; /* $secondary-light  */
-$link-primary-active-dark: #fdf9f5; /* $primary-light   */
-
-/* common visited */
-$link-primary-visited: #8b949e; /* $text-secondary  */
+$link-primary-dark: $purple-800;
+$link-primary-light: $secondary-light;
+$link-primary-active-light:$primary-dark;
+$link-primary-active-dark: $primary-light;
+$link-primary-visited: $text-secondary;
 
 /* navbar */
 $transparent-white-15: rgba(255, 255, 255, 0.15);

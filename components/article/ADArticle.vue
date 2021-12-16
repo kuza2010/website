@@ -1,48 +1,54 @@
 <template>
-    <c-flex
-        :mt="[4, 5]" :flex-direction="['column', 'row']"
-        :align-items="['left', 'center']"
-        :class="colorMode ==='dark' ? 'article-dark': 'article-light'"
-        w="95%" rounded="6px"
-        p="1" justify-content="flex-start"
-        cursor="pointer" @click.native="navigateToPost"
+    <nuxt-link
+        :to="toLink"
+        class="article-brief"
     >
-        <c-badge
-            v-if="isNew"
-            :ml="[1,4]" :mt="[4,0]"
-            py="1" px="2"
-            w="36px" variant-color="brand.purple"
-        >
-            New!
-        </c-badge>
-        <c-box :ml="[1,4]">
-            <c-text
-                font-size="sm" font-weight="medium"
-                mb="1"
-            >
-                {{ data | articleDateFormat }}
-            </c-text>
-            <c-text
-                :mb="[0,1]" :white-space="['nowrap', 'normal']"
-                font-size="xl" font-weight="bold"
-                my="0" text-overflow="ellipsis"
-                overflow="hidden"
-            >
-                {{ title }}
-            </c-text>
-        </c-box>
         <c-flex
-            :ml="[0,'auto']" :mr="[0, 1]"
-            :mb="[4,0]" :mt="[2,0]"
+            :mt="[4, 5]" :flex-direction="['column', 'row']"
+            :align-items="['left', 'center']"
+            :class="colorMode ==='dark' ? 'article-dark': 'article-light'"
+            w="95%" rounded="md"
+            p="1" justify-content="flex-start"
+            cursor="pointer" @click.native="navigateToPost"
         >
-            <a-d-tag
-                v-for="(tag, index) in tagArray.slice(0,4)"
-                :key="tag" :text="tag"
-                :hover-color="getHoverColor(index)"
-                :color="getColor(index)"
-            />
+            <c-badge
+                v-if="isNew"
+                :ml="[1,4]" :mt="[4,0]"
+                py="1" px="2"
+                w="36px" variant-color="brand.purple"
+            >
+                New!
+            </c-badge>
+            <c-box :ml="[1,4]">
+                <c-text
+                    font-size="sm" font-weight="medium"
+                    mb="1"
+                >
+                    {{ data | articleDateFormat }}
+                </c-text>
+                <c-text
+                    :mb="[0,1]" :white-space="['nowrap', 'normal']"
+                    font-size="xl" font-weight="bold"
+                    my="0" text-overflow="ellipsis"
+                    overflow="hidden"
+                >
+                    {{ title }}
+                </c-text>
+            </c-box>
+            <c-flex
+                :ml="[0,'auto']" :mr="[0, 1]"
+                :mb="[4,0]" :mt="[2,0]"
+            >
+                <a-d-tag
+                    v-for="(tag, index) in tagArray.slice(0,4)"
+                    :key="tag"
+                    :text="tag"
+                    :color="getColor(index)"
+                    :hover-color="getHoverColor(index)"
+                />
+            </c-flex>
         </c-flex>
-    </c-flex>
+    </nuxt-link>
 </template>
 
 <script>
@@ -82,6 +88,9 @@ export default {
     computed: {
         colorMode () {
             return this.$chakraColorMode()
+        },
+        toLink () {
+            return `/blog/${this.id}`
         }
     },
     methods: {
@@ -107,34 +116,42 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@use "assets/abstracts/colors";
 
-.article-dark {
-    &:hover {
-        -webkit-transform: translateY(-5px);
-        transform: translateY(-5px);
-        background-color: var(--secondary-black);
-        transition: all 0.5s ease 0s;
+.article-brief {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .article-dark {
+        &:hover {
+            -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+            background-color: colors.$secondary-dark;
+            transition: all 0.5s ease 0s;
+        }
+
+        &:not(:hover) {
+            transition: all 0.5s ease 0s;
+        }
     }
 
-    &:not(:hover) {
-        transition: all 0.5s ease 0s;
+    .article-light {
+
+        box-shadow: 5px 5px 10px 0 colors.$color-border-light;
+
+        &:hover {
+            -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+            background-color: colors.$purple-200;
+            transition: all 0.5s ease 0s;
+        }
+
+        &:not(:hover) {
+            transition: all 0.5s ease 0s;
+        }
     }
-}
 
-.article-light {
-
-    box-shadow: 5px 5px 10px 0 var(--color-border-light);
-
-    &:hover {
-        -webkit-transform: translateY(-5px);
-        transform: translateY(-5px);
-        background-color: var(--purple-200);
-        transition: all 0.5s ease 0s;
-    }
-
-    &:not(:hover) {
-        transition: all 0.5s ease 0s;
-    }
 }
 
 </style>

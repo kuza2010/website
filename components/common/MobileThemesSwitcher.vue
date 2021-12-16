@@ -30,8 +30,11 @@ export default {
     },
     methods: {
         toggleColorMode () {
+            const prev = this.colorMode
             this.$toggleColorMode()
-            localStorage.setItem('color-mode', this.$chakraColorMode())
+            localStorage.setItem('color-mode', this.colorMode)
+            document.body.classList.remove(prev)
+            document.body.classList.add(this.colorMode)
         }
     }
 }

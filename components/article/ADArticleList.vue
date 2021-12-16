@@ -1,9 +1,8 @@
 <template>
     <c-flex
-        flex-direction="column"
-        m="0 1rem"
-        :pt="[4,0]"
         align-items="center"
+        flex-direction="column"
+        :pt="[4,0]"
     >
         <c-heading
             pb="4" :mb="1"

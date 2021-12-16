@@ -1,21 +1,23 @@
 <template>
     <c-link
-        :is-external="isExternalLink" :href="to"
+        :href="to"
+        :is-external="isExternalLink"
         :class="colorMode === 'dark'? 'dark-link' :'light-link'"
-        font-weight="normal"
     >
         <span v-if="left">
             <c-icon
-                :name="icon" :alt="getName"
                 mt="-5px"
+                :name="icon"
+                :alt="getName"
             />
             {{ text }}
         </span>
         <span v-else>
             {{ text }}
             <c-icon
-                :name="icon" :alt="getName"
                 mt="-5px"
+                :name="icon"
+                :alt="getName"
             />
         </span>
     </c-link>
@@ -67,38 +69,31 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@use "assets/abstracts/colors" as *;
 
 .light-link {
     font-weight: bold;
-    color: var(--link-primary-light) !important;
+    color: $link-primary-light;
 
     &:visited {
-        color: var(--link-primary-visited) !important;
+        color: $link-primary-visited;
     }
 
     &:active {
-        color: var(--link-primary-active-light) !important;
-        outline: none;
-        box-shadow: none;
-        border: none;
-        font-weight: 500;
+        color: $link-primary-active-light;
     }
 }
 
 .dark-link {
     font-weight: bold;
-    color: var(--link--primary-dark) !important;
+    color: $link-primary-dark;
 
     &:visited {
-        color: var(--link-primary-visited) !important;
+        color: $link-primary-visited;
     }
 
     &:active {
-        color: var(--link-primary-active-dark) !important;
-        outline: none;
-        box-shadow: none;
-        border: none;
-        font-weight: 500;
+        color: $link-primary-active-dark;
     }
 }
 

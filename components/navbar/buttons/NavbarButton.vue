@@ -4,7 +4,7 @@
         as="button"
         border="0"
         p="0.75rem"
-        rounded="0.5rem"
+        rounded="md"
         background="none"
         font-size="20px"
         line-height="24px"

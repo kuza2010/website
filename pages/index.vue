@@ -1,7 +1,10 @@
 <template>
-    <c-box>
+    <c-box class="content">
         <a-d-summary/>
-        <a-d-article-list :article-list="posts" title="Article list"/>
+        <a-d-article-list
+            title="Article list"
+            :article-list="posts"
+        />
         <a-d-things-belt/>
     </c-box>
 </template>
@@ -33,18 +36,16 @@ export default {
             posts: articles.map((elem) => {
                 const monthAgo = moment().subtract(1, 'months')
                 const createdAt = moment(elem.created)
+                elem.isNew = monthAgo.isBefore(createdAt)
 
-                return {
-                    ...elem,
-                    isNew: monthAgo.isBefore(createdAt)
-                }
+                return elem
             })
                 .sort((a, b) => a.created < b.created ? 1 : (a.created > b.created ? 0 : 1))
         }
     },
     head () {
         return {
-            title: 'AD website'
+            title: 'Artyom Danilin – Developer'
         }
     },
     computed: {

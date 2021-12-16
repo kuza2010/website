@@ -28,10 +28,11 @@ export default {
 
 // https://css-tricks.com/4-ways-to-animate-the-color-of-a-text-link-on-hover/
 <style scoped lang="scss">
+@use "assets/abstracts/colors" as *;
 
 .link-light {
     overflow: hidden;
-    background: linear-gradient(to right, var(--info-bold), var(--info-bold) 50%, var(--black-accent) 50%);
+    background: linear-gradient(to right, $info-bold, $info-bold 50%, $dark-accent 50%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 200% 100%;
@@ -44,18 +45,18 @@ export default {
     }
 
     & :visited {
-        color: var(--text-black) !important;
+        color: $text-dark;
     }
 
     & :active {
-        color: var(--text-black) !important
+        color: $text-dark;
     }
 
 }
 
 .link-dark {
     overflow: hidden;
-    background: linear-gradient(to right, var(--warning-bold), var(--warning-bold) 50%, var(--text-light) 50%);
+    background: linear-gradient(to right, $warning-bold, $warning-bold 50%, $text-light 50%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 200% 100%;
@@ -68,11 +69,11 @@ export default {
     }
 
     & :visited {
-        color: var(--text-light) !important;
+        color: $text-light;
     }
 
     & :active {
-        color: var(--text-light) !important
+        color: $text-light;
     }
 
 }

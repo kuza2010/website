@@ -12,6 +12,17 @@ body {
   font-family: 'Inter', sans-serif;
   line-height: 1.5;
 
+  .app-layout {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: variables.$default-page-width;
+
+    .content {
+      margin: 0 variables.$default-margin;
+    }
+  }
+
   // light theme
   &.light {
     color: colors.$text-dark;
@@ -31,21 +42,20 @@ body {
     }
 
     a {
-      color: colors.$text-dark !important;
+      color: colors.$text-dark;
       text-decoration: none;
 
       &:hover {
-        text-decoration: underline;
+        text-decoration: unset;
       }
 
       & :visited {
-        color: colors.$text-dark !important;
+        color: colors.$text-dark;
       }
 
       & :active {
-        color: colors.$text-dark !important
+        color: colors.$text-dark;
       }
-
     }
 
   }
@@ -69,22 +79,25 @@ body {
     }
 
     a {
-      color: colors.$text-light !important;
+      color: colors.$text-light;
       text-decoration: none;
 
       &:hover {
-        text-decoration: underline;
+        text-decoration: unset;
       }
 
       & :visited {
-        color: colors.$text-light !important;
+        color: colors.$text-light;
       }
 
       & :active {
-        color: colors.$text-light !important
+        color: colors.$text-light;
       }
-
     }
   }
 
+}
+
+.text-secondary {
+  color: colors.$text-secondary;
 }

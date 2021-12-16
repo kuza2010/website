@@ -3,7 +3,8 @@
         <a-d-button
             :size="size" :text="text"
             :class="colorMode==='dark'? 'footer-button-dark': 'footer-button-light'"
-            color="primary" mx="4"
+            color="primary"
+            mx="4"
         />
     </nuxt-link>
 </template>

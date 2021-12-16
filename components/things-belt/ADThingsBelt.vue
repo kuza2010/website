@@ -1,5 +1,5 @@
 <template>
-    <c-box :mt="[4,8]" mx="4">
+    <c-box :mt="[4,8]">
         <!--   things i like     -->
         <ad-things-indicator
             main-text="🤗"
@@ -23,7 +23,7 @@
         </c-flex>
         <!--   things i dont like    -->
         <ad-things-indicator
-            main-text=" 🙄"
+            main-text="🙄"
             open-popover-main-text="🤮"
             popover-text="I'm not keen on/hate ..."
         />
