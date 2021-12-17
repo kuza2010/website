@@ -1,6 +1,9 @@
 // kick off default blue border
-button, a{
-  &:focus {
-    box-shadow: unset !important;
-  }
+
+button:focus {
+  box-shadow: unset !important;
+}
+
+a:focus {
+  box-shadow: unset !important;
 }

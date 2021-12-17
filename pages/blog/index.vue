@@ -25,6 +25,9 @@
                     Here I share some of my ideas, thinking, insights and views on life. Take a cup of coffee and just
                     make yourself at home...
                 </c-text>
+                <c-box>
+                    <a-d-search-input/>
+                </c-box>
                 <a-d-article-list :article-list="posts" title="Article list"/>
             </c-stack>
         </c-box>
@@ -32,9 +35,10 @@
 </template>
 
 <script lang="js">
-import { CFlex, CBox, CHeading, CText, CStack } from '@chakra-ui/vue'
 import moment from 'moment'
+import { CFlex, CBox, CHeading, CText, CStack } from '@chakra-ui/vue'
 import ADArticleList from '~/components/article/ADArticleList'
+import ADSearchInput from '~/components/form/ADSearchInput'
 
 export default {
     name: 'Blog',
@@ -44,7 +48,8 @@ export default {
         CStack,
         CText,
         CBox,
-        ADArticleList
+        ADArticleList,
+        ADSearchInput
     },
     async asyncData ({ $content }) {
         const articles = await $content('articles')

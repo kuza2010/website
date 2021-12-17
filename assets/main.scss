@@ -1,6 +1,7 @@
 @use 'abstracts/colors';
 @use 'abstracts/variables';
 
+@import 'components/input';
 @import 'components/navbar';
 @import 'components/footer';
 @import 'components/now-playing';

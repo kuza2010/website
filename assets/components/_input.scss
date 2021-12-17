@@ -1,0 +1,56 @@
+@use '../abstracts' as *;
+
+input {
+
+  &.dark {
+    color: $text-secondary;
+    background-color: $secondary-dark;
+    border-radius: $input-border-radius;
+    border: 1px solid $color-border-dark;
+
+    &:hover {
+      border: 1px solid $color-border-dark;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: $primary-dark;
+      border-color: $input-focused-border-color-dark;
+      box-shadow: 0 0 3px $input-focused-border-color-dark-accent;
+    }
+
+    &::placeholder {
+      color: $text-secondary;
+    }
+
+    svg {
+      color: $text-secondary;
+    }
+  }
+
+  &.light {
+    color: $text-dark;
+    background-color: $white;
+    border: 1px solid $text-secondary;
+    border-radius: $input-border-radius;
+
+    &:hover {
+      border: 1px solid $text-secondary;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $purple-500;
+      box-shadow: 0 0 3px $purple-900;
+      background-color: $primary-light;
+    }
+
+    &::placeholder {
+      color: $text-secondary;
+    }
+
+    svg {
+      color: $text-dark;
+    }
+  }
+}
