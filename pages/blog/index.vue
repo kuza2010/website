@@ -26,19 +26,35 @@
                     make yourself at home...
                 </c-text>
                 <c-box>
-                    <a-d-search-input/>
+                    <a-d-search-input
+                        :value="searchTerm"
+                        placeholder="Search by tag or article title..."
+                        @onSearchChanged="onSearchChanged"
+                    />
                 </c-box>
-                <a-d-article-list :article-list="posts" title="Article list"/>
+                <a-d-article-list
+                    v-if="filteredPosts && filteredPosts.length !== 0"
+                    title="Article list"
+                    :article-list="filteredPosts"
+                />
+                <a-d-empty-article
+                    v-else
+                    title="No articles found"
+                    comment="No articles by your search criteria"
+                />
             </c-stack>
         </c-box>
     </c-flex>
 </template>
 
 <script lang="js">
-import moment from 'moment'
 import { CFlex, CBox, CHeading, CText, CStack } from '@chakra-ui/vue'
-import ADArticleList from '~/components/article/ADArticleList'
 import ADSearchInput from '~/components/form/ADSearchInput'
+import ADArticleList from '~/components/article/ADArticleList'
+import ADEmptyArticle from '~/components/article/ADEmptyArticle'
+
+import { mapToBriefArticle } from '~/utils/articleUtils'
+import { defaultSorting } from '~/utils/sortingUtils'
 
 export default {
     name: 'Blog',
@@ -49,7 +65,8 @@ export default {
         CText,
         CBox,
         ADArticleList,
-        ADSearchInput
+        ADSearchInput,
+        ADEmptyArticle
     },
     async asyncData ({ $content }) {
         const articles = await $content('articles')
@@ -58,20 +75,39 @@ export default {
             .limit(5)
             .fetch()
 
+        const posts = articles.map(mapToBriefArticle)
+            .sort((a, b) => defaultSorting(a.created, b.created))
+        const filteredPosts = [...posts]
+
         return {
-            posts: articles.map((elem) => {
-                const monthAgo = moment().subtract(1, 'months')
-                const createdAt = moment(elem.created)
-                return {
-                    ...elem,
-                    isNew: monthAgo.isBefore(createdAt)
-                }
-            }).sort((a, b) => a.created < b.created ? 1 : (a.created > b.created ? 0 : 1))
+            posts,
+            filteredPosts
+        }
+    },
+    data () {
+        return {
+            searchTerm: ''
         }
     },
     head () {
         return {
             title: 'Blog - in dev'
+        }
+    },
+    methods: {
+        onSearchChanged (newValue) {
+            if (this.searchTerm !== newValue) {
+                this.searchTerm = newValue.trim()
+                this.runFiltering()
+            }
+        },
+        runFiltering () {
+            if (this.searchTerm) {
+                this.filteredPosts = this.posts
+                    .filter(post => post.title.includes(this.searchTerm) || post.languageTags.includes(this.searchTerm))
+            } else {
+                this.filteredPosts = this.posts
+            }
         }
     }
 }

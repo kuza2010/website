@@ -10,10 +10,10 @@
             size="xl"
             color="dangerBold"
         >
-            There are no articles yet
+            {{ title }}
         </c-heading>
         <c-text font-size="xs">
-            Author is in progress...
+            {{ comment }}
         </c-text>
     </c-flex>
 </template>
@@ -27,6 +27,16 @@ export default {
         CFlex,
         CHeading,
         CText
+    },
+    props: {
+        title: {
+            type: String,
+            default: () => 'There are no articles yet'
+        },
+        comment: {
+            type: String,
+            default: () => 'Author is in progress...'
+        }
     }
 }
 </script>

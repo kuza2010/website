@@ -6,6 +6,7 @@
       "use": "@nuxtjs/vercel-builder",
       "config": {
         "serverFiles": [
+          "utils/**",
           "config/**",
           "plugins/**",
           "content/**",
