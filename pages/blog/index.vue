@@ -2,7 +2,7 @@
     <c-flex
         m="0 1rem"
         flex-direction="column"
-        align-items="center" class="all-height"
+        align-items="center"
     >
         <c-box :mt="[6,12]">
             <c-heading
@@ -112,9 +112,3 @@ export default {
     }
 }
 </script>
-
-<style scoped lang="scss">
-.all-height {
-    height: 70vh
-}
-</style>
