@@ -9,8 +9,7 @@
             @click.native="navigateTo('/')"
         >
             <navbar-button
-                icon-left="sleigh"
-                text="Home"
+                text="☕ Danilin Artyom"
             />
         </nuxt-link>
         <nuxt-link
