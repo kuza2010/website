@@ -103,8 +103,9 @@ export default {
         },
         runFiltering () {
             if (this.searchTerm) {
-                this.filteredPosts = this.posts
-                    .filter(post => post.title.includes(this.searchTerm) || post.languageTags.includes(this.searchTerm))
+                this.filteredPosts = this.posts.filter((post) => {
+                    return post.title.toLowerCase().includes(this.searchTerm.toLowerCase()) || post.languageTags.includes(this.searchTerm)
+                })
             } else {
                 this.filteredPosts = this.posts
             }
