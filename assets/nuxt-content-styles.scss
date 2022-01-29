@@ -67,10 +67,11 @@
     position: relative;
 
     & > .filename {
-      color: $primary-light;
+      color: $info-bold;
       position: absolute;
       right: 0;
-      z-index: 10;
+      top: -8px;
+      z-index: 2;
       font-size: .875rem;
       letter-spacing: -.025em;
       line-height: 1;
