@@ -5,7 +5,7 @@ img: quartz/quartz-scheduler-main.webp
 alt: quartz-scheduler in spring 
 languageTags: [spring, java, scheduler]
 created: 2022-01-29T16:27:00 
-lastModified: 2022-01-29T16:27:00
+lastModified: 2022-01-30T17:30:00
 ---
 
 In this article we will integrate [quartz-scheduler](http://www.quartz-scheduler.org/) in Spring Boot application. Our
@@ -148,9 +148,9 @@ class PrintToConsoleJob : Job {
 Perform POST request with the following body:
 
 ```json[request]
-{
-    "text": "String",
-    "utcFireTime": "2022-01-29T17:43:30"
+ {
+    "text": "This is my super secret message that displayed on: 14:22:00",
+    "utcFireTime": "2022-01-30T14:22:00"
 }
 ```
 
@@ -158,9 +158,16 @@ The server response:
 
 ```json[response]
 {
-    "jobName": "Console-job-4444f391-6ff7-4522-84a3-43a3beca7ad4",
+    "jobName": "Console-job-10d37546-eb84-462e-9be1-e315aa85417f",
     "jobGroup": "Console-job-group"
 }
+```
+
+Wait the fire time of the task and check log file:
+```text[scheduler.log]
+17:22:00 INFO: execute job of class PrintToConsoleJob with job key: Console-job-group.Console-job-10d37546-eb84-462e-9be1-e315aa85417f
+17:22:00 INFO: *** 'This is my super secret message that displayed on: 14:22:00' ***
+17:22:00 INFO: execute job of class PrintToConsoleJob finished
 ```
 
 
