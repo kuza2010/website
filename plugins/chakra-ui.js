@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Chakra from '@chakra-ui/vue'
 import {
+    faLink,
     faBlog,
     faCoffee,
     faEnvelopeOpen,
-    faExternalLinkAlt,
     faHamburger,
     faHighlighter,
     faHome,
@@ -22,6 +22,7 @@ Vue.use(Chakra, {
         iconSet: {
             faBlog,
             faHome,
+            faLink,
             faSleigh,
             faCoffee,
             faSnowplow,
@@ -29,8 +30,7 @@ Vue.use(Chakra, {
             faHighlighter,
             faScrewdriver,
             faUserGraduate,
-            faEnvelopeOpen,
-            faExternalLinkAlt
+            faEnvelopeOpen
         },
         iconPack: 'fa',
         extend: {

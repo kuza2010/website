@@ -35,7 +35,7 @@
                     <link-with-icon
                         text="LinkedIn"
                         is-external-link
-                        icon="external-link-alt"
+                        icon="link"
                         :to="myLinkedIn"
                     />
                     , if you have something for me.
