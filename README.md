@@ -1,6 +1,6 @@
 # danilin-website.vercel.app
 
-A personal website built using Vue, Nuxt.js, Chakra UI. Used MDX for blogs, Context Api for app theme. Feel free to copy
+A personal website built using Vue, Nuxt.js, Chakra UI. Used Nuxt content for blogs, Context Api for app theme. Feel free to copy
 and use.
 
 ## Set up environment variables
@@ -17,9 +17,9 @@ current playing track from Spotify. So, the variables:
 ___
 Example:
 
-- CLIENT_SECRET=AQDo...K8
-- CLIENT_ID=8eb...qk
-- REFRESH_TOKEN=09M...wt1
+- CLIENT_SECRET=AQDo...
+- CLIENT_ID=8eb...
+- REFRESH_TOKEN=09M...
 
 ## Run on local machine
 
