@@ -16,7 +16,7 @@
   "dependencies": {
     "nuxt": "^2.15.8",
     "moment": "^2.29.3",
-    "core-js": "^3.22.8",
+    "core-js": "^3.23.1",
     "node-fetch": "^2.6.1",
     "prism-themes": "^1.9.0",
     "@nuxt/content": "^1.15.1",
