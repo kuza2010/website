@@ -23,7 +23,7 @@
     "@chakra-ui/nuxt": "^0.2.4",
     "@nuxtjs/emotion": "^0.1.0",
     "@nuxtjs/vercel-builder": "^0.22.1",
-    "@fortawesome/free-solid-svg-icons": "^6.1.1"
+    "@fortawesome/free-solid-svg-icons": "^6.1.2"
   },
   "devDependencies": {
     "pug": "^3.0.2",
