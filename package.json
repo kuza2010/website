@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "pug": "^3.0.2",
-    "sass": "^1.55.0",
+    "sass": "^1.57.0",
     "fibers": "^5.0.3",
     "eslint": "^7.32.0",
     "sass-loader": "^10.1.11",
