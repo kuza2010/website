@@ -20,7 +20,7 @@
     "node-fetch": "^2.6.1",
     "prism-themes": "^1.9.0",
     "@nuxt/content": "^1.15.1",
-    "@chakra-ui/nuxt": "^0.2.4",
+    "@chakra-ui/nuxt": "^0.5.0",
     "@nuxtjs/emotion": "^0.1.0",
     "@nuxtjs/vercel-builder": "^0.23.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0"
