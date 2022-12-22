@@ -9,7 +9,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
+    "generate": "nuxt generate ",
     "lint": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "fix": "eslint --fix --ext \".js,.vue\" --ignore-path .gitignore ."
   },
