@@ -5,10 +5,6 @@
   "nickname": "kyza2010",
   "description": "This is Danilin Artyom personal website",
   "private": true,
-  "engines" : {
-    "npm" : ">=9.2.0 < 10",
-    "node" : ">=18.12.1 <19"
-  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
