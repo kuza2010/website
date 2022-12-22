@@ -36,9 +36,6 @@ export default {
         '@assets/normalize/normalize.scss',
         '@assets/main.scss'
     ],
-    transpile: [
-        'defu'
-    ],
     env: {
         clientId: process.env.CLIENT_ID || null,
         clientSecret: process.env.CLIENT_SECRET || null,
