@@ -6,7 +6,7 @@
   "description": "This is Danilin Artyom personal website",
   "private": true,
   "engines": {
-    "node": "14.21.2"
+    "node": "14"
   },
   "scripts": {
     "dev": "nuxt",
