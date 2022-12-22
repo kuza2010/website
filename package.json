@@ -6,10 +6,10 @@
   "description": "This is Danilin Artyom personal website",
   "private": true,
   "scripts": {
-    "dev": "nuxt --openssl-legacy-provider",
-    "build": "nuxt build --openssl-legacy-provider",
-    "start": "nuxt start --openssl-legacy-provider",
-    "generate": "nuxt generate --openssl-legacy-provider",
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
     "lint": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "fix": "eslint --fix --ext \".js,.vue\" --ignore-path .gitignore ."
   },
