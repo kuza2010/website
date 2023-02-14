@@ -23,7 +23,7 @@
     "node-fetch": "^2.6.1",
     "prism-themes": "^1.9.0",
     "@nuxt/content": "1.15.1",
-    "@chakra-ui/nuxt": "^0.6.0",
+    "@chakra-ui/nuxt": "^0.7.0",
     "@nuxtjs/emotion": "^0.1.0",
     "@nuxtjs/vercel-builder": "0.24.0",
     "@fortawesome/free-solid-svg-icons": "6.3.0"
