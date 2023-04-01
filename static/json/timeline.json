@@ -89,5 +89,12 @@
     "tagText": "Finish university",
     "key": "2021",
     "isAdditional": false
+  },
+  {
+    "year": "2023",
+    "text": "Started a new position at Digital League as Java developer",
+    "tagText": "New position",
+    "key": "2023",
+    "isAdditional": false
   }
 ]

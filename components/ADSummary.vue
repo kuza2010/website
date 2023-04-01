@@ -14,17 +14,17 @@
             >
                 Artyom Danilin
             </c-heading>
-            <c-text my="1">
-                Software designer at <b>Orion Innovation</b>
+            <c-text>
+                Backend software engineer at <b>Digital League</b>
                 <br>
-                Experienced with Java / Android / JavaScript.
+                Mostly experienced with <b>Java technology</b>
             </c-text>
             <c-text
                 font-weight="normal"
                 class="text-secondary"
                 :font-size="['md', 'xl', '1.3rem']"
             >
-                Working with a varied range of technologies. With an emphasis on backend development.
+                Working with a varied range of tech (backend/mobile/web). Keep my emphasis on backend development.
                 <br>
                 Here is my personal slice of the Internet where you can get to know me better.
             </c-text>
@@ -66,7 +66,7 @@
 </template>
 
 <script>
-import { CBox, CFlex, CHeading, CImage, CText } from '@chakra-ui/vue'
+import {CBox, CFlex, CHeading, CImage, CText, CStack} from '@chakra-ui/vue'
 import ADButton from '~/components/common/buttons/ADButton'
 
 export default {
@@ -77,34 +77,35 @@ export default {
         CBox,
         CImage,
         CHeading,
-        CText
+        CText,
+        CStack
     },
     inject: ['$chakraColorMode'],
-    data () {
+    data() {
         return {
             // TODO: how can i get width before rendering
             width: 1024
         }
     },
     computed: {
-        colorMode () {
+        colorMode() {
             return this.$chakraColorMode()
         },
-        showAvatar () {
+        showAvatar() {
             return this.width < 600 || this.width > 900
         }
     },
-    destroyed () {
+    destroyed() {
         window.removeEventListener('resize', this.onWindowResize)
     },
-    mounted () {
+    mounted() {
         this.$nextTick(function () {
             this.onWindowResize()
         })
         window.addEventListener('resize', this.onWindowResize)
     },
     methods: {
-        onFeedbackClick () {
+        onFeedbackClick() {
             this.$toast({
                 title: 'Give me feedback',
                 description: `Please send your feedback here: ${this.$config.email} `,
@@ -113,7 +114,7 @@ export default {
                 duration: 10000
             })
         },
-        onWindowResize () {
+        onWindowResize() {
             this.width = window.innerWidth
         }
     }

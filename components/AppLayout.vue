@@ -4,7 +4,7 @@
         <c-flex
             class="app-layout"
             flex-direction="column"
-            :pt="[4, 24]"
+            pt="24"
         >
             <slot/>
         </c-flex>

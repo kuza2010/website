@@ -27,7 +27,8 @@ Example:
 git clone https://github.com/kuza2010/website.git
 cd website
 npm install
-# make sure that you have provided env variables 
+# make sure that you have provided env variables
+# npm 9.5.0 node 14.21.3 
 npm dev
 ```
 
