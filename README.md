@@ -3,6 +3,9 @@
 A personal website built using Vue, Nuxt.js, Chakra UI. Used Nuxt content for blogs, Context Api for app theme. Feel free to copy
 and use.
 
+# ⚠️⚠️⚠️Deprecated⚠️⚠️⚠️
+Please find reborned version by the following link: https://github.com/kuza2010/personal-site
+
 ## Set up environment variables
 
 To run it on your machine you need to provide some environment variables. These variables will use for fetching your
